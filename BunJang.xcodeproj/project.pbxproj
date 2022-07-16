@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1148CE95CCC727BE9CED33F1 /* Pods_BunJang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689B71A9E8E0FF6AB688A6E1 /* Pods_BunJang.framework */; };
+		87442BAF2882DED300E7AF3A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BAE2882DED300E7AF3A /* Secret.swift */; };
+		87442BB22882E5A300E7AF3A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BB12882E5A300E7AF3A /* User.swift */; };
+		87442BB42882E6B400E7AF3A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BB32882E6B400E7AF3A /* LoginViewController.swift */; };
+		87442BB62882EB9E00E7AF3A /* HomeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BB52882EB9E00E7AF3A /* HomeMainViewController.swift */; };
 		8770195B2882651D0003441E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770195A2882651D0003441E /* AppDelegate.swift */; };
 		8770195D2882651D0003441E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770195C2882651D0003441E /* SceneDelegate.swift */; };
 		877019622882651D0003441E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877019602882651D0003441E /* Home.storyboard */; };
@@ -32,13 +36,17 @@
 		8770199F288273730003441E /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770199E288273730003441E /* UITableViewCell+.swift */; };
 		877019A1288273800003441E /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A0288273800003441E /* UICollectionViewCell+.swift */; };
 		877019A3288274B00003441E /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877019A2288274B00003441E /* My.storyboard */; };
-		877019A52882D65B0003441E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A42882D65B0003441E /* LoginViewController.swift */; };
+		877019A52882D65B0003441E /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A42882D65B0003441E /* LoginMainViewController.swift */; };
 		877019A82882D7A00003441E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A72882D7A00003441E /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		098D35EDF39F290C4DC70042 /* Pods-BunJang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.debug.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.debug.xcconfig"; sourceTree = "<group>"; };
 		689B71A9E8E0FF6AB688A6E1 /* Pods_BunJang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BunJang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87442BAE2882DED300E7AF3A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		87442BB12882E5A300E7AF3A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		87442BB32882E6B400E7AF3A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		87442BB52882EB9E00E7AF3A /* HomeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewController.swift; sourceTree = "<group>"; };
 		877019572882651D0003441E /* BunJang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BunJang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8770195A2882651D0003441E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8770195C2882651D0003441E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +73,7 @@
 		8770199E288273730003441E /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		877019A0288273800003441E /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
 		877019A2288274B00003441E /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
-		877019A42882D65B0003441E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		877019A42882D65B0003441E /* LoginMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		877019A72882D7A00003441E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		B78BAAEF7C1078C23C4ED23D /* Pods-BunJang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.release.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +97,14 @@
 				B78BAAEF7C1078C23C4ED23D /* Pods-BunJang.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		87442BB02882E59000E7AF3A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				87442BB12882E5A300E7AF3A /* User.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		8770194E2882651D0003441E = {
@@ -161,6 +177,7 @@
 		87701973288266B70003441E /* Secret */ = {
 			isa = PBXGroup;
 			children = (
+				87442BAE2882DED300E7AF3A /* Secret.swift */,
 			);
 			path = Secret;
 			sourceTree = "<group>";
@@ -184,7 +201,9 @@
 			isa = PBXGroup;
 			children = (
 				8770199428826D260003441E /* Login.storyboard */,
-				877019A42882D65B0003441E /* LoginViewController.swift */,
+				877019A42882D65B0003441E /* LoginMainViewController.swift */,
+				87442BB32882E6B400E7AF3A /* LoginViewController.swift */,
+				87442BB02882E59000E7AF3A /* Entity */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -193,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				877019602882651D0003441E /* Home.storyboard */,
+				87442BB52882EB9E00E7AF3A /* HomeMainViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -375,14 +395,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				877019A1288273800003441E /* UICollectionViewCell+.swift in Sources */,
+				87442BAF2882DED300E7AF3A /* Secret.swift in Sources */,
 				8770198B28826A680003441E /* UIFont+.swift in Sources */,
 				8770195B2882651D0003441E /* AppDelegate.swift in Sources */,
 				8770198728826A4B0003441E /* String+.swift in Sources */,
-				877019A52882D65B0003441E /* LoginViewController.swift in Sources */,
+				877019A52882D65B0003441E /* LoginMainViewController.swift in Sources */,
 				8770195D2882651D0003441E /* SceneDelegate.swift in Sources */,
+				87442BB62882EB9E00E7AF3A /* HomeMainViewController.swift in Sources */,
 				87701979288266FF0003441E /* Device.swift in Sources */,
 				87701972288266B30003441E /* Constant.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
+				87442BB42882E6B400E7AF3A /* LoginViewController.swift in Sources */,
 				87701983288269E70003441E /* BaseViewController.swift in Sources */,
 				87701977288266EF0003441E /* IndicatorView.swift in Sources */,
 				8770199F288273730003441E /* UITableViewCell+.swift in Sources */,
@@ -393,6 +416,7 @@
 				8770198928826A590003441E /* UIColor+.swift in Sources */,
 				8770198D28826A730003441E /* UIButton+.swift in Sources */,
 				8770199328826AF80003441E /* Protocol.swift in Sources */,
+				87442BB22882E5A300E7AF3A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -522,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
