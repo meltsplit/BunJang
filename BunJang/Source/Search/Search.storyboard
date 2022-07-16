@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chat Main View Controller-->
+        <!--Search Main View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ChatMainViewController" id="Y6W-OH-hqX" customClass="ChatMainViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchMainViewController" id="Y6W-OH-hqX" customClass="SearchMainViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJp-AF-CXM">
-                                <rect key="frame" x="149" y="418" width="116" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iG5-mx-cA6">
+                                <rect key="frame" x="122" y="418" width="170" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                 <color key="textColor" name="BGJT_RedColor"/>
                                 <nil key="highlightedColor"/>
@@ -28,14 +28,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mJp-AF-CXM" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Ozr-dX-BLl"/>
-                            <constraint firstItem="mJp-AF-CXM" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qRP-5Z-0m4"/>
+                            <constraint firstItem="iG5-mx-cA6" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="GEv-dR-sms"/>
+                            <constraint firstItem="iG5-mx-cA6" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Qj3-er-3PO"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="65"/>
+            <point key="canvasLocation" x="35" y="83"/>
         </scene>
     </scenes>
     <resources>

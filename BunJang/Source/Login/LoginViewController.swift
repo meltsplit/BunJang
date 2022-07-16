@@ -44,9 +44,9 @@ class LoginViewController : BaseViewController{
     
     private func goHomeVC(){
         
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let storyboard = UIStoryboard(name: "Tab", bundle: nil)
         
-        guard let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeMainViewController") as? HomeMainViewController else { return }
+        guard let homeVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
         
         homeVC.modalPresentationStyle = .fullScreen
         present(homeVC, animated: true)

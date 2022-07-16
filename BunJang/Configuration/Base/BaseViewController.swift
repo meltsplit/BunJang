@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 class BaseViewController: UIViewController{
+    
     //MARK: - Properties
+    
     
     //MARK: - Life Cycle
     
