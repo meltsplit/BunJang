@@ -27,6 +27,8 @@ class HomeTabmanViewController : TabmanViewController{
         setDelegate()
         setBar()
         setNotification()
+        
+        
     }
     
     //MARK: - Custom Method

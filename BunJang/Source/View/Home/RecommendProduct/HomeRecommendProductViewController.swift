@@ -59,6 +59,11 @@ extension HomeRecommendProductViewController : UICollectionViewDelegate,UICollec
         cell.setData(ProductModel.sampleData[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let productVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+        navigationController?.pushViewController(productVC, animated: true)
+    }
 }
 
 //MARK: - CollectionView Delegate FlowLayout

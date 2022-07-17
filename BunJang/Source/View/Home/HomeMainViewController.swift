@@ -17,14 +17,7 @@ class HomeMainViewController : BaseViewController{
     
     //MARK: - Properties
     
-    let eventImage = [
-                        ImageSource(image: Image.event1),
-                        ImageSource(image: Image.event2),
-                        ImageSource(image: Image.event3),
-                        ImageSource(image: Image.event4),
-                        ImageSource(image: Image.event5),
-                        
-                     ]
+    var eventImage : [AlamofireSource] = []
     
     //MARK: - Life Cycle
     
@@ -34,6 +27,26 @@ class HomeMainViewController : BaseViewController{
         setDelegate()
         setBar()
         setUI()
+       
+        BannerManager.shared.getBanner { (response) -> (Void) in
+            
+            switch response{
+            case .success(let data) :
+                
+                self.setBannerData(data as! BannerModel)
+                
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr :
+                print("pathErr")
+            case .serverErr :
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
         
     }
     
@@ -50,6 +63,15 @@ class HomeMainViewController : BaseViewController{
     }
     
     private func setUI(){
+        eventImageSlide.setImageInputs(eventImage)
+    }
+    
+    private func setBannerData(_ data : BannerModel){
+        
+        for bannerData in data.result{
+            
+            eventImage.append( AlamofireSource(urlString: bannerData.bannerImgUrl!)! )
+        }
         eventImageSlide.setImageInputs(eventImage)
     }
     

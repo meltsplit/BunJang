@@ -28,6 +28,12 @@
 		87442BDC2883F48F00E7AF3A /* PostCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDB2883F48F00E7AF3A /* PostCategoryViewController.swift */; };
 		87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDD2883F49B00E7AF3A /* PostTagViewController.swift */; };
 		87442BE0288414B700E7AF3A /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDF288414B700E7AF3A /* CALayer.swift */; };
+		87442BE328841EC100E7AF3A /* BannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BE228841EC100E7AF3A /* BannerManager.swift */; };
+		87442BE528841F0500E7AF3A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BE428841F0500E7AF3A /* API.swift */; };
+		87442BE7288423BB00E7AF3A /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BE6288423BB00E7AF3A /* BannerModel.swift */; };
+		87442BEA288425F700E7AF3A /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BE9288425F700E7AF3A /* NetworkResult.swift */; };
+		87442BED2884300F00E7AF3A /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87442BEC2884300F00E7AF3A /* Product.storyboard */; };
+		87442BEF2884301E00E7AF3A /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BEE2884301E00E7AF3A /* ProductViewController.swift */; };
 		8770195B2882651D0003441E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770195A2882651D0003441E /* AppDelegate.swift */; };
 		8770195D2882651D0003441E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770195C2882651D0003441E /* SceneDelegate.swift */; };
 		877019622882651D0003441E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877019602882651D0003441E /* Home.storyboard */; };
@@ -79,6 +85,12 @@
 		87442BDB2883F48F00E7AF3A /* PostCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCategoryViewController.swift; sourceTree = "<group>"; };
 		87442BDD2883F49B00E7AF3A /* PostTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTagViewController.swift; sourceTree = "<group>"; };
 		87442BDF288414B700E7AF3A /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		87442BE228841EC100E7AF3A /* BannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerManager.swift; sourceTree = "<group>"; };
+		87442BE428841F0500E7AF3A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		87442BE6288423BB00E7AF3A /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		87442BE9288425F700E7AF3A /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		87442BEC2884300F00E7AF3A /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
+		87442BEE2884301E00E7AF3A /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		877019572882651D0003441E /* BunJang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BunJang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8770195A2882651D0003441E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8770195C2882651D0003441E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,14 +178,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		87442BD42883459400E7AF3A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				87442BD5288345B400E7AF3A /* ProductModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		87442BD72883F3D900E7AF3A /* RecommendProduct */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +210,109 @@
 			path = Tag;
 			sourceTree = "<group>";
 		};
+		87442BE8288425E400E7AF3A /* Netwrok */ = {
+			isa = PBXGroup;
+			children = (
+				87442BE428841F0500E7AF3A /* API.swift */,
+				87442BE9288425F700E7AF3A /* NetworkResult.swift */,
+			);
+			path = Netwrok;
+			sourceTree = "<group>";
+		};
+		87442BEB28842FD000E7AF3A /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				87442BEC2884300F00E7AF3A /* Product.storyboard */,
+				87442BEE2884301E00E7AF3A /* ProductViewController.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		87442BF02884339400E7AF3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87442BF7288434AF00E7AF3A /* Home */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87442BF12884341900E7AF3A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				87442BF42884346300E7AF3A /* Home */,
+				87442BF52884346A00E7AF3A /* Product */,
+				87442BF32884345F00E7AF3A /* Login */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		87442BF22884341F00E7AF3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87442BB72882F09100E7AF3A /* Tab */,
+				8770197A288269250003441E /* Login */,
+				8770197B2882692F0003441E /* Home */,
+				87442BC0288301FA00E7AF3A /* Search */,
+				8770197E288269450003441E /* Post */,
+				8770197D2882693B0003441E /* Chat */,
+				8770197C288269360003441E /* My */,
+				87442BEB28842FD000E7AF3A /* Product */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87442BF32884345F00E7AF3A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		87442BF42884346300E7AF3A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				87442BE228841EC100E7AF3A /* BannerManager.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		87442BF52884346A00E7AF3A /* Product */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		87442BF7288434AF00E7AF3A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				87442BE6288423BB00E7AF3A /* BannerModel.swift */,
+				87442BD5288345B400E7AF3A /* ProductModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		87442BF8288434FA00E7AF3A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				877019632882651E0003441E /* Assets.xcassets */,
+				87701974288266C40003441E /* Font */,
+				8770196F288266950003441E /* Util */,
+				87442BF92884352300E7AF3A /* Protocol */,
+				8770197F2882698B0003441E /* Extension */,
+				877019A62882D7970003441E /* Constant */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		87442BF92884352300E7AF3A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8770199228826AF80003441E /* Protocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		8770194E2882651D0003441E = {
 			isa = PBXGroup;
 			children = (
@@ -228,13 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				8770196E288266770003441E /* Configuration */,
-				8770196F288266950003441E /* Util */,
+				87442BF8288434FA00E7AF3A /* Resource */,
 				877019702882669A0003441E /* Source */,
-				8770195A2882651D0003441E /* AppDelegate.swift */,
-				8770195C2882651D0003441E /* SceneDelegate.swift */,
-				877019632882651E0003441E /* Assets.xcassets */,
-				877019652882651E0003441E /* LaunchScreen.storyboard */,
-				877019682882651E0003441E /* Info.plist */,
 			);
 			path = BunJang;
 			sourceTree = "<group>";
@@ -242,9 +344,11 @@
 		8770196E288266770003441E /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				877019A62882D7970003441E /* Constant */,
+				877019682882651E0003441E /* Info.plist */,
+				8770195C2882651D0003441E /* SceneDelegate.swift */,
+				8770195A2882651D0003441E /* AppDelegate.swift */,
+				87442BE8288425E400E7AF3A /* Netwrok */,
 				87701973288266B70003441E /* Secret */,
-				87701974288266C40003441E /* Font */,
 				87701975288266D10003441E /* Base */,
 			);
 			path = Configuration;
@@ -255,8 +359,6 @@
 			children = (
 				87701976288266EF0003441E /* IndicatorView.swift */,
 				87701978288266FF0003441E /* Device.swift */,
-				8770197F2882698B0003441E /* Extension */,
-				8770199228826AF80003441E /* Protocol.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -264,13 +366,9 @@
 		877019702882669A0003441E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				8770197A288269250003441E /* Login */,
-				87442BB72882F09100E7AF3A /* Tab */,
-				8770197B2882692F0003441E /* Home */,
-				87442BC0288301FA00E7AF3A /* Search */,
-				8770197E288269450003441E /* Post */,
-				8770197D2882693B0003441E /* Chat */,
-				8770197C288269360003441E /* My */,
+				87442BF22884341F00E7AF3A /* View */,
+				87442BF12884341900E7AF3A /* Network */,
+				87442BF02884339400E7AF3A /* Model */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -293,6 +391,7 @@
 		87701975288266D10003441E /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				877019652882651E0003441E /* LaunchScreen.storyboard */,
 				87701982288269E70003441E /* BaseViewController.swift */,
 			);
 			path = Base;
@@ -312,13 +411,12 @@
 		8770197B2882692F0003441E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				87442BD72883F3D900E7AF3A /* RecommendProduct */,
-				87442BD82883F40100E7AF3A /* Brand */,
 				877019602882651D0003441E /* Home.storyboard */,
+				87442BC728831B9D00E7AF3A /* Cell */,
 				87442BB52882EB9E00E7AF3A /* HomeMainViewController.swift */,
 				87442BCC2883389900E7AF3A /* HomeTabManViewController.swift */,
-				87442BC728831B9D00E7AF3A /* Cell */,
-				87442BD42883459400E7AF3A /* Model */,
+				87442BD82883F40100E7AF3A /* Brand */,
+				87442BD72883F3D900E7AF3A /* RecommendProduct */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -453,6 +551,7 @@
 				877019642882651E0003441E /* Assets.xcassets in Resources */,
 				87442BC22883020C00E7AF3A /* Search.storyboard in Resources */,
 				87442BB92882F0AF00E7AF3A /* Tab.storyboard in Resources */,
+				87442BED2884300F00E7AF3A /* Product.storyboard in Resources */,
 				8770199728826D360003441E /* Post.storyboard in Resources */,
 				877019622882651D0003441E /* Home.storyboard in Resources */,
 				877019A3288274B00003441E /* My.storyboard in Resources */,
@@ -513,6 +612,7 @@
 				87442BBB2883014900E7AF3A /* PostMainViewController.swift in Sources */,
 				877019A1288273800003441E /* UICollectionViewCell+.swift in Sources */,
 				87442BAF2882DED300E7AF3A /* Secret.swift in Sources */,
+				87442BE528841F0500E7AF3A /* API.swift in Sources */,
 				87442BD6288345B400E7AF3A /* ProductModel.swift in Sources */,
 				87442BBF2883017D00E7AF3A /* MyMainViewController.swift in Sources */,
 				8770198B28826A680003441E /* UIFont+.swift in Sources */,
@@ -526,10 +626,12 @@
 				87442BB62882EB9E00E7AF3A /* HomeMainViewController.swift in Sources */,
 				87701979288266FF0003441E /* Device.swift in Sources */,
 				87442BBD2883016600E7AF3A /* ChatMainViewController.swift in Sources */,
+				87442BE7288423BB00E7AF3A /* BannerModel.swift in Sources */,
 				87701972288266B30003441E /* Constant.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
 				87442BE0288414B700E7AF3A /* CALayer.swift in Sources */,
 				87442BB42882E6B400E7AF3A /* LoginViewController.swift in Sources */,
+				87442BEF2884301E00E7AF3A /* ProductViewController.swift in Sources */,
 				87701983288269E70003441E /* BaseViewController.swift in Sources */,
 				87442BC928831CA300E7AF3A /* MenuCollectionViewCell.swift in Sources */,
 				87701977288266EF0003441E /* IndicatorView.swift in Sources */,
@@ -538,11 +640,13 @@
 				8770199D288272F80003441E /* UIView+.swift in Sources */,
 				8770198F28826A7E0003441E /* UIViewController+.swift in Sources */,
 				8770198528826A3B0003441E /* Date+.swift in Sources */,
+				87442BE328841EC100E7AF3A /* BannerManager.swift in Sources */,
 				8770199128826A960003441E /* UINavigationBar+.swift in Sources */,
 				8770198928826A590003441E /* UIColor+.swift in Sources */,
 				87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */,
 				8770198D28826A730003441E /* UIButton+.swift in Sources */,
 				8770199328826AF80003441E /* Protocol.swift in Sources */,
+				87442BEA288425F700E7AF3A /* NetworkResult.swift in Sources */,
 				87442BDC2883F48F00E7AF3A /* PostCategoryViewController.swift in Sources */,
 				87442BB22882E5A300E7AF3A /* User.swift in Sources */,
 			);
@@ -694,7 +798,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T6DNHAHXG9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BunJang/Info.plist;
+				INFOPLIST_FILE = BunJang/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -724,7 +828,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T6DNHAHXG9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BunJang/Info.plist;
+				INFOPLIST_FILE = BunJang/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
