@@ -27,7 +27,7 @@ class HomeMainViewController : BaseViewController{
         setDelegate()
         setBar()
         setUI()
-       
+        
         BannerManager.shared.getBanner { (response) -> (Void) in
             
             switch response{
