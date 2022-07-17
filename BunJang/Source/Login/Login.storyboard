@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qM8-Wv-LRc">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="qM8-Wv-LRc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Skf-7f-T0e">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -31,21 +31,21 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="LoginMainViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abN-ee-n86" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="0.0" y="148" width="414" height="487.5"/>
+                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="745" translatesAutoresizingMaskIntoConstraints="NO" id="abN-ee-n86" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="0.0" y="147.99999999999997" width="390" height="459.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="abN-ee-n86" secondAttribute="height" multiplier="654:770" id="4IY-NI-3pr"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LdS-83-xIC">
-                                <rect key="frame" x="30" y="665.5" width="354" height="147.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="755" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LdS-83-xIC">
+                                <rect key="frame" x="30" y="637.33333333333337" width="330" height="137.66666666666663"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-a3-Z4j">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="71"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-a3-Z4j">
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="66.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pCb-a3-Z4j" secondAttribute="height" multiplier="576:116" id="sZg-Xf-16R"/>
                                         </constraints>
@@ -58,8 +58,8 @@
                                             <action selector="kakaoLoginBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ptJ-BG-VHj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dF-wa-2qP">
-                                        <rect key="frame" x="0.0" y="76" width="354" height="71.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dF-wa-2qP">
+                                        <rect key="frame" x="0.0" y="71.333333333333258" width="330" height="66.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5dF-wa-2qP" secondAttribute="height" multiplier="576:116" id="w8p-vv-gmk"/>
                                         </constraints>
@@ -93,21 +93,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="82.366071428571431"/>
+            <point key="canvasLocation" x="-29" y="82"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="cth-JK-egU">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="hrI-LA-Au8" customClass="LoginViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ec-DH-j5f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="T54-6g-SQc">
-                                <rect key="frame" x="30" y="194" width="354" height="180"/>
+                                <rect key="frame" x="30" y="194" width="330" height="180"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MMu-nX-26Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Jdb-rn-uSD"/>
                                         </constraints>
@@ -115,7 +115,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U3O-C2-G8Z">
-                                        <rect key="frame" x="0.0" y="130" width="354" height="50"/>
+                                        <rect key="frame" x="0.0" y="130" width="330" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="rdI-3v-3Bo"/>
                                         </constraints>
@@ -125,7 +125,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wL-vN-ciw">
-                                <rect key="frame" x="50" y="712" width="314" height="50"/>
+                                <rect key="frame" x="50" y="660" width="290" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="e6y-rG-wBP"/>
                                 </constraints>
@@ -142,7 +142,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IY0-UY-cLn">
-                                <rect key="frame" x="50" y="642" width="314" height="50"/>
+                                <rect key="frame" x="50" y="590" width="290" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="icO-GL-aZC"/>
                                 </constraints>

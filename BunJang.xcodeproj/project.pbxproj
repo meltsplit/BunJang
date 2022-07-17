@@ -19,6 +19,12 @@
 		87442BC22883020C00E7AF3A /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87442BC12883020C00E7AF3A /* Search.storyboard */; };
 		87442BC42883021800E7AF3A /* SearchMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BC32883021800E7AF3A /* SearchMainViewController.swift */; };
 		87442BC62883035900E7AF3A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BC52883035900E7AF3A /* BaseTabBarController.swift */; };
+		87442BC928831CA300E7AF3A /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BC828831CA300E7AF3A /* MenuCollectionViewCell.swift */; };
+		87442BCD2883389900E7AF3A /* HomeTabManViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BCC2883389900E7AF3A /* HomeTabManViewController.swift */; };
+		87442BCF28833A0C00E7AF3A /* HomeRecommendProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BCE28833A0C00E7AF3A /* HomeRecommendProductViewController.swift */; };
+		87442BD1288340AD00E7AF3A /* HomeBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BD0288340AD00E7AF3A /* HomeBrandViewController.swift */; };
+		87442BD32883442400E7AF3A /* RecommendProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BD22883442400E7AF3A /* RecommendProductCollectionViewCell.swift */; };
+		87442BD6288345B400E7AF3A /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BD5288345B400E7AF3A /* ProductModel.swift */; };
 		8770195B2882651D0003441E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770195A2882651D0003441E /* AppDelegate.swift */; };
 		8770195D2882651D0003441E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770195C2882651D0003441E /* SceneDelegate.swift */; };
 		877019622882651D0003441E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877019602882651D0003441E /* Home.storyboard */; };
@@ -61,6 +67,12 @@
 		87442BC12883020C00E7AF3A /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		87442BC32883021800E7AF3A /* SearchMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMainViewController.swift; sourceTree = "<group>"; };
 		87442BC52883035900E7AF3A /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		87442BC828831CA300E7AF3A /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		87442BCC2883389900E7AF3A /* HomeTabManViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabManViewController.swift; sourceTree = "<group>"; };
+		87442BCE28833A0C00E7AF3A /* HomeRecommendProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendProductViewController.swift; sourceTree = "<group>"; };
+		87442BD0288340AD00E7AF3A /* HomeBrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBrandViewController.swift; sourceTree = "<group>"; };
+		87442BD22883442400E7AF3A /* RecommendProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		87442BD5288345B400E7AF3A /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		877019572882651D0003441E /* BunJang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BunJang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8770195A2882651D0003441E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8770195C2882651D0003441E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +149,23 @@
 				87442BC32883021800E7AF3A /* SearchMainViewController.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		87442BC728831B9D00E7AF3A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				87442BC828831CA300E7AF3A /* MenuCollectionViewCell.swift */,
+				87442BD22883442400E7AF3A /* RecommendProductCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		87442BD42883459400E7AF3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87442BD5288345B400E7AF3A /* ProductModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8770194E2882651D0003441E = {
@@ -246,7 +275,12 @@
 			isa = PBXGroup;
 			children = (
 				877019602882651D0003441E /* Home.storyboard */,
+				87442BC728831B9D00E7AF3A /* Cell */,
 				87442BB52882EB9E00E7AF3A /* HomeMainViewController.swift */,
+				87442BCC2883389900E7AF3A /* HomeTabManViewController.swift */,
+				87442BCE28833A0C00E7AF3A /* HomeRecommendProductViewController.swift */,
+				87442BD0288340AD00E7AF3A /* HomeBrandViewController.swift */,
+				87442BD42883459400E7AF3A /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -433,12 +467,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87442BCD2883389900E7AF3A /* HomeTabManViewController.swift in Sources */,
 				87442BC62883035900E7AF3A /* BaseTabBarController.swift in Sources */,
 				87442BBB2883014900E7AF3A /* PostMainViewController.swift in Sources */,
 				877019A1288273800003441E /* UICollectionViewCell+.swift in Sources */,
 				87442BAF2882DED300E7AF3A /* Secret.swift in Sources */,
+				87442BD6288345B400E7AF3A /* ProductModel.swift in Sources */,
 				87442BBF2883017D00E7AF3A /* MyMainViewController.swift in Sources */,
 				8770198B28826A680003441E /* UIFont+.swift in Sources */,
+				87442BD32883442400E7AF3A /* RecommendProductCollectionViewCell.swift in Sources */,
+				87442BD1288340AD00E7AF3A /* HomeBrandViewController.swift in Sources */,
 				87442BC42883021800E7AF3A /* SearchMainViewController.swift in Sources */,
 				8770195B2882651D0003441E /* AppDelegate.swift in Sources */,
 				8770198728826A4B0003441E /* String+.swift in Sources */,
@@ -451,8 +489,10 @@
 				877019A82882D7A00003441E /* Image.swift in Sources */,
 				87442BB42882E6B400E7AF3A /* LoginViewController.swift in Sources */,
 				87701983288269E70003441E /* BaseViewController.swift in Sources */,
+				87442BC928831CA300E7AF3A /* MenuCollectionViewCell.swift in Sources */,
 				87701977288266EF0003441E /* IndicatorView.swift in Sources */,
 				8770199F288273730003441E /* UITableViewCell+.swift in Sources */,
+				87442BCF28833A0C00E7AF3A /* HomeRecommendProductViewController.swift in Sources */,
 				8770199D288272F80003441E /* UIView+.swift in Sources */,
 				8770198F28826A7E0003441E /* UIViewController+.swift in Sources */,
 				8770198528826A3B0003441E /* Date+.swift in Sources */,

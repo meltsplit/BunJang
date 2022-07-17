@@ -20,9 +20,12 @@ class PostMainViewController : BaseViewController{
         super.viewDidLoad()
         
         setDelegate()
-        setBar()
+        setBar(true)
         setUI()
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        setBar(false)
     }
     
     //MARK: - Custom Method
@@ -31,8 +34,8 @@ class PostMainViewController : BaseViewController{
         true
     }
     
-    private func setBar(){
-        true
+    private func setBar(_ bool: Bool){
+        tabBarController?.tabBar.isHidden = bool
     }
     
     private func setUI(){
@@ -41,6 +44,15 @@ class PostMainViewController : BaseViewController{
     
     
     //MARK: - IBAction
+    @IBAction func backBtnPressed(_ sender: UIBarButtonItem) {
+        print("backBtn pressed")
+        let storyboard = UIStoryboard(name: "Tab", bundle: nil)
+        
+        guard let BaseVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
+        
+        BaseVC.modalPresentationStyle = .fullScreen
+        present(BaseVC, animated: true)
+    }
     
 }
 

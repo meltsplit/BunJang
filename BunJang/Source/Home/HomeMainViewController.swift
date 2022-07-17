@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class HomeMainViewController : BaseViewController{
     
     //MARK: - IBOutlet
+   
+    @IBOutlet weak var eventImageSlide: ImageSlideshow!
+    @IBOutlet weak var menuCollectionView: UICollectionView!
     
     //MARK: - Properties
     
+    let eventImage = [
+                        ImageSource(image: Image.event1),
+                        ImageSource(image: Image.event2),
+                        ImageSource(image: Image.event3),
+                        ImageSource(image: Image.event4),
+                        ImageSource(image: Image.event5),
+                        
+                     ]
     
     //MARK: - Life Cycle
     
@@ -28,15 +40,17 @@ class HomeMainViewController : BaseViewController{
     //MARK: - Custom Method
     
     private func setDelegate(){
-        true
+        
+        menuCollectionView.delegate = self
+        menuCollectionView.dataSource = self
     }
     
     private func setBar(){
-        true
+    
     }
     
     private func setUI(){
-        true
+        eventImageSlide.setImageInputs(eventImage)
     }
     
     
@@ -44,7 +58,42 @@ class HomeMainViewController : BaseViewController{
     
 }
 
-extension HomeMainViewController {
+//MARK: - CollectionView Delegate, DataSource
+extension HomeMainViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        14
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.cellIdentifier, for: indexPath) as? MenuCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.setData(indexPath)
+        
+        return cell
+    }
+    
+    
+}
+
+//MARK: - CollectionView Delegate FlowLayout
+
+extension HomeMainViewController : UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    //행간 높이
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 80, height: 80)
+    }
+    
     
 }
 
