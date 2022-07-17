@@ -36,6 +36,12 @@ class LoginMainViewController : BaseViewController{
     
     private func setImageSlideShow(){
         loginImageSlide?.setImageInputs(loginImage)
+        
+        let indicator = UIPageControl()
+        indicator.currentPageIndicatorTintColor = UIColor.black
+        indicator.pageIndicatorTintColor = UIColor.lightGray
+        
+        loginImageSlide.pageIndicator = indicator
     }
    
     //MARK: - IBAction

@@ -11,6 +11,12 @@ class PostMainViewController : BaseViewController{
     
     //MARK: - IBOutlet
     
+    @IBOutlet weak var cameraView: UIView!
+    
+    @IBOutlet weak var registerView: UIView!
+    @IBOutlet weak var safePayView: UIView!
+    @IBOutlet weak var registerBtn: UIButton!
+    
     //MARK: - Properties
     
     
@@ -31,7 +37,7 @@ class PostMainViewController : BaseViewController{
     //MARK: - Custom Method
     
     private func setDelegate(){
-        true
+        return
     }
     
     private func setBar(_ bool: Bool){
@@ -39,20 +45,46 @@ class PostMainViewController : BaseViewController{
     }
     
     private func setUI(){
-        true
+        cameraView.makeCornerRound(radius: 10)
+        
+        registerView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner,.layerMaxXMinYCorner)
+        registerView.layer.addBorder([.top], color: UIColor.systemGray5, width: 1)
+        
+        
+        
+       safePayView.makeBorder(width: 2, cgColor: UIColor.systemGray5.cgColor)
+       safePayView.makeCornerRound(radius: 10)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "category" {
+//            let vc = segue.destination as! PostCategoryViewController
+//        } else if segue.identifier == "tag" {
+//            let vc = segue.destination as! PostTagViewController
+//        }
+        return
     }
     
     
     //MARK: - IBAction
-    @IBAction func backBtnPressed(_ sender: UIBarButtonItem) {
-        print("backBtn pressed")
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Tab", bundle: nil)
         
         guard let BaseVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
         
         BaseVC.modalPresentationStyle = .fullScreen
-        present(BaseVC, animated: true)
+        present(BaseVC, animated: false)
     }
+    
+    @IBAction func cameraBtnPressed(_ sender: UITapGestureRecognizer) {
+        print("카메라 버튼 클릭")
+    }
+    
+    
+    
+    
+    
     
 }
 

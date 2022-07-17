@@ -25,6 +25,9 @@
 		87442BD1288340AD00E7AF3A /* HomeBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BD0288340AD00E7AF3A /* HomeBrandViewController.swift */; };
 		87442BD32883442400E7AF3A /* RecommendProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BD22883442400E7AF3A /* RecommendProductCollectionViewCell.swift */; };
 		87442BD6288345B400E7AF3A /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BD5288345B400E7AF3A /* ProductModel.swift */; };
+		87442BDC2883F48F00E7AF3A /* PostCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDB2883F48F00E7AF3A /* PostCategoryViewController.swift */; };
+		87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDD2883F49B00E7AF3A /* PostTagViewController.swift */; };
+		87442BE0288414B700E7AF3A /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDF288414B700E7AF3A /* CALayer.swift */; };
 		8770195B2882651D0003441E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770195A2882651D0003441E /* AppDelegate.swift */; };
 		8770195D2882651D0003441E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770195C2882651D0003441E /* SceneDelegate.swift */; };
 		877019622882651D0003441E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877019602882651D0003441E /* Home.storyboard */; };
@@ -73,6 +76,9 @@
 		87442BD0288340AD00E7AF3A /* HomeBrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBrandViewController.swift; sourceTree = "<group>"; };
 		87442BD22883442400E7AF3A /* RecommendProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		87442BD5288345B400E7AF3A /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		87442BDB2883F48F00E7AF3A /* PostCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCategoryViewController.swift; sourceTree = "<group>"; };
+		87442BDD2883F49B00E7AF3A /* PostTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTagViewController.swift; sourceTree = "<group>"; };
+		87442BDF288414B700E7AF3A /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		877019572882651D0003441E /* BunJang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BunJang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8770195A2882651D0003441E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8770195C2882651D0003441E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +172,38 @@
 				87442BD5288345B400E7AF3A /* ProductModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		87442BD72883F3D900E7AF3A /* RecommendProduct */ = {
+			isa = PBXGroup;
+			children = (
+				87442BCE28833A0C00E7AF3A /* HomeRecommendProductViewController.swift */,
+			);
+			path = RecommendProduct;
+			sourceTree = "<group>";
+		};
+		87442BD82883F40100E7AF3A /* Brand */ = {
+			isa = PBXGroup;
+			children = (
+				87442BD0288340AD00E7AF3A /* HomeBrandViewController.swift */,
+			);
+			path = Brand;
+			sourceTree = "<group>";
+		};
+		87442BD92883F46000E7AF3A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				87442BDB2883F48F00E7AF3A /* PostCategoryViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		87442BDA2883F46700E7AF3A /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				87442BDD2883F49B00E7AF3A /* PostTagViewController.swift */,
+			);
+			path = Tag;
 			sourceTree = "<group>";
 		};
 		8770194E2882651D0003441E = {
@@ -274,12 +312,12 @@
 		8770197B2882692F0003441E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				87442BD72883F3D900E7AF3A /* RecommendProduct */,
+				87442BD82883F40100E7AF3A /* Brand */,
 				877019602882651D0003441E /* Home.storyboard */,
-				87442BC728831B9D00E7AF3A /* Cell */,
 				87442BB52882EB9E00E7AF3A /* HomeMainViewController.swift */,
 				87442BCC2883389900E7AF3A /* HomeTabManViewController.swift */,
-				87442BCE28833A0C00E7AF3A /* HomeRecommendProductViewController.swift */,
-				87442BD0288340AD00E7AF3A /* HomeBrandViewController.swift */,
+				87442BC728831B9D00E7AF3A /* Cell */,
 				87442BD42883459400E7AF3A /* Model */,
 			);
 			path = Home;
@@ -306,6 +344,8 @@
 		8770197E288269450003441E /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				87442BD92883F46000E7AF3A /* Category */,
+				87442BDA2883F46700E7AF3A /* Tag */,
 				8770199628826D360003441E /* Post.storyboard */,
 				87442BBA2883014900E7AF3A /* PostMainViewController.swift */,
 			);
@@ -325,6 +365,7 @@
 				8770199C288272F80003441E /* UIView+.swift */,
 				8770199E288273730003441E /* UITableViewCell+.swift */,
 				877019A0288273800003441E /* UICollectionViewCell+.swift */,
+				87442BDF288414B700E7AF3A /* CALayer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -487,6 +528,7 @@
 				87442BBD2883016600E7AF3A /* ChatMainViewController.swift in Sources */,
 				87701972288266B30003441E /* Constant.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
+				87442BE0288414B700E7AF3A /* CALayer.swift in Sources */,
 				87442BB42882E6B400E7AF3A /* LoginViewController.swift in Sources */,
 				87701983288269E70003441E /* BaseViewController.swift in Sources */,
 				87442BC928831CA300E7AF3A /* MenuCollectionViewCell.swift in Sources */,
@@ -498,8 +540,10 @@
 				8770198528826A3B0003441E /* Date+.swift in Sources */,
 				8770199128826A960003441E /* UINavigationBar+.swift in Sources */,
 				8770198928826A590003441E /* UIColor+.swift in Sources */,
+				87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */,
 				8770198D28826A730003441E /* UIButton+.swift in Sources */,
 				8770199328826AF80003441E /* Protocol.swift in Sources */,
+				87442BDC2883F48F00E7AF3A /* PostCategoryViewController.swift in Sources */,
 				87442BB22882E5A300E7AF3A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,9 +20,8 @@
                     <connections>
                         <segue destination="dKn-9G-Wrg" kind="relationship" relationship="viewControllers" id="cNH-Gv-W4R"/>
                         <segue destination="kLw-T1-0Yk" kind="relationship" relationship="viewControllers" id="DNu-p4-ovh"/>
-                        <segue destination="nYi-T6-LgF" kind="relationship" relationship="viewControllers" id="Sya-JT-cZh"/>
                         <segue destination="07q-2f-uAW" kind="relationship" relationship="viewControllers" id="oyN-RN-gcr"/>
-                        <segue destination="zMl-DS-qVS" kind="relationship" relationship="viewControllers" id="3uW-Aj-at2"/>
+                        <segue destination="PQJ-lr-tbs" kind="relationship" relationship="viewControllers" id="3S6-NR-jLM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxX-Rx-w6O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -37,7 +36,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHu-NJ-z0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="843" y="306"/>
+            <point key="canvasLocation" x="616" y="376"/>
         </scene>
         <!--홈-->
         <scene sceneID="4fW-VN-TXc">
@@ -80,11 +79,28 @@
         <scene sceneID="1cE-UT-POE">
             <objects>
                 <viewControllerPlaceholder storyboardName="Post" referencedIdentifier="PostMainViewController" id="Ejh-5Q-5g6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ejj-EY-8mj"/>
                     <navigationItem key="navigationItem" id="9hw-lf-Yca"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4u-CB-rIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-304" y="1434"/>
+        </scene>
+        <!--등록-->
+        <scene sceneID="2cg-gN-Ux8">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="PQJ-lr-tbs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="등록" image="plus.circle" catalog="system" id="JrX-rz-hTb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1aa-Jz-Rek">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ejh-5Q-5g6" kind="relationship" relationship="rootViewController" id="kfy-0r-ud0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Heu-eR-xJb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-304" y="883"/>
         </scene>
         <!--ChatMainViewController-->
         <scene sceneID="s5d-lp-Sh2">
@@ -122,23 +138,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1V-XP-ay1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1193" y="872"/>
-        </scene>
-        <!--등록-->
-        <scene sceneID="Efm-4k-f3O">
-            <objects>
-                <navigationController id="nYi-T6-LgF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="등록" image="plus.circle" catalog="system" id="IQI-3S-ipy"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTv-Vy-wGT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Ejh-5Q-5g6" kind="relationship" relationship="rootViewController" id="j3g-Qr-G5X"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JTE-ln-Sm1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-304" y="872"/>
         </scene>
         <!--번개톡-->
         <scene sceneID="0Qq-X8-zxw">
