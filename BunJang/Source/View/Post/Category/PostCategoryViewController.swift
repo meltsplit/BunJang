@@ -20,9 +20,14 @@ class PostCategoryViewController : BaseViewController{
         super.viewDidLoad()
         
         setDelegate()
-        setBar()
+        setBar(true)
         setUI()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        setBar(false)
     }
     
     //MARK: - Custom Method
@@ -31,8 +36,10 @@ class PostCategoryViewController : BaseViewController{
         self.modalPresentationStyle = .popover
     }
     
-    private func setBar(){
-        true
+    private func setBar(_ bool: Bool){
+        navigationController?.isNavigationBarHidden = bool
+        tabBarController?.tabBar.isTranslucent = bool
+        tabBarController?.tabBar.isHidden = bool
     }
     
     private func setUI(){

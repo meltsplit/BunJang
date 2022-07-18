@@ -8,7 +8,7 @@
 import UIKit
 import MaterialComponents.MaterialBottomSheet
 
-class PostMainViewController : BaseViewController{
+class PostMainViewController : BaseViewController {
     
     //MARK: - IBOutlet
     
@@ -17,6 +17,7 @@ class PostMainViewController : BaseViewController{
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     
+    @IBOutlet weak var optionSelectBtn: UIButton!
     
     @IBOutlet weak var registerView: UIView!
     @IBOutlet weak var safePayView: UIView!
@@ -47,19 +48,23 @@ class PostMainViewController : BaseViewController{
     }
     
     private func setBar(_ bool: Bool){
+        navigationController?.isNavigationBarHidden = bool
+        tabBarController?.tabBar.isTranslucent = bool
         tabBarController?.tabBar.isHidden = bool
     }
     
     private func setUI(){
         cameraView.makeCornerRound(radius: 10)
         
-        registerView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner,.layerMaxXMinYCorner)
+        
         registerView.layer.addBorder([.top], color: UIColor.systemGray5, width: 1)
         
+        optionSelectBtn.makeCornerRound(radius: 10)
+        optionSelectBtn.makeBorder(width: 1, color: UIColor.systemGray3)
         
-        
-       safePayView.makeBorder(width: 2, cgColor: UIColor.systemGray5.cgColor)
+       safePayView.makeBorder(width: 2, color: UIColor.systemGray5)
        safePayView.makeCornerRound(radius: 10)
+        registerBtn.makeCornerRound(radius: 10)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,23 +92,28 @@ class PostMainViewController : BaseViewController{
         print("카메라 버튼 클릭")
     }
     
+    
     @IBAction func optionBtnPressed(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "OptionBottomSheet") as! OptionBottomSheet
-                
-                // MDC 바텀 시트로 설정
-        let bottomSheet: MDCBottomSheetController = MDCBottomSheetController(contentViewController: vc)
+        
+        let optionBS = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "OptionBottomSheet") as! OptionBottomSheet
+        
+        optionBS.delegate = self
+        
+        let bottomSheet = MDCBottomSheetController(contentViewController: optionBS)
+        
                 
                 // 보여주기
         present(bottomSheet, animated: true, completion: nil)
     }
     
-    
-    
-    
-    
 }
 
-extension PostMainViewController {
+extension PostMainViewController : optionDataDelegate {
     
+    func sendData(_ data: OptionModel) {
+        
+        // TODO: 옵션데이터 처리
+        print(data)
+    }
 }
 

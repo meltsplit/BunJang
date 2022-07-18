@@ -63,6 +63,9 @@
 		877019A52882D65B0003441E /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A42882D65B0003441E /* LoginMainViewController.swift */; };
 		877019A82882D7A00003441E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A72882D7A00003441E /* Image.swift */; };
 		877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */; };
+		877F20392885A8B800F1EEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20382885A8B800F1EEA9 /* Color.swift */; };
+		877F203C2885B3F600F1EEA9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F203B2885B3F600F1EEA9 /* OptionModel.swift */; };
+		877F203F2885C03F00F1EEA9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F203E2885C03F00F1EEA9 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +128,9 @@
 		877019A42882D65B0003441E /* LoginMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		877019A72882D7A00003441E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBottomSheet.swift; sourceTree = "<group>"; };
+		877F20382885A8B800F1EEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		877F203B2885B3F600F1EEA9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
+		877F203E2885C03F00F1EEA9 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		B78BAAEF7C1078C23C4ED23D /* Pods-BunJang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.release.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +236,7 @@
 		87442BF02884339400E7AF3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				877F203A2885B3EB00F1EEA9 /* Post */,
 				87442BFA28843FF400E7AF3A /* Login */,
 				87442BF7288434AF00E7AF3A /* Home */,
 			);
@@ -482,6 +489,8 @@
 			isa = PBXGroup;
 			children = (
 				877019A72882D7A00003441E /* Image.swift */,
+				877F20382885A8B800F1EEA9 /* Color.swift */,
+				877F203E2885C03F00F1EEA9 /* Data.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -492,6 +501,14 @@
 				877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */,
 			);
 			path = Option;
+			sourceTree = "<group>";
+		};
+		877F203A2885B3EB00F1EEA9 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				877F203B2885B3F600F1EEA9 /* OptionModel.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		8AE4C1C67F71AF556431CF53 /* Frameworks */ = {
@@ -649,11 +666,13 @@
 				877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
 				87442BFD28844D8900E7AF3A /* CategoryTagCollectionViewCell.swift in Sources */,
+				877F20392885A8B800F1EEA9 /* Color.swift in Sources */,
 				87442BE0288414B700E7AF3A /* CALayer+.swift in Sources */,
 				87442BB42882E6B400E7AF3A /* LoginViewController.swift in Sources */,
 				87442BEF2884301E00E7AF3A /* ProductViewController.swift in Sources */,
 				87701983288269E70003441E /* BaseViewController.swift in Sources */,
 				87442BC928831CA300E7AF3A /* MenuCollectionViewCell.swift in Sources */,
+				877F203F2885C03F00F1EEA9 /* Data.swift in Sources */,
 				87701977288266EF0003441E /* IndicatorView.swift in Sources */,
 				8770199F288273730003441E /* UITableViewCell+.swift in Sources */,
 				87442BCF28833A0C00E7AF3A /* HomeRecommendProductViewController.swift in Sources */,
@@ -665,6 +684,7 @@
 				8770198928826A590003441E /* UIColor+.swift in Sources */,
 				87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */,
 				8770198D28826A730003441E /* UIButton+.swift in Sources */,
+				877F203C2885B3F600F1EEA9 /* OptionModel.swift in Sources */,
 				8770199328826AF80003441E /* Protocol.swift in Sources */,
 				87442BEA288425F700E7AF3A /* NetworkResult.swift in Sources */,
 				87442BDC2883F48F00E7AF3A /* PostCategoryViewController.swift in Sources */,
@@ -821,7 +841,7 @@
 				INFOPLIST_FILE = BunJang/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UIMainStoryboardFile = Tab;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -851,7 +871,7 @@
 				INFOPLIST_FILE = BunJang/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Login;
+				INFOPLIST_KEY_UIMainStoryboardFile = Tab;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

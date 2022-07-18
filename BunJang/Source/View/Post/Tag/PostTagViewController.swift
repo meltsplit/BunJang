@@ -20,9 +20,14 @@ class PostTagViewController : BaseViewController{
         super.viewDidLoad()
         
         setDelegate()
-        setBar()
+        setBar(true)
         setUI()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        setBar(false)
     }
     
     //MARK: - Custom Method
@@ -31,8 +36,10 @@ class PostTagViewController : BaseViewController{
         self.modalPresentationStyle = .fullScreen
     }
     
-    private func setBar(){
-        true
+    private func setBar(_ bool: Bool){
+        navigationController?.isNavigationBarHidden = bool
+        tabBarController?.tabBar.isTranslucent = bool
+        tabBarController?.tabBar.isHidden = bool
     }
     
     private func setUI(){

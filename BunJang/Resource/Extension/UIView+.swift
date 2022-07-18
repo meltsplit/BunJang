@@ -23,9 +23,9 @@ extension UIView{
         clipsToBounds = true
     }
     
-    func makeBorder(width : CGFloat , cgColor : CGColor ){
-    layer.borderWidth = width
-    layer.borderColor = cgColor
+    func makeBorder(width : CGFloat , color : UIColor ){
+        layer.borderWidth = width
+        layer.borderColor = color.cgColor
     }
     
 }

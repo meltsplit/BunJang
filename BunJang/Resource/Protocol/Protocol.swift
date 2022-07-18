@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol optionDataDelegate{
+    
+    func sendData(_ data : OptionModel)
+}

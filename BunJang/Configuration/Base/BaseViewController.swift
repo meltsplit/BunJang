@@ -16,7 +16,7 @@ class BaseViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.dismissKeyboardWhenTappedAround()
         tabBarController?.tabBar.isTranslucent = false
         
     }
