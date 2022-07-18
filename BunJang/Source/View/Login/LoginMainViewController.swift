@@ -7,6 +7,9 @@
 
 import UIKit
 import ImageSlideshow
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginMainViewController : BaseViewController{
     
@@ -31,6 +34,7 @@ class LoginMainViewController : BaseViewController{
         setImageSlideShow()
         
     }
+
     
     //MARK: - Custom Method
     
@@ -47,6 +51,21 @@ class LoginMainViewController : BaseViewController{
     //MARK: - IBAction
     
     @IBAction func kakaoLoginBtnPressed(_ sender: UIButton) {
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
+                    
+                    guard let BaseVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
+                    
+                    BaseVC.modalPresentationStyle = .fullScreen
+                    
+                    self.present(BaseVC, animated: true)
+                    
+                }
+            }
         
     }
     @IBAction func appleLoginBtnPressed(_ sender: UIButton) {

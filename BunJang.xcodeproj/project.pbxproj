@@ -27,7 +27,7 @@
 		87442BD6288345B400E7AF3A /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BD5288345B400E7AF3A /* ProductModel.swift */; };
 		87442BDC2883F48F00E7AF3A /* PostCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDB2883F48F00E7AF3A /* PostCategoryViewController.swift */; };
 		87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDD2883F49B00E7AF3A /* PostTagViewController.swift */; };
-		87442BE0288414B700E7AF3A /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDF288414B700E7AF3A /* CALayer.swift */; };
+		87442BE0288414B700E7AF3A /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BDF288414B700E7AF3A /* CALayer+.swift */; };
 		87442BE328841EC100E7AF3A /* BannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BE228841EC100E7AF3A /* BannerManager.swift */; };
 		87442BE528841F0500E7AF3A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BE428841F0500E7AF3A /* API.swift */; };
 		87442BE7288423BB00E7AF3A /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BE6288423BB00E7AF3A /* BannerModel.swift */; };
@@ -86,7 +86,7 @@
 		87442BD5288345B400E7AF3A /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		87442BDB2883F48F00E7AF3A /* PostCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCategoryViewController.swift; sourceTree = "<group>"; };
 		87442BDD2883F49B00E7AF3A /* PostTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTagViewController.swift; sourceTree = "<group>"; };
-		87442BDF288414B700E7AF3A /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		87442BDF288414B700E7AF3A /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		87442BE228841EC100E7AF3A /* BannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerManager.swift; sourceTree = "<group>"; };
 		87442BE428841F0500E7AF3A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		87442BE6288423BB00E7AF3A /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
@@ -294,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				877019632882651E0003441E /* Assets.xcassets */,
-				87701974288266C40003441E /* Font */,
 				8770196F288266950003441E /* Util */,
 				87442BF92884352300E7AF3A /* Protocol */,
 				8770197F2882698B0003441E /* Extension */,
@@ -397,13 +396,6 @@
 			path = Secret;
 			sourceTree = "<group>";
 		};
-		87701974288266C40003441E /* Font */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
 		87701975288266D10003441E /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,7 +470,7 @@
 				8770199C288272F80003441E /* UIView+.swift */,
 				8770199E288273730003441E /* UITableViewCell+.swift */,
 				877019A0288273800003441E /* UICollectionViewCell+.swift */,
-				87442BDF288414B700E7AF3A /* CALayer.swift */,
+				87442BDF288414B700E7AF3A /* CALayer+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -645,7 +637,7 @@
 				87442BE7288423BB00E7AF3A /* BannerModel.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
 				87442BFD28844D8900E7AF3A /* CategoryTagCollectionViewCell.swift in Sources */,
-				87442BE0288414B700E7AF3A /* CALayer.swift in Sources */,
+				87442BE0288414B700E7AF3A /* CALayer+.swift in Sources */,
 				87442BB42882E6B400E7AF3A /* LoginViewController.swift in Sources */,
 				87442BEF2884301E00E7AF3A /* ProductViewController.swift in Sources */,
 				87701983288269E70003441E /* BaseViewController.swift in Sources */,
