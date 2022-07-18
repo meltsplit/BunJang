@@ -38,7 +38,9 @@ class ProductViewController : BaseViewController{
     
     private func setBar(_ bool : Bool){
         navigationController?.isNavigationBarHidden = bool
+        tabBarController?.tabBar.isTranslucent = bool
         tabBarController?.tabBar.isHidden = bool
+        
     }
     
     private func setUI(){

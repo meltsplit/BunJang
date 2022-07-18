@@ -14,6 +14,7 @@ class HomeMainViewController : BaseViewController{
    
     @IBOutlet weak var eventImageSlide: ImageSlideshow!
     @IBOutlet weak var menuCollectionView: UICollectionView!
+    @IBOutlet weak var homecontainerViewHeight: NSLayoutConstraint!
     
     //MARK: - Properties
     

@@ -176,6 +176,7 @@
                     <size key="freeformSize" width="380" height="883"/>
                     <connections>
                         <outlet property="eventImageSlide" destination="TSa-fD-ShZ" id="xY9-eT-raA"/>
+                        <outlet property="homecontainerViewHeight" destination="Qg1-0q-yzr" id="E97-OW-e2I"/>
                         <outlet property="menuCollectionView" destination="aSW-oz-Svg" id="6ZF-Xd-YNu"/>
                     </connections>
                 </viewController>

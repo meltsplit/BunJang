@@ -62,6 +62,7 @@
 		877019A3288274B00003441E /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877019A2288274B00003441E /* My.storyboard */; };
 		877019A52882D65B0003441E /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A42882D65B0003441E /* LoginMainViewController.swift */; };
 		877019A82882D7A00003441E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A72882D7A00003441E /* Image.swift */; };
+		877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		877019A2288274B00003441E /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
 		877019A42882D65B0003441E /* LoginMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		877019A72882D7A00003441E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBottomSheet.swift; sourceTree = "<group>"; };
 		B78BAAEF7C1078C23C4ED23D /* Pods-BunJang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.release.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -451,6 +453,7 @@
 			children = (
 				8770199628826D360003441E /* Post.storyboard */,
 				87442BBA2883014900E7AF3A /* PostMainViewController.swift */,
+				877F20352885A01F00F1EEA9 /* Option */,
 				87442BD92883F46000E7AF3A /* Category */,
 				87442BDA2883F46700E7AF3A /* Tag */,
 			);
@@ -481,6 +484,14 @@
 				877019A72882D7A00003441E /* Image.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		877F20352885A01F00F1EEA9 /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */,
+			);
+			path = Option;
 			sourceTree = "<group>";
 		};
 		8AE4C1C67F71AF556431CF53 /* Frameworks */ = {
@@ -635,6 +646,7 @@
 				87701979288266FF0003441E /* Device.swift in Sources */,
 				87442BBD2883016600E7AF3A /* ChatMainViewController.swift in Sources */,
 				87442BE7288423BB00E7AF3A /* BannerModel.swift in Sources */,
+				877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
 				87442BFD28844D8900E7AF3A /* CategoryTagCollectionViewCell.swift in Sources */,
 				87442BE0288414B700E7AF3A /* CALayer+.swift in Sources */,

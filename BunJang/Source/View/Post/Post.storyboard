@@ -199,6 +199,9 @@
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="optionBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dds-Wq-qsX"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gsj-12-b3Q">
                                         <rect key="frame" x="82" y="5.5" width="137.5" height="18"/>
@@ -374,29 +377,59 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraView" destination="yse-3u-W06" id="cD8-ju-HsF"/>
+                        <outlet property="priceTextField" destination="Xci-Pr-CSp" id="Rnm-Wb-bA5"/>
                         <outlet property="registerBtn" destination="il9-oL-vpx" id="Sfy-d7-Q4b"/>
                         <outlet property="registerView" destination="U50-7x-eGO" id="EeM-Ei-fNs"/>
                         <outlet property="safePayView" destination="tqm-DV-XJf" id="ecd-CS-pUz"/>
+                        <outlet property="titleTextField" destination="Tmq-6m-Dx2" id="NSR-fp-ArN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="pZa-QE-nLq">
+                <tapGestureRecognizer id="pZa-QE-nLq" userLabel="Camera Tap">
                     <connections>
                         <action selector="cameraBtnPressed:" destination="Y6W-OH-hqX" id="51g-pb-6Mu"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="k64-iE-cm1">
+                <tapGestureRecognizer id="k64-iE-cm1" userLabel="Category Tap">
                     <connections>
                         <segue destination="WzP-i6-Yba" kind="push" identifier="category" id="DIp-K8-vhh"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="zFU-Qe-mfR">
+                <tapGestureRecognizer id="zFU-Qe-mfR" userLabel="Tag Tap">
                     <connections>
                         <segue destination="me9-Qg-SnU" kind="show" identifier="tag" id="VvR-kd-9dZ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-281.15942028985512" y="208.92857142857142"/>
+        </scene>
+        <!--Option Bottom Sheet-->
+        <scene sceneID="lVl-N1-frF">
+            <objects>
+                <viewController id="9Qc-pe-WWg" customClass="OptionBottomSheet" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mf7-lM-2QF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPM-sL-GZs">
+                                <rect key="frame" x="30" y="74" width="354" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <color key="tintColor" red="0.84313725490000002" green="0.18039215689999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r6b-m7-dnz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kPM-sL-GZs" firstAttribute="leading" secondItem="r6b-m7-dnz" secondAttribute="leading" constant="30" id="8vU-uA-ha5"/>
+                            <constraint firstItem="r6b-m7-dnz" firstAttribute="bottom" secondItem="kPM-sL-GZs" secondAttribute="bottom" constant="30" id="Bxq-Mv-nnL"/>
+                            <constraint firstItem="r6b-m7-dnz" firstAttribute="trailing" secondItem="kPM-sL-GZs" secondAttribute="trailing" constant="30" id="IlE-w3-jyZ"/>
+                            <constraint firstItem="kPM-sL-GZs" firstAttribute="top" secondItem="r6b-m7-dnz" secondAttribute="top" constant="30" id="TpA-jS-Owy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uY5-Hj-yxl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294" y="1000"/>
         </scene>
         <!--Post Tag View Controller-->
         <scene sceneID="NcD-eu-Ze8">
@@ -489,6 +522,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

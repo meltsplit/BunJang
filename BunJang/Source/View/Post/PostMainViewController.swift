@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialBottomSheet
 
 class PostMainViewController : BaseViewController{
     
@@ -13,11 +14,16 @@ class PostMainViewController : BaseViewController{
     
     @IBOutlet weak var cameraView: UIView!
     
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    
+    
     @IBOutlet weak var registerView: UIView!
     @IBOutlet weak var safePayView: UIView!
     @IBOutlet weak var registerBtn: UIButton!
     
     //MARK: - Properties
+    
     
     
     //MARK: - Life Cycle
@@ -81,6 +87,15 @@ class PostMainViewController : BaseViewController{
         print("카메라 버튼 클릭")
     }
     
+    @IBAction func optionBtnPressed(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "OptionBottomSheet") as! OptionBottomSheet
+                
+                // MDC 바텀 시트로 설정
+        let bottomSheet: MDCBottomSheetController = MDCBottomSheetController(contentViewController: vc)
+                
+                // 보여주기
+        present(bottomSheet, animated: true, completion: nil)
+    }
     
     
     

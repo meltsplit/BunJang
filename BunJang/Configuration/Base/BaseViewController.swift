@@ -17,7 +17,7 @@ class BaseViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tabBarController?.tabBar.isTranslucent = false
         
     }
     
