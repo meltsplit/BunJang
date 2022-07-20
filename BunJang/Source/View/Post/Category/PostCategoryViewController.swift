@@ -14,11 +14,13 @@ class PostCategoryViewController : BaseViewController {
     @IBOutlet weak var categoryTableView: UITableView!
     
     //MARK: - Properties
+    var delegate : SecondCategoryDelegate?
     
     var categoryCount : Int = 1
-    var firstCategoryData : [FirstCategoryResult] = [FirstCategoryResult(firstCategoryId: 1, firstCategory: "신발", categoryImgUrl: "https://kuku-keke.com/wp-content/uploads/2020/04/2514_5.png") ]
-    var selectCategoryId = FirstCategory.신발
-    var selectCategoryName = "신발"
+    var firstCategoryData : [FirstCategoryResult] = [Default.firstCategory ]
+   
+    
+    var selectFirstCategoryResult = Default.firstCategory
     
     //MARK: - Life Cycle
     
@@ -80,15 +82,14 @@ class PostCategoryViewController : BaseViewController {
     private func setFirstCategory(_ data : FirstCategoryResponse ){
         categoryCount = data.result.count
         firstCategoryData = data.result
+        
         categoryTableView.reloadData()
         
     }
     
     
     //MARK: - IBAction
-    @IBAction func backBtnPressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
+    @IBAction func backBtnPressed(_ sender: UIButton) { popVC() }
     
 }
 
@@ -115,23 +116,29 @@ extension PostCategoryViewController : UITableViewDelegate, UITableViewDataSourc
         
         let secondCategoryVC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "SecondCategoryViewController") as! SecondCategoryViewController
         
-        secondCategoryVC.selectedFirstCategoryId = selectCategoryId
-        secondCategoryVC.selectedFirstCategoryName = selectCategoryName
+        secondCategoryVC.delegate = self
+        secondCategoryVC.selectedFirstCatedoryResult = selectFirstCategoryResult
         pushVC(secondCategoryVC)
         
-        //navigationController?.pushViewController(nextVC, animated: true)
     }
     
     
 }
 
-extension PostCategoryViewController : FirstCategoryDelegate{
-    
+extension PostCategoryViewController : FirstCategoryDelegate , SecondCategoryDelegate{
+   
+
     func sendFirstCategory(_ data: FirstCategoryResult) {
-        selectCategoryId = FirstCategory(rawValue: data.firstCategoryId)!
-        selectCategoryName = data.firstCategory
+        // TableView Cell 로 부터 데이터 받음 
+        selectFirstCategoryResult = data
     }
     
+    func sendSecondCategory(_ data: SecondCategoryResult) {
+        // 두번쨰 카테고리 뷰가 선택됐을 떄 delegate 패턴으로 데이터 받음
+        print(data)
+        popVCNoAnimate()
+        delegate?.sendSecondCategory(data)
+    }
     
 }
 

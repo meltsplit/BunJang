@@ -68,6 +68,8 @@
 		877C89752888156300C79ADC /* FirstCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C89742888156300C79ADC /* FirstCategoryResponse.swift */; };
 		877C8977288816EC00C79ADC /* SecondCategoryManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C8976288816EC00C79ADC /* SecondCategoryManger.swift */; };
 		877C8979288816F900C79ADC /* SecondCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C8978288816F900C79ADC /* SecondCategoryResponse.swift */; };
+		877C897B28884B8E00C79ADC /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C897A28884B8E00C79ADC /* Storyboard.swift */; };
+		877C897D28888F3E00C79ADC /* Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C897C28888F3E00C79ADC /* Default.swift */; };
 		877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */; };
 		877F20392885A8B800F1EEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20382885A8B800F1EEA9 /* Color.swift */; };
 		877F203C2885B3F600F1EEA9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F203B2885B3F600F1EEA9 /* OptionModel.swift */; };
@@ -150,6 +152,8 @@
 		877C89742888156300C79ADC /* FirstCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCategoryResponse.swift; sourceTree = "<group>"; };
 		877C8976288816EC00C79ADC /* SecondCategoryManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCategoryManger.swift; sourceTree = "<group>"; };
 		877C8978288816F900C79ADC /* SecondCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCategoryResponse.swift; sourceTree = "<group>"; };
+		877C897A28884B8E00C79ADC /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		877C897C28888F3E00C79ADC /* Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Default.swift; sourceTree = "<group>"; };
 		877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBottomSheet.swift; sourceTree = "<group>"; };
 		877F20382885A8B800F1EEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		877F203B2885B3F600F1EEA9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 		87442BF02884339400E7AF3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				877C897C28888F3E00C79ADC /* Default.swift */,
 				87442BFA28843FF400E7AF3A /* Login */,
 				87442BF7288434AF00E7AF3A /* Home */,
 				877F203A2885B3EB00F1EEA9 /* Post */,
@@ -527,6 +532,7 @@
 				877F20382885A8B800F1EEA9 /* Color.swift */,
 				877F20432885EBF900F1EEA9 /* Segue.swift */,
 				877F205E2887AE5300F1EEA9 /* Cell.swift */,
+				877C897A28884B8E00C79ADC /* Storyboard.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -785,6 +791,7 @@
 				877F205A28874DC600F1EEA9 /* TotalMenuBrandVC.swift in Sources */,
 				877F205828874D9E00F1EEA9 /* TotalMenuCategoryVC.swift in Sources */,
 				87442BC42883021800E7AF3A /* SearchMainViewController.swift in Sources */,
+				877C897D28888F3E00C79ADC /* Default.swift in Sources */,
 				8770195B2882651D0003441E /* AppDelegate.swift in Sources */,
 				8770198728826A4B0003441E /* String+.swift in Sources */,
 				877019A52882D65B0003441E /* LoginMainViewController.swift in Sources */,
@@ -822,6 +829,7 @@
 				8770198928826A590003441E /* UIColor+.swift in Sources */,
 				87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */,
 				8770198D28826A730003441E /* UIButton+.swift in Sources */,
+				877C897B28884B8E00C79ADC /* Storyboard.swift in Sources */,
 				877F203C2885B3F600F1EEA9 /* OptionModel.swift in Sources */,
 				877F204E288735B800F1EEA9 /* SignUpResponse.swift in Sources */,
 				877F204A2887186600F1EEA9 /* LoginSignUpViewController.swift in Sources */,

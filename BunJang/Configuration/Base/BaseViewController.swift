@@ -48,6 +48,10 @@ class BaseViewController: UIViewController{
         navigationController?.popViewController(animated: true)
     }
     
+    func popVCNoAnimate(){
+        navigationController?.popViewController(animated: false)
+    }
+    
     func presentRightToLeft(_ viewControllerToPresent: UIViewController) {
             let transition = CATransition()
             transition.duration = 0.25

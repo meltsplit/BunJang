@@ -13,6 +13,7 @@ class PostTagViewController : BaseViewController{
     
     //MARK: - Properties
     
+    var delegate : ArrayStringDelegate?
     
     //MARK: - Life Cycle
     

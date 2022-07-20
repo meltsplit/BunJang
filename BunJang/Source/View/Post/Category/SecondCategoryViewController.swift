@@ -16,12 +16,14 @@ class SecondCategoryViewController : BaseViewController{
     
     //MARK: - Properties
     
-    var selectedFirstCategoryId = FirstCategory.신발
-    var selectedFirstCategoryName = "스니커즈"
-    var selectSecondCategoryId = SecondCategory.스니커즈
+    var delegate : SecondCategoryDelegate?
+    
+    var selectedFirstCatedoryResult = Default.firstCategory
+    
+    var selectSecondCategoryResult = Default.secondCategory
     
     var categoryCount = 1
-    var secondCategoryData = [SecondCategoryResult(firstCategoryId: 1, lastCategoryId: 1, lastCategory: "11")]
+    var secondCategoryData = [ Default.secondCategory]
     
     //MARK: - Life Cycle
     
@@ -59,11 +61,11 @@ class SecondCategoryViewController : BaseViewController{
     
     private func setUI(){
         secondCategoryTableView.separatorStyle = .none
-        selectedFirstCategoryLabel.text = selectedFirstCategoryName
+        selectedFirstCategoryLabel.text = selectedFirstCatedoryResult.firstCategory
     }
     
     private func getCategory(){
-        SecondCategoryManager.shared.getSecondCategory(selectedFirstCategoryId) { (response) in
+        SecondCategoryManager.shared.getSecondCategory(selectedFirstCatedoryResult.firstCategoryId) { (response) in
             switch response{
             case .success(let data) :
                 
@@ -117,8 +119,15 @@ extension SecondCategoryViewController: UITableViewDelegate,UITableViewDataSourc
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        
+        //MARK: - 유저가 두번째 카테고리까지 선택시
+
+        popVCNoAnimate()
+        delegate?.sendSecondCategory(selectSecondCategoryResult)
+        
+        
     }
     
     
@@ -127,7 +136,7 @@ extension SecondCategoryViewController: UITableViewDelegate,UITableViewDataSourc
 
 extension SecondCategoryViewController : SecondCategoryDelegate{
     func sendSecondCategory(_ data: SecondCategoryResult) {
-        true
+        selectSecondCategoryResult = data
     }
     
     

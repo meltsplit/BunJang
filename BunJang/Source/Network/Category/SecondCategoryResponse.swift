@@ -1,3 +1,4 @@
+
 //
 //  SecondCategoryResponse.swift
 //  BunJang
@@ -18,8 +19,13 @@ struct SecondCategoryResponse : Codable {
 
 struct SecondCategoryResult : Codable {
     
+    let firstCategory : String
     let firstCategoryId : Int
-    let lastCategoryId : Int
-    let lastCategory : String
+    let firstCategoryImgUrl : String
     
+    let lastCategory : String
+    let lastCategoryId : Int
+    let lastCategoryImgUrl : String
+    
+
 }

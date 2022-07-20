@@ -13,8 +13,8 @@ class CategoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
-    var firstCategoryResult = FirstCategoryResult(firstCategoryId: 1, firstCategory: "신발", categoryImgUrl: Image.categoryDefaultImageURL)
-    var secondCategoryResult = SecondCategoryResult(firstCategoryId: 1, lastCategoryId: 1, lastCategory: "스니커즈")
+    var firstCategoryResult = Default.firstCategory
+    var secondCategoryResult = Default.secondCategory
     
     var firstCategoryDelegate : FirstCategoryDelegate?
     var secondCategoryDelegate : SecondCategoryDelegate?

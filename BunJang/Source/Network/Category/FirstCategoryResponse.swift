@@ -21,6 +21,7 @@ struct FirstCategoryResult : Codable {
     
     let firstCategoryId : Int
     let firstCategory : String
-    let categoryImgUrl : String
+    let firstCategoryImgUrl : String
     
+ 
 }

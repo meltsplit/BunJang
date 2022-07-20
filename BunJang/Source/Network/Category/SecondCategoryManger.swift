@@ -19,9 +19,9 @@ struct SecondCategoryManager {
 
 extension SecondCategoryManager{
     
-    func getSecondCategory(_ selectedFirstCategoryId : FirstCategory ,completion : @escaping (NetworkResult<Any>) -> (Void) ){
+    func getSecondCategory(_ selectedFirstCategoryId : Int ,completion : @escaping (NetworkResult<Any>) -> (Void) ){
      
-        let url = API.secondCategoryURL + String(selectedFirstCategoryId.rawValue)
+        let url = API.secondCategoryURL + String(selectedFirstCategoryId)
         
         let dataRequest = AF.request(
                                      url,
