@@ -70,6 +70,7 @@
 		877C8979288816F900C79ADC /* SecondCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C8978288816F900C79ADC /* SecondCategoryResponse.swift */; };
 		877C897B28884B8E00C79ADC /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C897A28884B8E00C79ADC /* Storyboard.swift */; };
 		877C897D28888F3E00C79ADC /* Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C897C28888F3E00C79ADC /* Default.swift */; };
+		877C8981288893E900C79ADC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C8980288893E900C79ADC /* TagCollectionViewCell.swift */; };
 		877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */; };
 		877F20392885A8B800F1EEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20382885A8B800F1EEA9 /* Color.swift */; };
 		877F203C2885B3F600F1EEA9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F203B2885B3F600F1EEA9 /* OptionModel.swift */; };
@@ -154,6 +155,7 @@
 		877C8978288816F900C79ADC /* SecondCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCategoryResponse.swift; sourceTree = "<group>"; };
 		877C897A28884B8E00C79ADC /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		877C897C28888F3E00C79ADC /* Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Default.swift; sourceTree = "<group>"; };
+		877C8980288893E900C79ADC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBottomSheet.swift; sourceTree = "<group>"; };
 		877F20382885A8B800F1EEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		877F203B2885B3F600F1EEA9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				877F20412885EB7400F1EEA9 /* CategoryTableViewCell.swift */,
+				877C8980288893E900C79ADC /* TagCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				87442BBD2883016600E7AF3A /* ChatMainViewController.swift in Sources */,
 				877F20462885F17D00F1EEA9 /* SecondCategoryViewController.swift in Sources */,
 				87442BE7288423BB00E7AF3A /* BannerResponse.swift in Sources */,
+				877C8981288893E900C79ADC /* TagCollectionViewCell.swift in Sources */,
 				877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
 				87442BFD28844D8900E7AF3A /* CategoryTagCollectionViewCell.swift in Sources */,

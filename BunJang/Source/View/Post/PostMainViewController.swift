@@ -179,6 +179,7 @@ extension PostMainViewController : optionDataDelegate,SecondCategoryDelegate,Arr
     
     func sendArrayString(_ data: [String]) {
         tagData = data
+        print(tagData)
     }
     
     

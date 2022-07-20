@@ -27,3 +27,7 @@ protocol SecondCategoryDelegate{
 protocol ArrayStringDelegate{
     func sendArrayString(_ data : [String])
 }
+
+protocol StringDelegate{
+    func sendString(_ data : String)
+}
