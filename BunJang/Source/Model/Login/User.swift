@@ -7,13 +7,21 @@
 
 import Foundation
 
-struct User{
-    static let shared = User(id: "a", pwd: "a", name: "장석우", nickname: "멜트", address: "서울시 양천구 신월동")
+struct User : Codable{
     
-    let id : String?
-    let pwd : String?
-    let name : String?
-    let nickname : String?
-    let address : String?
+    static let shared = User(id: "pinaex00", pwd: "12345", location: "양천구 신월동", phoneNum: "01099711712")
+    
+    
+    let id : String
+    let pwd : String
+    let nickname : String = "파이내쁠"
+    let location : String
+    //let date : Date?
+    let phoneNum : String
+    
+    
+    
     
 }
+
+

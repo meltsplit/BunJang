@@ -1,26 +1,27 @@
 //
-//  HomeBannerManager.swift
+//  FirstCategoryManager.swift
 //  BunJang
 //
-//  Created by 장석우 on 2022/07/17.
+//  Created by 장석우 on 2022/07/20.
 //
 
 import Foundation
 import Alamofire
 
-struct BannerManager {
+struct SecondCategoryManager {
     
-    static let shared = BannerManager()
+    static let shared = SecondCategoryManager()
+    
     private var managerID: String{ return String(describing: self)}
     private init() {}
     
 }
 
-extension BannerManager{
+extension SecondCategoryManager{
     
-    func getBanner(completion : @escaping (NetworkResult<Any>) -> (Void) ){
+    func getSecondCategory(_ selectedFirstCategoryId : FirstCategory ,completion : @escaping (NetworkResult<Any>) -> (Void) ){
      
-        let url = API.bannerURL
+        let url = API.secondCategoryURL + String(selectedFirstCategoryId.rawValue)
         
         let dataRequest = AF.request(
                                      url,
@@ -29,22 +30,17 @@ extension BannerManager{
                                     )
         
         dataRequest.responseData{ response in
-            
             debugPrint(response)
             
             switch response.result {
             case .success:
-                guard let statusCode = response.response?.statusCode else{
-                    return
-                }
-                guard let data = response.value else{
-                    return
-                }
+                guard let statusCode = response.response?.statusCode else{ return }
+                guard let data = response.value else{ return }
                
                 completion(judge(status: statusCode, data: data))
 
             case .failure(let err):
-                print("\(managerID)에서 failure 발생하였습니다.")
+                print("\(managerID) 객체에서 failure 발생하였습니다.")
                 print(err)
                 completion(.networkFail)
             }
@@ -58,9 +54,8 @@ extension BannerManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(BannerResponse.self, from : data)
-        else {
-            print("\(managerID)에서 Decode를 실패하였습니다.")
+        guard let decodedData = try? decoder.decode(SecondCategoryResponse.self, from : data) else{
+            print("\(managerID)에서 failure 발생하였습니다.")
             return .pathErr
         }
         

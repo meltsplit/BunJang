@@ -11,3 +11,15 @@ protocol optionDataDelegate{
     
     func sendData(_ data : OptionModel)
 }
+
+protocol FirstCategoryDelegate{
+    
+    func sendFirstCategory(_ data : FirstCategoryResult)
+    
+}
+
+protocol SecondCategoryDelegate{
+    
+    func sendSecondCategory(_ data : SecondCategoryResult)
+    
+}

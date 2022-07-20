@@ -31,7 +31,7 @@ class LoginViewController : BaseViewController{
     //MARK: - Custom Method
     
     private func setDelegate(){
-        true
+        dismissKeyboardWhenTappedAround()
     }
    
     private func setBar(){
@@ -55,9 +55,10 @@ class LoginViewController : BaseViewController{
    
     //MARK: - IBAction
     
-    @IBAction func autoLogin(_ sender: UIButton) {
-        goHomeVC()
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        popVC()
     }
+    
     
     @IBAction func loginBtnPressed(_ sender: UIButton) {
         guard let id = idTextField.text else { return }

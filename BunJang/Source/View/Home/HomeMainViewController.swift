@@ -25,16 +25,27 @@ class HomeMainViewController : BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("vdl")
+        
         setDelegate()
         setBar()
         setUI()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        
+        
         BannerManager.shared.getBanner { (response) -> (Void) in
             
             switch response{
+                
             case .success(let data) :
                 
-                self.setBannerData(data as! BannerModel)
+                self.setBannerData(data as! BannerResponse)
                 
             case .requestErr(let msg):
                 if let message = msg as? String {
@@ -48,12 +59,14 @@ class HomeMainViewController : BaseViewController{
                 print("networkFail")
             }
         }
-        
     }
     
     //MARK: - Custom Method
     
     private func setDelegate(){
+        
+        let menuXib = UINib(nibName: String(describing: MenuCollectionCell.self), bundle: nil)
+        menuCollectionView.register(menuXib, forCellWithReuseIdentifier: MenuCollectionCell.cellIdentifier)
         
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
@@ -65,9 +78,10 @@ class HomeMainViewController : BaseViewController{
     
     private func setUI(){
         eventImageSlide.setImageInputs(eventImage)
+        
     }
     
-    private func setBannerData(_ data : BannerModel){
+    private func setBannerData(_ data : BannerResponse){
         
         for bannerData in data.result{
             
@@ -90,7 +104,7 @@ extension HomeMainViewController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.cellIdentifier, for: indexPath) as? MenuCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionCell.cellIdentifier, for: indexPath) as? MenuCollectionCell else { return UICollectionViewCell() }
         
         cell.setData(indexPath)
         
@@ -108,9 +122,8 @@ extension HomeMainViewController : UICollectionViewDelegateFlowLayout{
         return 1
     }
     
-    //행간 높이
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

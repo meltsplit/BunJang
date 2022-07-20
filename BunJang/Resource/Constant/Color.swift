@@ -10,6 +10,6 @@ import UIKit
 
 struct Color{
     
-    static let Red = UIColor(named: "BGJT_RedColor")
-    static let Pink = UIColor(named: "BGJT_PinkColor")
+    static let Red = UIColor(named: "BGJT_RedColor")!
+    static let Pink = UIColor(named: "BGJT_PinkColor")!
 }

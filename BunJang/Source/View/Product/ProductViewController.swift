@@ -20,14 +20,22 @@ class ProductViewController : BaseViewController{
         super.viewDidLoad()
         
         setDelegate()
-        setBar(true)
         setUI()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        hideNavBar()
+        hideTabBar()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        setBar(false)
+        
+        showNavBar()
+        showTabBar()
     }
     
     //MARK: - Custom Method
@@ -36,12 +44,6 @@ class ProductViewController : BaseViewController{
         true
     }
     
-    private func setBar(_ bool : Bool){
-        navigationController?.isNavigationBarHidden = bool
-        tabBarController?.tabBar.isTranslucent = bool
-        tabBarController?.tabBar.isHidden = bool
-        
-    }
     
     private func setUI(){
         true
@@ -49,10 +51,7 @@ class ProductViewController : BaseViewController{
     
     
     //MARK: - IBAction
-    @IBAction func backBtnPressed(_ sender: UIButton) {
-    
-        navigationController?.popViewController(animated: true)
-    }
+    @IBAction func backBtnPressed(_ sender: UIButton) { popVC() }
     
 }
 

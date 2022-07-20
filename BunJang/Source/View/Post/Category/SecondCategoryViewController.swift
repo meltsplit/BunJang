@@ -1,24 +1,27 @@
 //
-//  PostCategoryViewController.swift
+//  SecondCategoryViewController.swift
 //  BunJang
 //
-//  Created by 장석우 on 2022/07/17.
+//  Created by 장석우 on 2022/07/19.
 //
 
 import UIKit
 
-class PostCategoryViewController : BaseViewController {
+class SecondCategoryViewController : BaseViewController{
     
     //MARK: - IBOutlet
     
-    @IBOutlet weak var categoryTableView: UITableView!
+    @IBOutlet weak var secondCategoryTableView: UITableView!
+    @IBOutlet weak var selectedFirstCategoryLabel: UILabel!
     
     //MARK: - Properties
     
-    var categoryCount : Int = 1
-    var firstCategoryData : [FirstCategoryResult] = [FirstCategoryResult(firstCategoryId: 1, firstCategory: "신발", categoryImgUrl: "https://kuku-keke.com/wp-content/uploads/2020/04/2514_5.png") ]
-    var selectCategoryId = FirstCategory.신발
-    var selectCategoryName = "신발"
+    var selectedFirstCategoryId = FirstCategory.신발
+    var selectedFirstCategoryName = "스니커즈"
+    var selectSecondCategoryId = SecondCategory.스니커즈
+    
+    var categoryCount = 1
+    var secondCategoryData = [SecondCategoryResult(firstCategoryId: 1, lastCategoryId: 1, lastCategory: "11")]
     
     //MARK: - Life Cycle
     
@@ -26,42 +29,45 @@ class PostCategoryViewController : BaseViewController {
         super.viewDidLoad()
         
         setDelegate()
-        setUI()
         getCategory()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         hideNavBar()
         hideTabBar()
+        
+        setUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         showNavBar()
         showTabBar()
+        
     }
     
     //MARK: - Custom Method
     
     private func setDelegate(){
-        
-        categoryTableView.delegate = self
-        categoryTableView.dataSource = self
-        
+        secondCategoryTableView.delegate = self
+        secondCategoryTableView.dataSource = self
     }
     
     private func setUI(){
-        categoryTableView.separatorStyle = .none
+        secondCategoryTableView.separatorStyle = .none
+        selectedFirstCategoryLabel.text = selectedFirstCategoryName
     }
     
     private func getCategory(){
-        FirstCategoryManager.shared.getFirstCategory { (response) in
+        SecondCategoryManager.shared.getSecondCategory(selectedFirstCategoryId) { (response) in
             switch response{
             case .success(let data) :
                 
-                self.setFirstCategory(data as! FirstCategoryResponse)
+                self.setSecondCategory(data as! SecondCategoryResponse)
                 
             case .requestErr(let msg):
                 if let message = msg as? String {
@@ -77,24 +83,24 @@ class PostCategoryViewController : BaseViewController {
         }
     }
     
-    private func setFirstCategory(_ data : FirstCategoryResponse ){
+    private func setSecondCategory(_ data : SecondCategoryResponse ){
+        
         categoryCount = data.result.count
-        firstCategoryData = data.result
-        categoryTableView.reloadData()
+        secondCategoryData = data.result
+        
+        secondCategoryTableView.reloadData()
         
     }
     
     
     //MARK: - IBAction
-    @IBAction func backBtnPressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
     
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        popVC()
+    }
 }
 
-//MARK: - TableView Delegate
-
-extension PostCategoryViewController : UITableViewDelegate, UITableViewDataSource{
+extension SecondCategoryViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryCount
@@ -105,33 +111,28 @@ extension PostCategoryViewController : UITableViewDelegate, UITableViewDataSourc
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.cellIdentifier, for: indexPath) as? CategoryTableViewCell else { return UITableViewCell()}
         
         cell.selectionStyle = .none
-        cell.firstCategoryDelegate = self
-        cell.setData(indexPath, firstCategoryData)
+        cell.secondCategoryDelegate = self
+        cell.setData(indexPath, secondCategoryData)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let secondCategoryVC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "SecondCategoryViewController") as! SecondCategoryViewController
-        
-        secondCategoryVC.selectedFirstCategoryId = selectCategoryId
-        secondCategoryVC.selectedFirstCategoryName = selectCategoryName
-        pushVC(secondCategoryVC)
-        
-        //navigationController?.pushViewController(nextVC, animated: true)
+        print(indexPath)
     }
+    
     
     
 }
 
-extension PostCategoryViewController : FirstCategoryDelegate{
-    
-    func sendFirstCategory(_ data: FirstCategoryResult) {
-        selectCategoryId = FirstCategory(rawValue: data.firstCategoryId)!
-        selectCategoryName = data.firstCategory
+extension SecondCategoryViewController : SecondCategoryDelegate{
+    func sendSecondCategory(_ data: SecondCategoryResult) {
+        true
     }
     
     
+    
 }
+
+
 

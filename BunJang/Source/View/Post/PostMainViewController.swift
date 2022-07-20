@@ -33,12 +33,19 @@ class PostMainViewController : BaseViewController {
         super.viewDidLoad()
         
         setDelegate()
-        setBar(true)
         setUI()
+        
+        self.dismissKeyboardWhenTappedAround()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        setBar(false)
+        showNavBar()
+        showTabBar()
     }
     
     //MARK: - Custom Method
@@ -47,10 +54,9 @@ class PostMainViewController : BaseViewController {
         return
     }
     
-    private func setBar(_ bool: Bool){
-        navigationController?.isNavigationBarHidden = bool
-        tabBarController?.tabBar.isTranslucent = bool
-        tabBarController?.tabBar.isHidden = bool
+    private func setBar(){
+        hideNavBar()
+        hideTabBar()
     }
     
     private func setUI(){
@@ -98,11 +104,7 @@ class PostMainViewController : BaseViewController {
         let optionBS = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "OptionBottomSheet") as! OptionBottomSheet
         
         optionBS.delegate = self
-        
         let bottomSheet = MDCBottomSheetController(contentViewController: optionBS)
-        
-                
-                // 보여주기
         present(bottomSheet, animated: true, completion: nil)
     }
     

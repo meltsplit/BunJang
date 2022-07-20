@@ -1,13 +1,13 @@
 //
-//  PostTagViewController.swift
+//  TotalMenuBrandVC.swift
 //  BunJang
 //
-//  Created by 장석우 on 2022/07/17.
+//  Created by 장석우 on 2022/07/20.
 //
 
 import UIKit
 
-class PostTagViewController : BaseViewController{
+class TotalMenuBrandVC : BaseViewController{
     
     //MARK: - IBOutlet
     
@@ -27,24 +27,22 @@ class PostTagViewController : BaseViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setBar()
+        hideNavBar()
+        hideTabBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         showNavBar()
+        showTabBar()
         
     }
     
     //MARK: - Custom Method
     
     private func setDelegate(){
-        
-    }
-    
-    private func setBar(){
-        hideTabBar()
-        hideNavBar()
+        true
     }
     
     private func setUI(){
@@ -54,12 +52,9 @@ class PostTagViewController : BaseViewController{
     
     //MARK: - IBAction
     
-    @IBAction func backBtnPressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
 }
 
-extension PostTagViewController {
+extension TotalMenuBrandVC {
     
 }
 

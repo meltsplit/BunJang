@@ -1,26 +1,27 @@
 //
-//  HomeBannerManager.swift
+//  FirstCategoryManager.swift
 //  BunJang
 //
-//  Created by 장석우 on 2022/07/17.
+//  Created by 장석우 on 2022/07/20.
 //
 
 import Foundation
 import Alamofire
 
-struct BannerManager {
+struct FirstCategoryManager {
     
-    static let shared = BannerManager()
+    static let shared = FirstCategoryManager()
+    
     private var managerID: String{ return String(describing: self)}
     private init() {}
     
 }
 
-extension BannerManager{
+extension FirstCategoryManager{
     
-    func getBanner(completion : @escaping (NetworkResult<Any>) -> (Void) ){
+    func getFirstCategory(completion : @escaping (NetworkResult<Any>) -> (Void) ){
      
-        let url = API.bannerURL
+        let url = API.firstCategoryURL
         
         let dataRequest = AF.request(
                                      url,
@@ -29,17 +30,12 @@ extension BannerManager{
                                     )
         
         dataRequest.responseData{ response in
-            
             debugPrint(response)
             
             switch response.result {
             case .success:
-                guard let statusCode = response.response?.statusCode else{
-                    return
-                }
-                guard let data = response.value else{
-                    return
-                }
+                guard let statusCode = response.response?.statusCode else{ return }
+                guard let data = response.value else{ return }
                
                 completion(judge(status: statusCode, data: data))
 
@@ -58,7 +54,7 @@ extension BannerManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(BannerResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(FirstCategoryResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .pathErr

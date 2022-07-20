@@ -1,22 +1,23 @@
 //
-//  SearchTabMainController.swift
-//  Clone_MangoPlate
+//  HomeTotalCategoryTabManViewController.swift
+//  BunJang
 //
-//  Created by 장석우 on 2022/07/09.
+//  Created by 장석우 on 2022/07/20.
 //
 
 import UIKit
 import Tabman
 import Pageboy
 
-class HomeTabmanViewController : TabmanViewController{
+class HomeTotalMenuTabmanViewController : TabmanViewController{
     
     //MARK: - Properties
     
-    private let recommendVC = UIStoryboard.init(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeRecommendProductViewController") as! HomeRecommendProductViewController
-    private let brandVC = UIStoryboard.init(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeBrandViewController") as! HomeBrandViewController
-    
-    private lazy var viewControllers : Array<UIViewController> = [recommendVC,brandVC]
+    private let categoryVC = UIStoryboard.init(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "TotalMenuCategoryVC") as! TotalMenuCategoryVC
+    private let brandVC = UIStoryboard.init(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "TotalMenuBrandVC") as! TotalMenuBrandVC
+    private let serviceVC = UIStoryboard.init(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "TotalMenuServiceVC") as! TotalMenuServiceVC
+
+    private lazy var viewControllers : Array<UIViewController> = [categoryVC,brandVC,serviceVC]
     
     //MARK: - Life Cycle
     
@@ -26,7 +27,6 @@ class HomeTabmanViewController : TabmanViewController{
         setDelegate()
         setBar()
         setNotification()
-        
         
     }
     
@@ -64,14 +64,16 @@ class HomeTabmanViewController : TabmanViewController{
     
 }
 
-extension HomeTabmanViewController : PageboyViewControllerDataSource, TMBarDataSource{
+extension HomeTotalMenuTabmanViewController : PageboyViewControllerDataSource, TMBarDataSource{
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         switch index {
         case 0:
-            return TMBarItem(title: "추천 상품")
+            return TMBarItem(title: "카테고리")
         case 1:
             return TMBarItem(title: "브랜드")
+        case 2:
+            return TMBarItem(title: "서비스")
             
         default:
             let title = "Page\(index)"
@@ -95,3 +97,4 @@ extension HomeTabmanViewController : PageboyViewControllerDataSource, TMBarDataS
     
     
 }
+

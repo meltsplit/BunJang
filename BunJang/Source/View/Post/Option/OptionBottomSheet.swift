@@ -68,7 +68,7 @@ class OptionBottomSheet : BaseViewController {
                    if btn == sender {
                        btn.isSelected = true
                        btn.backgroundColor = Color.Pink
-                       btn.makeBorder(width: 1, color: Color.Pink!)
+                       btn.makeBorder(width: 1, color: Color.Pink)
                        
                        optionData.state = (btn.tag == 0) ? OptionModel.State.old.rawValue : OptionModel.State.new.rawValue
                        
@@ -87,7 +87,7 @@ class OptionBottomSheet : BaseViewController {
                    if btn == sender {
                        btn.isSelected = true
                        btn.backgroundColor = Color.Pink
-                       btn.makeBorder(width: 1, color: Color.Pink!)
+                       btn.makeBorder(width: 1, color: Color.Pink)
                        
                        optionData.change = (btn.tag == 0) ? OptionModel.Change.disable.rawValue : OptionModel.Change.able.rawValue
                        

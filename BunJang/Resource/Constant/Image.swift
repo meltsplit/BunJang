@@ -9,6 +9,8 @@
 import UIKit
 
 struct Image{
+    static var categoryDefaultImageURL = "https://drive.google.com/file/d/17pIagEFMMiCUogGydGxyIITxtVZgWndt/view?usp=sharing"
+    
     static var login1 = UIImage(named: "login1")!
     static var login2 = UIImage(named: "login2")!
     static var login3 = UIImage(named: "login3")!
