@@ -254,7 +254,7 @@ class PostMainViewController : BaseViewController {
             
         } else {
             safePayView.makeBorder(width: 2, color: .systemGray5)
-            safePayCheckBtn.tintColor = .systemGray2
+            safePayCheckBtn.tintColor = .systemGray3
         }
     }
     
@@ -316,26 +316,24 @@ extension PostMainViewController : UITextFieldDelegate{
         dismissKeyboard()
         
         guard let text = textField.text else {return }
-        if !text.isEmpty {
-        
             switch textField{
             case titleTextField:
                 titleLine.backgroundColor = .systemGray3
                
                 
-                titleData = text
+                titleData = !text.isEmpty ? text : nil
                 
             case priceTextField:
                 print(text)
                 priceTextField.text = makePriceString(Int(text) ?? 0)
-                wonLabel.textColor = .systemGray2
+                wonLabel.textColor = .systemGray3
                 priceLine.backgroundColor = .systemGray5
                 
-                priceData = Int(text) ?? 0
+                priceData = !text.isEmpty ? Int(text) ?? 0 : nil
                 
             default: print("")
             }
-        }
+        
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
