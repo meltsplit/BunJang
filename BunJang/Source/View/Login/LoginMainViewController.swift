@@ -19,7 +19,8 @@ class LoginMainViewController : BaseViewController{
     
     //MARK: - Properties
     
-    let loginImage = [
+    
+    let onBoardingImage = [
         ImageSource(image: Image.login1),
         ImageSource(image: Image.login2),
         ImageSource(image: Image.login3),
@@ -39,7 +40,8 @@ class LoginMainViewController : BaseViewController{
     //MARK: - Custom Method
     
     private func setImageSlideShow(){
-        loginImageSlide?.setImageInputs(loginImage)
+        
+        loginImageSlide?.setImageInputs(onBoardingImage)
         
         let indicator = UIPageControl()
         indicator.currentPageIndicatorTintColor = UIColor.black
@@ -79,6 +81,7 @@ class LoginMainViewController : BaseViewController{
             case .success(let data) :
                 print("성공")
                 let signUpData = (data as! SignUpResponse).result
+                
                 print(signUpData)
             case .requestErr(let msg):
                 if let message = msg as? String {

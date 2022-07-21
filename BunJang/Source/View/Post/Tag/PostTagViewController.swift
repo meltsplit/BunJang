@@ -14,6 +14,7 @@ class PostTagViewController : BaseViewController{
     @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var tagTextField: UITextField!
     
+    
     //MARK: - Properties
     
     var delegate : ArrayStringDelegate?
@@ -44,7 +45,7 @@ class PostTagViewController : BaseViewController{
     //MARK: - Custom Method
     
     private func setDelegate(){
-        
+        tagTextField.delegate = self
         tagCollectionView.delegate = self
         tagCollectionView.dataSource = self
     }
@@ -55,9 +56,24 @@ class PostTagViewController : BaseViewController{
     }
     
     private func setUI(){
-        true
+        
     }
     
+    private func addTag(){
+        let tagEmpty = tagTextField.text?.isEmpty ?? true
+        if (!tagEmpty) {
+            
+            if tagData.count < 5{
+                tagData.append(tagTextField.text!)
+                
+                tagCollectionView.reloadData()
+            }
+            else { 
+                presentBottomAlert(message: "태그는 최대 5개까지 추가 가능합니다.")
+            }
+        }
+        tagTextField.endEditing(true)
+    }
     
     //MARK: - IBAction
     
@@ -67,17 +83,7 @@ class PostTagViewController : BaseViewController{
     }
     
     @IBAction func addBtnPressed(_ sender: UIButton) {
-        
-        let tagEmpty = tagTextField.text?.isEmpty ?? true
-        if (!tagEmpty) {
-            
-            if tagData.count <= 5{
-                tagData.append(tagTextField.text!)
-                
-                tagCollectionView.reloadData()
-            }
-            else {  presentAlert(title: "태그는 최대 5개 까지 추가 가능합니다.")}
-        }
+        tagTextField.endEditing(true)
     }
 }
 
@@ -95,6 +101,38 @@ extension PostTagViewController : UICollectionViewDelegate , UICollectionViewDat
     
     
     
+}
+//MARK: - CollectionView Delegate
+extension PostTagViewController : UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.cellIdentifier, for: indexPath) as! TagCollectionViewCell
+            
+            cell.tagLabel.text = tagData[indexPath.row]
+            cell.tagLabel.sizeToFit()
+            
+            //셀의 크기를 Label 크기 + 50(= 삭제 버튼을 위한 inset)
+            let cellWidth = cell.tagLabel.frame.width + 50
+            return CGSize(width: cellWidth, height: 30)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        4
+    }
+}
+//MARK: - TextField Delegate
+extension PostTagViewController : UITextFieldDelegate{
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        addTag()
+        textField.text = ""
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+    }
 }
 
 extension PostTagViewController : StringDelegate{

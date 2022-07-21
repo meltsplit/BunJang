@@ -33,6 +33,6 @@ extension UIFont {
     }
 
     static func NotoSans(_ type: NotoSansType, size: CGFloat) -> UIFont {
-        return UIFont(name: "NotoSansCJKkr-\(type.rawValue)", size: size)!
+        return .systemFont(ofSize: size, weight: .semibold)
     }
 }

@@ -9,28 +9,30 @@ import Foundation
 
 struct OptionModel{
     
-    var count: Int
-    var state: String
-    var change: String
+    var amount: Int
+    var isUsed: Bool
+    var changeable: Bool
     
     init() {
-        self.count = 1
-        self.state = State.old.rawValue
-        self.change = Change.disable.rawValue
+        self.amount = 1
+        self.isUsed = true
+        self.changeable = false
     }
     
-    enum State : String{
-        
-        case old = "중고상품"
-        case new = "새상품"
-        
-    }
     
-    enum Change : String{
-        
-        case disable = "불가"
-        case able = "가능"
-        
-    }
     
 }
+
+//enum State : String{
+//
+//    case old = "중고상품"
+//    case new = "새상품"
+//
+//}
+//
+//enum Change : String{
+//
+//    case disable = "불가"
+//    case able = "가능"
+//
+//}

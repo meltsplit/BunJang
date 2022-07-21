@@ -72,4 +72,17 @@ class BaseViewController: UIViewController{
             dismiss(animated: false)
         }
     
+    
+    func btnSelectedUI(_ btn: UIButton){
+        btn.isSelected = true
+        btn.backgroundColor = Color.Pink
+        btn.makeBorder(width: 1, color: Color.Pink)
+    }
+    
+    func btnUnSelectedUI(_ btn: UIButton){
+        btn.isSelected = false
+        btn.backgroundColor = .white
+        btn.makeBorder(width: 1, color: UIColor.systemGray3)
+    }
+    
 }

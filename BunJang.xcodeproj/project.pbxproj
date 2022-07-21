@@ -71,6 +71,13 @@
 		877C897B28884B8E00C79ADC /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C897A28884B8E00C79ADC /* Storyboard.swift */; };
 		877C897D28888F3E00C79ADC /* Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C897C28888F3E00C79ADC /* Default.swift */; };
 		877C8981288893E900C79ADC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C8980288893E900C79ADC /* TagCollectionViewCell.swift */; };
+		877C8983288960BA00C79ADC /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C8982288960BA00C79ADC /* SignUpResponse.swift */; };
+		877C89852889CCF300C79ADC /* ProductPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C89842889CCF300C79ADC /* ProductPostModel.swift */; };
+		877C89872889DCB500C79ADC /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C89862889DCB500C79ADC /* UIStackView+.swift */; };
+		877C89892889E74000C79ADC /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C89882889E74000C79ADC /* Int+.swift */; };
+		877C898B2889EF6D00C79ADC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C898A2889EF6D00C79ADC /* Error.swift */; };
+		877C898F288A009200C79ADC /* productPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C898E288A009200C79ADC /* productPostManager.swift */; };
+		877C8991288A00A300C79ADC /* productPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C8990288A00A300C79ADC /* productPostResponse.swift */; };
 		877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */; };
 		877F20392885A8B800F1EEA9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20382885A8B800F1EEA9 /* Color.swift */; };
 		877F203C2885B3F600F1EEA9 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F203B2885B3F600F1EEA9 /* OptionModel.swift */; };
@@ -79,7 +86,6 @@
 		877F20462885F17D00F1EEA9 /* SecondCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20452885F17D00F1EEA9 /* SecondCategoryViewController.swift */; };
 		877F204A2887186600F1EEA9 /* LoginSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F20492887186600F1EEA9 /* LoginSignUpViewController.swift */; };
 		877F204C2887225600F1EEA9 /* SignUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F204B2887225600F1EEA9 /* SignUpManager.swift */; };
-		877F204E288735B800F1EEA9 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F204D288735B800F1EEA9 /* SignUpResponse.swift */; };
 		877F205128874B2C00F1EEA9 /* HomeTotalMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F205028874B2C00F1EEA9 /* HomeTotalMenuViewController.swift */; };
 		877F205328874CBE00F1EEA9 /* HomeTotalCategoryTabManViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F205228874CBE00F1EEA9 /* HomeTotalCategoryTabManViewController.swift */; };
 		877F205828874D9E00F1EEA9 /* TotalMenuCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877F205728874D9E00F1EEA9 /* TotalMenuCategoryVC.swift */; };
@@ -156,6 +162,13 @@
 		877C897A28884B8E00C79ADC /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		877C897C28888F3E00C79ADC /* Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Default.swift; sourceTree = "<group>"; };
 		877C8980288893E900C79ADC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		877C8982288960BA00C79ADC /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
+		877C89842889CCF300C79ADC /* ProductPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPostModel.swift; sourceTree = "<group>"; };
+		877C89862889DCB500C79ADC /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		877C89882889E74000C79ADC /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		877C898A2889EF6D00C79ADC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		877C898E288A009200C79ADC /* productPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productPostManager.swift; sourceTree = "<group>"; };
+		877C8990288A00A300C79ADC /* productPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productPostResponse.swift; sourceTree = "<group>"; };
 		877F20362885A04200F1EEA9 /* OptionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBottomSheet.swift; sourceTree = "<group>"; };
 		877F20382885A8B800F1EEA9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		877F203B2885B3F600F1EEA9 /* OptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
@@ -164,7 +177,6 @@
 		877F20452885F17D00F1EEA9 /* SecondCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCategoryViewController.swift; sourceTree = "<group>"; };
 		877F20492887186600F1EEA9 /* LoginSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpViewController.swift; sourceTree = "<group>"; };
 		877F204B2887225600F1EEA9 /* SignUpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpManager.swift; sourceTree = "<group>"; };
-		877F204D288735B800F1EEA9 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		877F205028874B2C00F1EEA9 /* HomeTotalMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTotalMenuViewController.swift; sourceTree = "<group>"; };
 		877F205228874CBE00F1EEA9 /* HomeTotalCategoryTabManViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTotalCategoryTabManViewController.swift; sourceTree = "<group>"; };
 		877F205728874D9E00F1EEA9 /* TotalMenuCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMenuCategoryVC.swift; sourceTree = "<group>"; };
@@ -310,7 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				877F204B2887225600F1EEA9 /* SignUpManager.swift */,
-				877F204D288735B800F1EEA9 /* SignUpResponse.swift */,
+				877C8982288960BA00C79ADC /* SignUpResponse.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -327,6 +339,7 @@
 		87442BF52884346A00E7AF3A /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				877C898D288A007300C79ADC /* Post */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -343,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				877019632882651E0003441E /* Assets.xcassets */,
+				877C898C2889EF7000C79ADC /* Error */,
 				8770196F288266950003441E /* Util */,
 				87442BF92884352300E7AF3A /* Protocol */,
 				8770197F2882698B0003441E /* Extension */,
@@ -512,6 +526,7 @@
 		8770197F2882698B0003441E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				877C89882889E74000C79ADC /* Int+.swift */,
 				8770198428826A3B0003441E /* Date+.swift */,
 				8770198628826A4B0003441E /* String+.swift */,
 				8770198828826A590003441E /* UIColor+.swift */,
@@ -523,6 +538,7 @@
 				8770199E288273730003441E /* UITableViewCell+.swift */,
 				877019A0288273800003441E /* UICollectionViewCell+.swift */,
 				87442BDF288414B700E7AF3A /* CALayer+.swift */,
+				877C89862889DCB500C79ADC /* UIStackView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -558,6 +574,23 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		877C898C2889EF7000C79ADC /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				877C898A2889EF6D00C79ADC /* Error.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		877C898D288A007300C79ADC /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				877C898E288A009200C79ADC /* productPostManager.swift */,
+				877C8990288A00A300C79ADC /* productPostResponse.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		877F20352885A01F00F1EEA9 /* Option */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +602,7 @@
 		877F203A2885B3EB00F1EEA9 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				877C89842889CCF300C79ADC /* ProductPostModel.swift */,
 				877F203B2885B3F600F1EEA9 /* OptionModel.swift */,
 			);
 			path = Post;
@@ -794,7 +828,10 @@
 				877F205A28874DC600F1EEA9 /* TotalMenuBrandVC.swift in Sources */,
 				877F205828874D9E00F1EEA9 /* TotalMenuCategoryVC.swift in Sources */,
 				87442BC42883021800E7AF3A /* SearchMainViewController.swift in Sources */,
+				877C8983288960BA00C79ADC /* SignUpResponse.swift in Sources */,
 				877C897D28888F3E00C79ADC /* Default.swift in Sources */,
+				877C89852889CCF300C79ADC /* ProductPostModel.swift in Sources */,
+				877C89872889DCB500C79ADC /* UIStackView+.swift in Sources */,
 				8770195B2882651D0003441E /* AppDelegate.swift in Sources */,
 				8770198728826A4B0003441E /* String+.swift in Sources */,
 				877019A52882D65B0003441E /* LoginMainViewController.swift in Sources */,
@@ -809,6 +846,7 @@
 				877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
 				87442BFD28844D8900E7AF3A /* CategoryTagCollectionViewCell.swift in Sources */,
+				877C898B2889EF6D00C79ADC /* Error.swift in Sources */,
 				877C8979288816F900C79ADC /* SecondCategoryResponse.swift in Sources */,
 				877F20392885A8B800F1EEA9 /* Color.swift in Sources */,
 				87442BE0288414B700E7AF3A /* CALayer+.swift in Sources */,
@@ -819,6 +857,7 @@
 				8770199F288273730003441E /* UITableViewCell+.swift in Sources */,
 				877C89752888156300C79ADC /* FirstCategoryResponse.swift in Sources */,
 				87442BCF28833A0C00E7AF3A /* HomeRecommendProductViewController.swift in Sources */,
+				877C89892889E74000C79ADC /* Int+.swift in Sources */,
 				877C89732888155700C79ADC /* FirstCategoryManager.swift in Sources */,
 				8770199D288272F80003441E /* UIView+.swift in Sources */,
 				8770198F28826A7E0003441E /* UIViewController+.swift in Sources */,
@@ -835,11 +874,12 @@
 				8770198D28826A730003441E /* UIButton+.swift in Sources */,
 				877C897B28884B8E00C79ADC /* Storyboard.swift in Sources */,
 				877F203C2885B3F600F1EEA9 /* OptionModel.swift in Sources */,
-				877F204E288735B800F1EEA9 /* SignUpResponse.swift in Sources */,
 				877F204A2887186600F1EEA9 /* LoginSignUpViewController.swift in Sources */,
 				8770199328826AF80003441E /* Protocol.swift in Sources */,
 				87442BEA288425F700E7AF3A /* NetworkResult.swift in Sources */,
+				877C8991288A00A300C79ADC /* productPostResponse.swift in Sources */,
 				87442BDC2883F48F00E7AF3A /* PostCategoryViewController.swift in Sources */,
+				877C898F288A009200C79ADC /* productPostManager.swift in Sources */,
 				87442BB22882E5A300E7AF3A /* User.swift in Sources */,
 				877F205128874B2C00F1EEA9 /* HomeTotalMenuViewController.swift in Sources */,
 			);

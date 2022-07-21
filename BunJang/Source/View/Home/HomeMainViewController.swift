@@ -30,7 +30,7 @@ class HomeMainViewController : BaseViewController{
         setDelegate()
         setBar()
         setUI()
-        
+        getBanner()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +38,31 @@ class HomeMainViewController : BaseViewController{
         
         
         
+        
+       
+    }
+    
+    //MARK: - Custom Method
+    
+    private func setDelegate(){
+        
+        let menuXib = UINib(nibName: String(describing: MenuCollectionCell.self), bundle: nil)
+        menuCollectionView.register(menuXib, forCellWithReuseIdentifier: MenuCollectionCell.cellIdentifier)
+        
+        menuCollectionView.delegate = self
+        menuCollectionView.dataSource = self
+    }
+    
+    private func setBar(){
+    
+    }
+    
+    private func setUI(){
+        eventImageSlide.setImageInputs(eventImage)
+        
+    }
+    
+    func getBanner(){
         
         BannerManager.shared.getBanner { (response) -> (Void) in
             
@@ -59,26 +84,6 @@ class HomeMainViewController : BaseViewController{
                 print("networkFail")
             }
         }
-    }
-    
-    //MARK: - Custom Method
-    
-    private func setDelegate(){
-        
-        let menuXib = UINib(nibName: String(describing: MenuCollectionCell.self), bundle: nil)
-        menuCollectionView.register(menuXib, forCellWithReuseIdentifier: MenuCollectionCell.cellIdentifier)
-        
-        menuCollectionView.delegate = self
-        menuCollectionView.dataSource = self
-    }
-    
-    private func setBar(){
-    
-    }
-    
-    private func setUI(){
-        eventImageSlide.setImageInputs(eventImage)
-        
     }
     
     private func setBannerData(_ data : BannerResponse){

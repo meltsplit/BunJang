@@ -70,7 +70,7 @@ extension UIViewController {
         
         let alertSuperview = UIView()
         alertSuperview.tag = 936419836287461
-        alertSuperview.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+        alertSuperview.backgroundColor = UIColor.darkGray.withAlphaComponent(0.9)
         alertSuperview.layer.cornerRadius = 10
         alertSuperview.isHidden = true
         alertSuperview.translatesAutoresizingMaskIntoConstraints = false
@@ -81,13 +81,13 @@ extension UIViewController {
         alertLabel.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addSubview(alertSuperview)
-        alertSuperview.bottomAnchor.constraint(equalTo: target ?? view.safeAreaLayoutGuide.bottomAnchor, constant: -12).isActive = true
+        alertSuperview.bottomAnchor.constraint(equalTo: target ?? view.safeAreaLayoutGuide.bottomAnchor, constant: -35).isActive = true
         alertSuperview.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         alertSuperview.addSubview(alertLabel)
         alertLabel.topAnchor.constraint(equalTo: alertSuperview.topAnchor, constant: 6).isActive = true
         alertLabel.bottomAnchor.constraint(equalTo: alertSuperview.bottomAnchor, constant: -6).isActive = true
-        alertLabel.leadingAnchor.constraint(equalTo: alertSuperview.leadingAnchor, constant: 12).isActive = true
-        alertLabel.trailingAnchor.constraint(equalTo: alertSuperview.trailingAnchor, constant: -12).isActive = true
+        alertLabel.leadingAnchor.constraint(equalTo: alertSuperview.leadingAnchor, constant: 40).isActive = true
+        alertLabel.trailingAnchor.constraint(equalTo: alertSuperview.trailingAnchor, constant: -40).isActive = true
         
         alertLabel.text = message
         alertSuperview.alpha = 1.0
@@ -113,4 +113,60 @@ extension UIViewController {
     @objc func dismissIndicator() {
         IndicatorView.shared.dismiss()
     }
+    
+    //MARK: - 키보드 사용 감지
+    
+    
+    func setKeyboardNotification() {
+          
+            NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(UIViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object:nil)
+            
+        }
+    
+    //MARK: - 키보드 높이 측정
+        @objc func keyboardWillShow(notification: NSNotification) {
+                if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                        let keyboardRectangle = keyboardFrame.cgRectValue
+                        let keyboardHeight = keyboardRectangle.height
+                    UIView.animate(withDuration: 1) {
+                        self.view.window?.frame.origin.y -= keyboardHeight
+                    }
+                }
+            }
+    
+
+    //MARK: - 키보드 중지 감지
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+            if self.view.window?.frame.origin.y != 0 {
+                if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                        let keyboardRectangle = keyboardFrame.cgRectValue
+                        let keyboardHeight = keyboardRectangle.height
+                    UIView.animate(withDuration: 1) {
+                        self.view.window?.frame.origin.y += keyboardHeight
+                    }
+                }
+            }
+        }
+
+    
+    
+    func makeLabel(text : String, color : UIColor, font : UIFont ) -> UILabel{
+        let label = UILabel()
+        label.text = text
+        label.textColor = color
+        label.font = font
+        return label
+    }
+    
+    func makePriceString(_ int: Int)-> String?{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+
+        return numberFormatter.string(from: NSNumber(value: int))
+    }
+    
+ 
 }

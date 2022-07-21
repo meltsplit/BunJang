@@ -30,6 +30,13 @@ class OptionBottomSheet : BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        dismissKeyboardWhenTappedAround()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(optionData)
+        setOption()
     }
     
     //MARK: - Custom Method
@@ -60,23 +67,35 @@ class OptionBottomSheet : BaseViewController {
         completeBtn.makeCornerRound(radius: 10)
     }
     
+    private func setOption(){
+        
+        countTextField.text = String(optionData.amount)
+        if ( optionData.isUsed == false ){
+            print("new!")
+            btnUnSelectedUI(stateBtnList[0])
+            btnSelectedUI(stateBtnList[1])
+            
+        }
+        if ( optionData.changeable == true){
+            btnUnSelectedUI(changeBtnList[0])
+            btnSelectedUI(changeBtnList[1])
+        }
+        
+    }
+   
+    
     //MARK: - IBAction
     
     @IBAction func stateBtnPressed(_ sender: UIButton) {
         
         for btn in stateBtnList {
                    if btn == sender {
-                       btn.isSelected = true
-                       btn.backgroundColor = Color.Pink
-                       btn.makeBorder(width: 1, color: Color.Pink)
+                       btnSelectedUI(btn)
                        
-                       optionData.state = (btn.tag == 0) ? OptionModel.State.old.rawValue : OptionModel.State.new.rawValue
+                       optionData.isUsed = (btn.tag == 0) ? true : false
                        
                    } else {
-                       btn.isSelected = false
-                       btn.backgroundColor = .white
-                       btn.makeBorder(width: 1, color: UIColor.systemGray3)
-
+                      btnUnSelectedUI(btn)
                    }
         }
     }
@@ -85,17 +104,13 @@ class OptionBottomSheet : BaseViewController {
         
         for btn in changeBtnList {
                    if btn == sender {
-                       btn.isSelected = true
-                       btn.backgroundColor = Color.Pink
-                       btn.makeBorder(width: 1, color: Color.Pink)
+                    btnSelectedUI(btn)
                        
-                       optionData.change = (btn.tag == 0) ? OptionModel.Change.disable.rawValue : OptionModel.Change.able.rawValue
+                       optionData.changeable = (btn.tag == 0) ? false : true
                        
                        
                    } else {
-                       btn.isSelected = false
-                       btn.backgroundColor = .white
-                       btn.makeBorder(width: 1, color: UIColor.systemGray3)
+                       btnUnSelectedUI(btn)
 
                    }
         }
@@ -106,7 +121,7 @@ class OptionBottomSheet : BaseViewController {
         let text = countTextField.text!
         if (!text.isEmpty && text != "0") { count = Int(text)! }
         
-        optionData.count = count
+        optionData.amount = count
         self.dismissKeyboard()
         dismiss(animated: true)
         

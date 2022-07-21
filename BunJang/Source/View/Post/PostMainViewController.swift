@@ -17,13 +17,35 @@ class PostMainViewController : BaseViewController {
     @IBOutlet weak var cameraView: UIView!
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var priceTextField: UITextField!
-    
-    @IBOutlet weak var optionSelectBtn: UIButton!
+    @IBOutlet weak var titleLine: UIView!
     
     @IBOutlet weak var categoryStackView: UIStackView!
     @IBOutlet weak var categoryPlaceHolderLabel: UILabel!
 
+    @IBOutlet weak var tagStackView: UIStackView!
+    @IBOutlet weak var tagPlaceHolderLabel: UILabel!
+    
+    
+    @IBOutlet weak var wonLabel: UILabel!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var priceLine: UIView!
+    @IBOutlet weak var shippingFeeBtn: UIButton!
+    
+    
+    @IBOutlet weak var optionSelectBtn: UIButton!
+    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var changeLabel: UILabel!
+    
+    @IBOutlet weak var contentsTextView: UITextView!
+    
+    @IBOutlet weak var registerView: UIView!
+    @IBOutlet weak var safePayView: UIView!
+    @IBOutlet weak var safePayLogo: UIButton!
+    @IBOutlet weak var safePayCheckBtn: UIImageView!
+    @IBOutlet weak var registerBtn: UIButton!
+    
+    
     private var firstCategoryLabel = UILabel().then {
         
         $0.font = .systemFont(ofSize: 18, weight: .bold)
@@ -51,15 +73,23 @@ class PostMainViewController : BaseViewController {
         $0.setContentHuggingPriority(.init(248), for: .horizontal)
     }
     
-    @IBOutlet weak var registerView: UIView!
-    @IBOutlet weak var safePayView: UIView!
-    @IBOutlet weak var registerBtn: UIButton!
+    
     
     //MARK: - Properties
     
-    var categoryData : SecondCategoryResult?
-    var tagData : [String]?
+    var postData : ProductPostModel?
     
+    var imagesData = [Default.defaultImage]
+    var titleData: String?
+    var categoryData: SecondCategoryResult?
+    var tagData: [String]?
+    var priceData: Int?
+    var shippingFeeData = false
+    var optionData = OptionModel()
+    var contentsData: String?
+    var payData = false
+    
+    lazy var textViewY = contentsTextView.frame.origin.y
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -73,7 +103,9 @@ class PostMainViewController : BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setBar()
+        
+        hideNavBar()
+        hideTabBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -84,12 +116,10 @@ class PostMainViewController : BaseViewController {
     //MARK: - Custom Method
     
     private func setDelegate(){
-        return
-    }
-    
-    private func setBar(){
-        hideNavBar()
-        hideTabBar()
+        
+        titleTextField.delegate = self
+        priceTextField.delegate = self
+        contentsTextView.delegate = self
     }
     
     private func setUI(){
@@ -100,8 +130,12 @@ class PostMainViewController : BaseViewController {
         optionSelectBtn.makeCornerRound(radius: 10)
         optionSelectBtn.makeBorder(width: 1, color: UIColor.systemGray3)
         
-       safePayView.makeBorder(width: 2, color: UIColor.systemGray5)
-       safePayView.makeCornerRound(radius: 10)
+        contentsTextView.makeBorder(width: 1, color: UIColor.systemGray3 )
+        contentsTextView.makeCornerRound(radius: 10)
+        
+        safePayView.makeBorder(width: 2, color: UIColor.systemGray5)
+        safePayLogo.makeCornerRound(radius: 10)
+        safePayView.makeCornerRound(radius: 10)
         registerBtn.makeCornerRound(radius: 10)
     }
     
@@ -122,6 +156,41 @@ class PostMainViewController : BaseViewController {
         categoryStackView.addArrangedSubview(secondCategoryLabel)
     }
     
+    
+    private func makeTagSeperateView() -> UIView{
+        let view = UIView()
+        view.frame.size = CGSize(width: 5, height: 7)
+        
+        view.backgroundColor = .systemGray3
+        return view
+    }
+    
+    private func checkValidPostData(images : [String]?, title : String? ,category : SecondCategoryResult?, tag: [String]?, price : Int? , contents : String?) throws -> ProductPostModel {
+        
+        
+        if images == nil{ throw PostError.inValidData(msg: "상품사진을 등록 해주세요.") }
+        else if title == nil { throw PostError.inValidData(msg: "상품명을 두글자 이상 작성해주세요.") }
+        else if category == nil { throw PostError.inValidData(msg: "카테고리를 선택해주세요.") }
+        else if tag == nil { throw PostError.inValidData(msg: "태그를 입력해주세요.")}
+        else if price == nil {throw PostError.inValidData(msg: "가격을 입력해주세요.")}
+        else if contents == nil {throw PostError.inValidData(msg: "상품설명을 10글자 이상 입력해주세요.")}
+        
+        return ProductPostModel(
+                         productImgs: images!,
+                         title: title!,
+                         firstCategoryId: category!.firstCategoryId,
+                         lastCategoryId: category!.lastCategoryId,
+                         tags: tag!,
+                         price: price!,
+                         contents: contents!,
+                         amount: optionData.amount,
+                         isUsed: optionData.isUsed,
+                         changeable: optionData.changeable,
+                         shippingFee: shippingFeeData,
+                         pay: payData
+                        )
+        
+    }
     
     //MARK: - IBAction
     
@@ -149,45 +218,195 @@ class PostMainViewController : BaseViewController {
         let tagVC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "PostTagViewController") as! PostTagViewController
         
         tagVC.delegate = self
+        tagVC.tagData = tagData ?? []
         pushVC(tagVC)
     }
     
+    @IBAction func shippingFeeBtnPressed(_ sender: UIButton) {
+        shippingFeeData = !shippingFeeData
+        
+        if( shippingFeeData){
+            sender.tintColor = Color.Red
+        }
+        else{
+            sender.tintColor = UIColor.systemGray3
+        }
+    }
     
     @IBAction func optionBtnPressed(_ sender: UIButton) {
         
         let optionBS = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "OptionBottomSheet") as! OptionBottomSheet
         
         optionBS.delegate = self
+        print(optionData)
+        print("----")
+        optionBS.optionData = optionData
+        
         let bottomSheet = MDCBottomSheetController(contentViewController: optionBS)
         present(bottomSheet, animated: true, completion: nil)
     }
     
+    @IBAction func safePayTapped(_ sender: UITapGestureRecognizer) {
+        payData = !payData
+        if payData{
+            safePayView.makeBorder(width: 2, color: Color.Red)
+            safePayCheckBtn.tintColor = Color.Red
+            
+        } else {
+            safePayView.makeBorder(width: 2, color: .systemGray5)
+            safePayCheckBtn.tintColor = .systemGray2
+        }
+    }
+    
+    //MARK: - 최종 등록 버튼!!
+    @IBAction func postCompleteBtnPressed(_ sender: UIButton) {
+        do {
+            postData = try checkValidPostData(images: imagesData, title: titleData, category: categoryData, tag: tagData, price: priceData, contents: contentsData)
+            print(postData)
+            
+            ProductPostManager.shared.postProduct(product: postData!) { (response) in
+                switch response {
+                case .success(let data) :
+                    let result = data as! ProductPostResult
+                    print("상품 ID: \(result.productId)")
+                    
+                case .requestErr(let msg):
+                    if let message = msg as? String {
+                        print(message)
+                    }
+                case .pathErr :
+                    print("pathErr")
+                case .serverErr :
+                    print("serverErr")
+                case .networkFail:
+                    
+                    print("networkFail")
+                }
+            }
+        } catch PostError.inValidData(let msg) {
+            presentBottomAlert(message: msg)
+        } catch {
+            print("다른 에러")
+        }
+        
+        
+    }
+}
+
+//MARK: - TextField Delegate
+extension PostMainViewController : UITextFieldDelegate{
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        
+        switch textField{
+        case titleTextField:
+            print("타이틀 수정중")
+            titleLine.backgroundColor = .black
+        case priceTextField:
+            print("가격 수정중")
+            wonLabel.textColor = .black
+            priceLine.backgroundColor = .black
+        default: print("")
+        }
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        dismissKeyboard()
+        
+        guard let text = textField.text else {return }
+        if !text.isEmpty {
+        
+            switch textField{
+            case titleTextField:
+                titleLine.backgroundColor = .systemGray3
+               
+                
+                titleData = text
+                
+            case priceTextField:
+                print(text)
+                priceTextField.text = makePriceString(Int(text) ?? 0)
+                wonLabel.textColor = .systemGray2
+                priceLine.backgroundColor = .systemGray5
+                
+                priceData = Int(text) ?? 0
+                
+            default: print("")
+            }
+        }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+}
+
+extension PostMainViewController : UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        UIView.animate(withDuration: 0.4) {
+            self.contentsTextView.frame.origin.y = CGFloat(self.textViewY - 200)
+        }
+        
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        UIView.animate(withDuration: 0.4) {
+            self.contentsTextView.frame.origin.y = CGFloat(self.textViewY)
+        }
+        
+        guard let text = textView.text else {return }
+        if !text.isEmpty {
+            contentsData = text
+        }
+    }
 }
 
 
+
+
+//MARK: - Data Send Delegate
 extension PostMainViewController : optionDataDelegate,SecondCategoryDelegate,ArrayStringDelegate {
     
     func sendSecondCategory(_ data: SecondCategoryResult) {
-        
-        //첫번쨰 카테고리 뷰로부터 델리게이트로 데이터 받아옴
+        //유저가 카테고리 선택완료시 델리게이트로 데이터 받아옴
         categoryData = data
         showCategoryLabel()
-        
-        
     }
     
     
     func sendArrayString(_ data: [String]) {
+        //유저가 태그 선택완료시 델리게이트로 데이터 받아옴
         tagData = data
-        print(tagData)
+        tagStackView.removeAllArrangedSubviews()
+        if !tagData!.isEmpty{
+            for tag in tagData!{
+                
+                tagStackView.addArrangedSubview(makeLabel(text: "#\(tag)", color: .black, font: .systemFont(ofSize: 16, weight: .semibold)))
+                tagStackView.addArrangedSubview(makeTagSeperateView())
+            }
+        
+        
+        } else{
+            tagStackView.addArrangedSubview(makeLabel(text: "# 태그", color: .systemGray3, font: .systemFont(ofSize: 20, weight: .bold)))
+        }
+        
+            
+        
+        
     }
     
     
     
     
     func sendData(_ data: OptionModel) {
-        // TODO: data 처리하자 석우야~
-        print(data)
+        
+        optionData = data
+
+        countLabel.text = "\(data.amount)개"
+        stateLabel.text = data.isUsed ? "중고상품" : "새상품"
+        changeLabel.text = data.changeable ? "교환가능" : "교환불가"
     }
     
     
