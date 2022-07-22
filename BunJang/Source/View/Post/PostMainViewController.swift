@@ -90,6 +90,7 @@ class PostMainViewController : BaseViewController {
     var payData = false
     
     lazy var textViewY = contentsTextView.frame.origin.y
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {

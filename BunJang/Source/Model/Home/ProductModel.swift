@@ -10,10 +10,10 @@ import UIKit
 
 struct ProductModel: Codable {
     
-    let image : String?
-    let title : String?
-    let price : Int?
-    let heart : Int?
+    var image : String?
+    var title : String?
+    var price : Int?
+    var heart : Int?
     
 }
 

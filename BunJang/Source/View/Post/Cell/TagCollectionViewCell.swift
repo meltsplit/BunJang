@@ -25,7 +25,7 @@ class TagCollectionViewCell: UICollectionViewCell {
     
     func setData(_ indexPath : IndexPath,_ data : [String]){
         
-        tagView.makeCornerRound(radius: 15)
+        tagView.makeCornerRound(radius: 10)
         
         tagLabel.text = data[indexPath.row]
     }

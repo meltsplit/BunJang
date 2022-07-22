@@ -13,6 +13,7 @@ class BaseTabBarController : UITabBarController{
         super.viewDidLoad()
         
         print("BaseTabController - viewDidLoad()")
+        print(User.shared)
     }
     
 }

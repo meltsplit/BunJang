@@ -22,5 +22,6 @@ struct API{
     static let signUpURL = baseURL + "/app/users/sign-up"
     
     static let firstCategoryURL = baseURL + "/app/categories"
-    static let secondCategoryURL = baseURL + "/app/last/categories/" //path Variable
+    static let secondCategoryURL = baseURL + "/app/last/categories" //path Variable
 }
+

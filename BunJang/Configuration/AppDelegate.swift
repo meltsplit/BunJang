@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         KakaoSDK.initSDK(appKey: Secret.KakaoNativeAppKey)
+        UserDefaults.standard.set(Secret.jwtToken, forKey: "jwt")
+        
         return true
     }
 

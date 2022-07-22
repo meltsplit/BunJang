@@ -8,16 +8,16 @@
 import Foundation
 import Alamofire
 
-class ProductPostManager{
-    static let shared = ProductPostManager()
+class ProductGetManager{
+    static let shared = ProductGetManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-extension ProductPostManager{
+extension ProductGetManager{
     
-    func postProduct(product: ProductPostModel, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getProduct(productId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         
 //        let token = UserDefaults.standard.string(forKey: "token") ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEwMDk5MjQwLCJleHAiOjE2MzYwMTkyNDAsImlzcyI6ImJlbWUifQ.JeYfzJsg-kdatqhIOqfJ4oXUvUdsiLUaGHwLl1mJRvQ"
         
@@ -26,38 +26,18 @@ extension ProductPostManager{
 //            "token": token
 //        ]
         
-        let url = API.productURL + "/" + Default.userID 
+        let url = API.productURL + "/" + String(User.shared.userId) + "/" + String(productId)
         
         
         let header : HTTPHeaders = [
-            "Content-Type":"application/json",
-            "X-ACCESS-TOKEN": Secret.jwtToken
+            //"Content-Type":"application/json"
+            //"X-ACCESS-TOKEN": User.shared.jwt
         ]
-        
-        let param : Parameters = [
-            
-            "productImgs" : product.productImgs,
-            "title" : product.title,
-            "firstCategoryId" : product.firstCategoryId,
-            "lastCategoryId" : product.lastCategoryId,
-            "tags" : product.tags,
-            "price" : product.price,
-            "contents" : product.contents,
-            "amount" : product.amount,
-            "isUsed" : product.isUsed,
-            "changeable" : product.changeable,
-            "pay" : product.pay,
-            "shippingFee" : product.shippingFee
-            
-        ]
-    
-        
         
         let dataRequest = AF.request(
                                      url,
-                                     method: .post,
-                                     parameters: param,
-                                     //encoding: JSONEncoding.default,
+                                     method: .get,
+                                     encoding: URLEncoding.default,
                                      headers: header
                                     )
         
@@ -69,9 +49,9 @@ extension ProductPostManager{
                 switch response.result {
                 case .success:
                     guard let statusCode = response.response?.statusCode else { return }
-                    guard let value = response.value else { return }
-                    
-                    let networkResult = self.judge(status: statusCode, data: value )
+                    guard let data = response.value else { return }
+             
+                    let networkResult = self.judge(status: statusCode, data: data )
                     
                     completion(networkResult)
                     
@@ -89,7 +69,7 @@ extension ProductPostManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(ProductPostResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(ProductGetResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .pathErr
@@ -97,12 +77,16 @@ extension ProductPostManager{
         
         switch status{
         case 200..<300:
+            print("\(self.managerID) - 통신 성공했습니다.")
             return .success(decodedData)
         case 400..<500 :
+            print("\(self.managerID) - Request Error 발생했습니다.")
             return .requestErr(decodedData)
         case 500 :
+            print("\(self.managerID) - Server Error 발생했습니다.")
             return .serverErr
         default :
+            print("\(self.managerID) - NetWork Fail 입니다.")
             return .networkFail
             
             

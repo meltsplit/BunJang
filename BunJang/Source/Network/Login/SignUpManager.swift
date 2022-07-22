@@ -17,7 +17,7 @@ class SignUpManager{
 
 extension SignUpManager{
     
-    func postRegister(user: User, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func postRegister(user: SignUpModel, completion: @escaping (NetworkResult<Any>) -> Void) {
         
 //        let token = UserDefaults.standard.string(forKey: "token") ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEwMDk5MjQwLCJleHAiOjE2MzYwMTkyNDAsImlzcyI6ImJlbWUifQ.JeYfzJsg-kdatqhIOqfJ4oXUvUdsiLUaGHwLl1mJRvQ"
         

@@ -11,6 +11,7 @@ class BaseViewController: UIViewController{
     
     //MARK: - Properties
     
+    var vcIdentifier : String{return String(describing: self)}
     
     //MARK: - Life Cycle
     
@@ -74,12 +75,16 @@ class BaseViewController: UIViewController{
     
     
     func btnSelectedUI(_ btn: UIButton){
+        btn.setTitleColor(Color.Red, for: .selected)
+        btn.setTitleColor(UIColor.systemGray3, for: .normal)
         btn.isSelected = true
         btn.backgroundColor = Color.Pink
         btn.makeBorder(width: 1, color: Color.Pink)
     }
     
     func btnUnSelectedUI(_ btn: UIButton){
+        btn.setTitleColor(Color.Red, for: .selected)
+        btn.setTitleColor(UIColor.systemGray3, for: .normal)
         btn.isSelected = false
         btn.backgroundColor = .white
         btn.makeBorder(width: 1, color: UIColor.systemGray3)

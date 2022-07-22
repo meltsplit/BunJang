@@ -61,8 +61,11 @@ class LoginViewController : BaseViewController{
     
     
     @IBAction func loginBtnPressed(_ sender: UIButton) {
+    
+            
         guard let id = idTextField.text else { return }
         guard let pwd = pwdTextField.text else { return }
+        
         
         if (id == User.shared.id && pwd == User.shared.pwd){
             goHomeVC()

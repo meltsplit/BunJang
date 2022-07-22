@@ -76,11 +76,11 @@ class SecondCategoryViewController : BaseViewController{
                     print(message)
                 }
             case .pathErr :
-                print("pathErr")
+                print(" - pathErr")
             case .serverErr :
-                print("serverErr")
+                print(" - serverErr")
             case .networkFail:
-                print("networkFail")
+                print(" - networkFail")
             }
         }
     }

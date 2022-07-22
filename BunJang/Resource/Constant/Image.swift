@@ -39,5 +39,9 @@ struct Image{
     static var shoe = UIImage(named: "shoe")!
     static var star = UIImage(named: "star")!
     
+    static var 판매내역 = UIImage(named: "판매내역")!
+    static var 거래내역 = UIImage(named: "거래내역")!
+    static var 택배관리 = UIImage(named: "택배관리")!
+    static var 고객센터 = UIImage(named: "고객센터")!
     
 }

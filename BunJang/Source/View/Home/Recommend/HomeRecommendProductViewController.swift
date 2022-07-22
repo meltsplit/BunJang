@@ -63,6 +63,7 @@ extension HomeRecommendProductViewController : UICollectionViewDelegate,UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("셀 선택됨")
         let productVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+        productVC.productId = 1
         navigationController?.pushViewController(productVC, animated: true)
     }
 }

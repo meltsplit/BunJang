@@ -21,7 +21,7 @@ extension SecondCategoryManager{
     
     func getSecondCategory(_ selectedFirstCategoryId : Int ,completion : @escaping (NetworkResult<Any>) -> (Void) ){
      
-        let url = API.secondCategoryURL + String(selectedFirstCategoryId)
+        let url = API.secondCategoryURL + "/" + String(selectedFirstCategoryId)
         
         let dataRequest = AF.request(
                                      url,

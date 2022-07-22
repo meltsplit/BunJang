@@ -9,18 +9,21 @@ import Foundation
 
 struct User : Codable{
     
-    static let shared = User(id: "pinaex00", pwd: "12345", location: "양천구 신월동", phoneNum: "01099711712")
+    static var shared = User()
     
     
-    let id : String
-    let pwd : String
-    let nickname : String = "파이내쁠"
-    let location : String
+    var id : String?
+    var pwd : String?
+    var nickname : String?
+    var location : String?
     //let date : Date?
-    let phoneNum : String
+    var phoneNum : String?
     
+    var userId : Int = 0
+    var jwt : String = "Default JWT Token"
+    var isLogin : Bool?
     
-    
+    private init(){}
     
 }
 

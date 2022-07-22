@@ -308,19 +308,15 @@
                                                                             <constraint firstAttribute="width" constant="4" id="hZZ-aH-LWE"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="252" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0h-hJ-9li">
-                                                                        <rect key="frame" x="102" y="15" width="30" height="20"/>
-                                                                        <color key="backgroundColor" name="BGJT_RedColor"/>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg pay" translatesAutoresizingMaskIntoConstraints="NO" id="7vo-zt-Y7t">
+                                                                        <rect key="frame" x="102" y="15" width="45.5" height="20"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="20" id="mAT-06-Rzl"/>
+                                                                            <constraint firstAttribute="height" constant="20" id="598-Ea-CMt"/>
+                                                                            <constraint firstAttribute="width" secondItem="7vo-zt-Y7t" secondAttribute="height" multiplier="109:48" id="Pdi-Cd-S6Q"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
-                                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" title="페이"/>
-                                                                    </button>
+                                                                    </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XIn-D0-5A2">
-                                                                        <rect key="frame" x="132" y="0.0" width="118.5" height="50"/>
+                                                                        <rect key="frame" x="147.5" y="0.0" width="103" height="50"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     </view>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Sqi-jQ-kBL">
@@ -433,7 +429,6 @@
                         <outlet property="registerBtn" destination="il9-oL-vpx" id="Sfy-d7-Q4b"/>
                         <outlet property="registerView" destination="U50-7x-eGO" id="EeM-Ei-fNs"/>
                         <outlet property="safePayCheckBtn" destination="Sqi-jQ-kBL" id="2PC-f7-IdZ"/>
-                        <outlet property="safePayLogo" destination="N0h-hJ-9li" id="2f0-jo-HHx"/>
                         <outlet property="safePayView" destination="tqm-DV-XJf" id="ecd-CS-pUz"/>
                         <outlet property="shippingFeeBtn" destination="0Ha-yr-u0m" id="TRH-9Z-Gys"/>
                         <outlet property="stateLabel" destination="GG2-Xr-mpj" id="Tzp-FZ-fNM"/>
@@ -1134,6 +1129,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg pay" width="109" height="48"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>

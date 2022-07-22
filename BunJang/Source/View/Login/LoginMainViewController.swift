@@ -31,7 +31,7 @@ class LoginMainViewController : BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(vcIdentifier)
         setImageSlideShow()
         
     }
@@ -73,34 +73,43 @@ class LoginMainViewController : BaseViewController{
     @IBAction func appleLoginBtnPressed(_ sender: UIButton) {
         print("애플 로그인은 개발자 계정이 있어야 가능합니다.")
         
-        let userData = User.shared
-        SignUpManager.shared.postRegister(user: userData) { (result) in
-            
-            switch result{
-                
-            case .success(let data) :
-                print("성공")
-                let signUpData = (data as! SignUpResponse).result
-                
-                print(signUpData)
-            case .requestErr(let msg):
-                if let message = msg as? String {
-                    print(message)
-                }
-            case .pathErr :
-                print("pathErr")
-            case .serverErr :
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
+//        let userData = User.shared
+//        SignUpManager.shared.postRegister(user: userData) { (result) in
+//            
+//            switch result{
+//                
+//            case .success(let data) :
+//                print("성공")
+//                let signUpData = (data as! SignUpResponse).result
+//                
+//                print(signUpData)
+//            case .requestErr(let msg):
+//                if let message = msg as? String {
+//                    print(message)
+//                }
+//            case .pathErr :
+//                print("pathErr")
+//            case .serverErr :
+//                print("serverErr")
+//            case .networkFail:
+//                print("networkFail")
+//            }
+//        }
       
     }
    
     
     @IBAction func autoLogin(_ sender: UIButton) {
         let mainTabVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
+        
+        User.shared.id = "pinaex00"
+        User.shared.pwd = "password"
+        User.shared.nickname = "파이내쁠"
+        User.shared.phoneNum = "010199711712"
+        User.shared.location = "강서구 마곡동"
+        User.shared.jwt = Secret.jwtToken
+        User.shared.userId = 1
+        
         changeRootViewController(mainTabVC)
     }
 }

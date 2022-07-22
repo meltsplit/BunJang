@@ -20,20 +20,27 @@ class MyMainViewController : BaseViewController{
         super.viewDidLoad()
         
         setDelegate()
-        setBar()
         setUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        hideNavBar()
+        hideTabBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        showNavBar()
+        showTabBar()
     }
     
     //MARK: - Custom Method
     
     private func setDelegate(){
-        true
+        
     }
     
-    private func setBar(){
-        true
-    }
     
     private func setUI(){
         true

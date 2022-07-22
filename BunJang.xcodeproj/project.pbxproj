@@ -61,6 +61,12 @@
 		877019A3288274B00003441E /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877019A2288274B00003441E /* My.storyboard */; };
 		877019A52882D65B0003441E /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A42882D65B0003441E /* LoginMainViewController.swift */; };
 		877019A82882D7A00003441E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A72882D7A00003441E /* Image.swift */; };
+		877C4073288AB6A1001F4C28 /* ProductGetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4072288AB6A1001F4C28 /* ProductGetManager.swift */; };
+		877C4075288AB6AD001F4C28 /* ProductGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4074288AB6AD001F4C28 /* ProductGetResponse.swift */; };
+		877C4078288AC139001F4C28 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4077288AC139001F4C28 /* SignUpModel.swift */; };
+		877C407A288AD73E001F4C28 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4079288AD73E001F4C28 /* UIImageView+.swift */; };
+		877C4081288B0EA1001F4C28 /* MyProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C407F288B0EA1001F4C28 /* MyProductCollectionViewCell.swift */; };
+		877C4082288B0EA1001F4C28 /* MyProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 877C4080288B0EA1001F4C28 /* MyProductCollectionViewCell.xib */; };
 		877C896B2887CDB500C79ADC /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C89692887CDB500C79ADC /* MenuCollectionCell.swift */; };
 		877C896C2887CDB500C79ADC /* MenuCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 877C896A2887CDB500C79ADC /* MenuCollectionCell.xib */; };
 		877C896F2888123B00C79ADC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C896E2888123B00C79ADC /* Category.swift */; };
@@ -152,6 +158,12 @@
 		877019A2288274B00003441E /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
 		877019A42882D65B0003441E /* LoginMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		877019A72882D7A00003441E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		877C4072288AB6A1001F4C28 /* ProductGetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGetManager.swift; sourceTree = "<group>"; };
+		877C4074288AB6AD001F4C28 /* ProductGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGetResponse.swift; sourceTree = "<group>"; };
+		877C4077288AC139001F4C28 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		877C4079288AD73E001F4C28 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		877C407F288B0EA1001F4C28 /* MyProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		877C4080288B0EA1001F4C28 /* MyProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		877C89692887CDB500C79ADC /* MenuCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionCell.swift; sourceTree = "<group>"; };
 		877C896A2887CDB500C79ADC /* MenuCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionCell.xib; sourceTree = "<group>"; };
 		877C896E2888123B00C79ADC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -299,6 +311,7 @@
 				87442BF42884346300E7AF3A /* Home */,
 				877C89712888153F00C79ADC /* Category */,
 				87442BF52884346A00E7AF3A /* Product */,
+				877C4085288B1432001F4C28 /* My */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -340,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				877C898D288A007300C79ADC /* Post */,
+				877C4071288AB68B001F4C28 /* Get */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -377,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				87442BB12882E5A300E7AF3A /* User.swift */,
+				877C4077288AC139001F4C28 /* SignUpModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -495,6 +510,7 @@
 		8770197C288269360003441E /* My */ = {
 			isa = PBXGroup;
 			children = (
+				877C407C288B0BB7001F4C28 /* Cell */,
 				877019A2288274B00003441E /* My.storyboard */,
 				87442BBE2883017D00E7AF3A /* MyMainViewController.swift */,
 			);
@@ -539,6 +555,7 @@
 				877019A0288273800003441E /* UICollectionViewCell+.swift */,
 				87442BDF288414B700E7AF3A /* CALayer+.swift */,
 				877C89862889DCB500C79ADC /* UIStackView+.swift */,
+				877C4079288AD73E001F4C28 /* UIImageView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -553,6 +570,31 @@
 				877C897A28884B8E00C79ADC /* Storyboard.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		877C4071288AB68B001F4C28 /* Get */ = {
+			isa = PBXGroup;
+			children = (
+				877C4072288AB6A1001F4C28 /* ProductGetManager.swift */,
+				877C4074288AB6AD001F4C28 /* ProductGetResponse.swift */,
+			);
+			path = Get;
+			sourceTree = "<group>";
+		};
+		877C407C288B0BB7001F4C28 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				877C407F288B0EA1001F4C28 /* MyProductCollectionViewCell.swift */,
+				877C4080288B0EA1001F4C28 /* MyProductCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		877C4085288B1432001F4C28 /* My */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = My;
 			sourceTree = "<group>";
 		};
 		877C896D2888122400C79ADC /* Category */ = {
@@ -752,6 +794,7 @@
 				877C896C2887CDB500C79ADC /* MenuCollectionCell.xib in Resources */,
 				877019642882651E0003441E /* Assets.xcassets in Resources */,
 				87442BC22883020C00E7AF3A /* Search.storyboard in Resources */,
+				877C4082288B0EA1001F4C28 /* MyProductCollectionViewCell.xib in Resources */,
 				87442BB92882F0AF00E7AF3A /* Tab.storyboard in Resources */,
 				87442BED2884300F00E7AF3A /* Product.storyboard in Resources */,
 				8770199728826D360003441E /* Post.storyboard in Resources */,
@@ -817,8 +860,10 @@
 				877019A1288273800003441E /* UICollectionViewCell+.swift in Sources */,
 				87442BAF2882DED300E7AF3A /* Secret.swift in Sources */,
 				87442BE528841F0500E7AF3A /* API.swift in Sources */,
+				877C4081288B0EA1001F4C28 /* MyProductCollectionViewCell.swift in Sources */,
 				87442BD6288345B400E7AF3A /* ProductModel.swift in Sources */,
 				87442BBF2883017D00E7AF3A /* MyMainViewController.swift in Sources */,
+				877C4075288AB6AD001F4C28 /* ProductGetResponse.swift in Sources */,
 				87442BFF288451F400E7AF3A /* ProoductCollectionViewCell.swift in Sources */,
 				877C896F2888123B00C79ADC /* Category.swift in Sources */,
 				8770198B28826A680003441E /* UIFont+.swift in Sources */,
@@ -831,6 +876,7 @@
 				877C8983288960BA00C79ADC /* SignUpResponse.swift in Sources */,
 				877C897D28888F3E00C79ADC /* Default.swift in Sources */,
 				877C89852889CCF300C79ADC /* ProductPostModel.swift in Sources */,
+				877C407A288AD73E001F4C28 /* UIImageView+.swift in Sources */,
 				877C89872889DCB500C79ADC /* UIStackView+.swift in Sources */,
 				8770195B2882651D0003441E /* AppDelegate.swift in Sources */,
 				8770198728826A4B0003441E /* String+.swift in Sources */,
@@ -839,12 +885,14 @@
 				87442C0128845BF400E7AF3A /* ReviewTableViewCell.swift in Sources */,
 				87442BB62882EB9E00E7AF3A /* HomeMainViewController.swift in Sources */,
 				87701979288266FF0003441E /* Device.swift in Sources */,
+				877C4078288AC139001F4C28 /* SignUpModel.swift in Sources */,
 				87442BBD2883016600E7AF3A /* ChatMainViewController.swift in Sources */,
 				877F20462885F17D00F1EEA9 /* SecondCategoryViewController.swift in Sources */,
 				87442BE7288423BB00E7AF3A /* BannerResponse.swift in Sources */,
 				877C8981288893E900C79ADC /* TagCollectionViewCell.swift in Sources */,
 				877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
+				877C4073288AB6A1001F4C28 /* ProductGetManager.swift in Sources */,
 				87442BFD28844D8900E7AF3A /* CategoryTagCollectionViewCell.swift in Sources */,
 				877C898B2889EF6D00C79ADC /* Error.swift in Sources */,
 				877C8979288816F900C79ADC /* SecondCategoryResponse.swift in Sources */,
