@@ -19,6 +19,10 @@ class MyMainViewController : BaseViewController{
     
     //MARK: - Properties
     
+    var collectionViewWidth = Device.width - 40
+    lazy var collectionViewCellHeight = collectionViewWidth / 350 * 120
+    var collectionViewLineSpacing : CGFloat = 20
+    
     var myProductData : [MyProductGetResult] = []
     
     //MARK: - Life Cycle
@@ -33,14 +37,12 @@ class MyMainViewController : BaseViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         hideNavBar()
-        hideTabBar()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         showNavBar()
-        showTabBar()
     }
     
     //MARK: - Custom Method
@@ -76,20 +78,18 @@ class MyMainViewController : BaseViewController{
                 print("serverErr")
             case .networkFail:
                 print("networkFail")
+            case .decodeErr:
+                print("decodeError")
             }
         }
     }
     
     private func setMyProduct(_ data: [MyProductGetResult]){
         myProductData = data
-        print("~~~~~~~~~~~~~~~~~~Reload 할꾸얌~~~~~")
         myProductCollectionView.reloadData()
         
-        let width = Device.width - 40
-        let height = width / 350 * 120 + 20
-        
         myProductCollectionView.snp.makeConstraints {
-            $0.height.equalTo(Int(height) * myProductData.count )
+            $0.height.equalTo((Int(collectionViewCellHeight) + Int(collectionViewLineSpacing)) * myProductData.count )
         }
     }
     
@@ -116,14 +116,11 @@ extension MyMainViewController : UICollectionViewDelegate,UICollectionViewDataSo
 extension MyMainViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = Device.width - 40
-        let height = width / 350 * 120
-        
-        return CGSize(width: width, height: height)
+        return CGSize(width: collectionViewWidth, height: collectionViewCellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return collectionViewLineSpacing
     }
 }
 

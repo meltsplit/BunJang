@@ -114,6 +114,8 @@ class ProductViewController : BaseViewController{
                 }
             case .pathErr :
                 print("pathErr")
+            case .decodeErr:
+                print("decodeError")
             case .serverErr :
                 print("serverErr")
             case .networkFail:
@@ -139,7 +141,7 @@ class ProductViewController : BaseViewController{
         self.contentsLabel.text = data.contents
         self.profileImageView.load(urlString: data.profileImgUrl)
         self.nicknameLabel.text = data.nickname
-        self.starLabel.text = String(data.star)
+        //self.starLabel.text = String(data.star!)
         self.followerLabel.text = String(data.follower)
         
         if data.follow {
@@ -153,12 +155,7 @@ class ProductViewController : BaseViewController{
         for image in self.productImageSlide.slideshowItems {
             image.imageView.contentMode = .scaleAspectFill
         }
-        
-        
-                                                                
-                                                                
-                                                                
-                                                                
+                                                              
         
     }
     

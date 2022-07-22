@@ -40,7 +40,7 @@ struct ProductGetResult : Codable {
     let tags: [Tags]
     let profileImgUrl: String
     let nickname: String
-    let star: Double
+    //let star: Double
     let follower: Int
     let follow: Bool
     let commentCount: Int

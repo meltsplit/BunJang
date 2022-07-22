@@ -14,7 +14,7 @@ class HomeMainViewController : BaseViewController{
    
     @IBOutlet weak var eventImageSlide: ImageSlideshow!
     @IBOutlet weak var menuCollectionView: UICollectionView!
-    @IBOutlet weak var homecontainerViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var contentView: UIView!
     
     //MARK: - Properties
     
@@ -25,19 +25,14 @@ class HomeMainViewController : BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("vdl")
-        
         setDelegate()
-        setBar()
         setUI()
         getBanner()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-        
         
        
     }
@@ -53,12 +48,12 @@ class HomeMainViewController : BaseViewController{
         menuCollectionView.dataSource = self
     }
     
-    private func setBar(){
-    
-    }
     
     private func setUI(){
         eventImageSlide.setImageInputs(eventImage)
+        contentView.snp.makeConstraints {
+            $0.height.equalTo(DataCheet.shard.height)
+        }
         
     }
     
@@ -82,6 +77,8 @@ class HomeMainViewController : BaseViewController{
                 print("serverErr")
             case .networkFail:
                 print("networkFail")
+            case .decodeErr:
+                print("decodeError")
             }
         }
     }
@@ -96,6 +93,8 @@ class HomeMainViewController : BaseViewController{
     }
     
     
+    
+       
     //MARK: - IBAction
     
 }

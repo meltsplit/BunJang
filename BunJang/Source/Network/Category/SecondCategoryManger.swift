@@ -56,7 +56,7 @@ extension SecondCategoryManager{
         
         guard let decodedData = try? decoder.decode(SecondCategoryResponse.self, from : data) else{
             print("\(managerID)에서 failure 발생하였습니다.")
-            return .pathErr
+            return .decodeErr
         }
         
         switch status{

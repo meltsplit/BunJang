@@ -273,12 +273,13 @@ class PostMainViewController : BaseViewController {
                     if let message = msg as? String {
                         print(message)
                     }
+                case .decodeErr:
+                    print("decodeError")
                 case .pathErr :
                     print("pathErr")
                 case .serverErr :
                     print("serverErr")
                 case .networkFail:
-                    
                     print("networkFail")
                 }
             }

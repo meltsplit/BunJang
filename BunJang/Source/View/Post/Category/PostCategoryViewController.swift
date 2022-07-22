@@ -75,6 +75,8 @@ class PostCategoryViewController : BaseViewController {
                 print("serverErr")
             case .networkFail:
                 print("networkFail")
+            case .decodeErr:
+                print("decodeError")
             }
         }
     }

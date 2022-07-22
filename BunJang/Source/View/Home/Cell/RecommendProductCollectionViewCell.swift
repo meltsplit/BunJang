@@ -22,23 +22,35 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
     //MARK: - Properties
     
     
-    //MARK: - Custom Method
-    
-    func setData(_ data : ProductModel){
-        productImageView.makeCornerRound(radius: 14)
-        
-        productImageView.image = UIImage(named: data.image!)
-        priceLabel.text = "\(data.price!)원"
-        titleLabel.text = data.title
-        locationLabel.text = "양천구 신월동"
-        timeLabel.text = "3분 전"
-        
-    }
+   
     
     //MARK: - IBAction
     
     @IBAction func heartBtnPressed(_ sender: UIButton) {
         print("찜 버튼 클릭됨")
     }
+    
+    //MARK: - Custom Method
+    
+//    func setData(_ data : ProductGetResult){
+//        productImageView.makeCornerRound(radius: 14)
+//        productImageView.load(urlString: "https://img.29cm.co.kr/next-product/2022/07/18/8732d52104224bba84307166c28145c7_20220718153123.jpg?width=700")
+//        priceLabel.text = makePriceString(data.price)
+//        titleLabel.text = data.title
+//        locationLabel.text = data.location
+//        timeLabel.text = data.updatedAt
+//
+//    }
+    
+    func setData(_ data : ProductModel){
+            productImageView.makeCornerRound(radius: 14)
+            productImageView.load(urlString: "https://img.29cm.co.kr/next-product/2022/07/18/8732d52104224bba84307166c28145c7_20220718153123.jpg?width=700")
+            priceLabel.text = makePriceString(data.price!)
+            titleLabel.text = data.title
+            locationLabel.text = "강서구 마곡동"
+            timeLabel.text = "3일 전"
+    
+        }
+
     
 }

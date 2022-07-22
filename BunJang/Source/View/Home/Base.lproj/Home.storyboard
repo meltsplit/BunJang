@@ -103,10 +103,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="380" height="883"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="RRd-oB-hgo" userLabel="Home Scroll View">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="RRd-oB-hgo" userLabel="Home Scroll View">
                                 <rect key="frame" x="0.0" y="0.0" width="380" height="883"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzA-6y-pm9" userLabel="homeContainerView">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RzA-6y-pm9" userLabel="homeContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="1500"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSa-fD-ShZ" customClass="ImageSlideshow" customModule="ImageSlideshow">
@@ -182,8 +182,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMF-bL-bpw">
+                                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NMF-bL-bpw">
                                                 <rect key="frame" x="0.0" y="552.33333333333348" width="380" height="947.66666666666652"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="900" id="o5A-WU-FfY"/>
+                                                </constraints>
                                                 <connections>
                                                     <segue destination="bVK-Xc-IRX" kind="embed" id="vJH-3J-gAv"/>
                                                 </connections>
@@ -194,7 +197,6 @@
                                             <constraint firstItem="aSW-oz-Svg" firstAttribute="top" secondItem="TSa-fD-ShZ" secondAttribute="bottom" constant="10" id="7FN-5h-bEv"/>
                                             <constraint firstItem="0Xs-Ve-WhW" firstAttribute="leading" secondItem="RzA-6y-pm9" secondAttribute="leading" constant="10" id="MsL-mI-32c"/>
                                             <constraint firstItem="TSa-fD-ShZ" firstAttribute="leading" secondItem="RzA-6y-pm9" secondAttribute="leading" id="N0z-Ut-diu"/>
-                                            <constraint firstAttribute="height" constant="1500" id="Qg1-0q-yzr"/>
                                             <constraint firstAttribute="trailing" secondItem="NMF-bL-bpw" secondAttribute="trailing" id="Rw8-B5-hiX"/>
                                             <constraint firstAttribute="trailing" secondItem="aSW-oz-Svg" secondAttribute="trailing" id="TVX-ld-wGO"/>
                                             <constraint firstItem="0Xs-Ve-WhW" firstAttribute="top" secondItem="aSW-oz-Svg" secondAttribute="bottom" constant="10" id="Wcr-hT-ZcV"/>
@@ -246,8 +248,8 @@
                     </navigationItem>
                     <size key="freeformSize" width="380" height="883"/>
                     <connections>
+                        <outlet property="contentView" destination="NMF-bL-bpw" id="Nqj-bp-59t"/>
                         <outlet property="eventImageSlide" destination="TSa-fD-ShZ" id="xY9-eT-raA"/>
-                        <outlet property="homecontainerViewHeight" destination="Qg1-0q-yzr" id="E97-OW-e2I"/>
                         <outlet property="menuCollectionView" destination="aSW-oz-Svg" id="6ZF-Xd-YNu"/>
                     </connections>
                 </viewController>
@@ -278,7 +280,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-fZ-nNr">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-fZ-nNr">
                                 <rect key="frame" x="10" y="44" width="370" height="766"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XbO-Tw-kWX">
@@ -307,7 +309,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="스투시 긴팔티" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-CF-7W6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="739" text="스투시 긴팔티" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-CF-7W6">
                                                     <rect key="frame" x="0.0" y="297" width="212" height="20.333333333333314"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -358,7 +360,7 @@
                                                         <constraint firstAttribute="height" constant="15" id="NUR-T4-iof"/>
                                                     </constraints>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" verticalHuggingPriority="245" verticalCompressionResistancePriority="745" translatesAutoresizingMaskIntoConstraints="NO" id="bBT-LJ-A7I" userLabel="space">
+                                                <view contentMode="scaleToFill" verticalHuggingPriority="245" verticalCompressionResistancePriority="736" translatesAutoresizingMaskIntoConstraints="NO" id="bBT-LJ-A7I" userLabel="space">
                                                     <rect key="frame" x="2" y="366.33333333333331" width="208" height="40.666666666666686"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>

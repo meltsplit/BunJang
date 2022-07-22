@@ -57,7 +57,7 @@ extension FirstCategoryManager{
         guard let decodedData = try? decoder.decode(FirstCategoryResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
-            return .pathErr
+            return .decodeErr
         }
         
         switch status{

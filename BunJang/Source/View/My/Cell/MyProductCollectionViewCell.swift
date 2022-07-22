@@ -23,7 +23,6 @@ class MyProductCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("닙 실행이요~")
         quickSellBtn.makeBorder(width: 1.3, color: .black)
         quickSellBtn.makeCornerRound(radius: 10)
         
@@ -32,9 +31,7 @@ class MyProductCollectionViewCell: UICollectionViewCell {
     //MARK: - Custom Method
     
     func setData(_ data : MyProductGetResult){
-        print("data 받았소~")
-        print(data)
-        //productImageView.load(urlString: data.productImgs[0].productImgUrl)
+        productImageView.load(urlString: data.productImgs[0].productImgUrl)
         updatedAtLabel.text = data.updatedAt
         titleLabel.text = data.title
         priceLabel.text = makePriceString(data.price)

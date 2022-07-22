@@ -31,3 +31,7 @@ protocol ArrayStringDelegate{
 protocol StringDelegate{
     func sendString(_ data : String)
 }
+
+protocol IntDelegate{
+    func sendInt(_ data : Int)
+}

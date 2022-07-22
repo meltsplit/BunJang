@@ -28,6 +28,8 @@ extension MyProductGetManager{
             "X-ACCESS-TOKEN": User.shared.jwt
         ]
         
+        
+        
         let dataRequest = AF.request(
                                      url,
                                      method: .get,
@@ -66,7 +68,7 @@ extension MyProductGetManager{
         guard let decodedData = try? decoder.decode(MyProductGetResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
-            return .pathErr
+            return .decodeErr
         }
         
         switch status{

@@ -15,6 +15,12 @@ class HomeRecommendProductViewController : BaseViewController{
     
     //MARK: - Properties
     
+    var recommendProductData : [ProductGetResult] = []
+    
+    
+    var collectionViewWidth = Device.width / 2 - 7
+    lazy var collectionViewCellHeight = collectionViewWidth * 2.2
+    var collectionViewLineSpacing = 5
     
     //MARK: - Life Cycle
     
@@ -22,8 +28,8 @@ class HomeRecommendProductViewController : BaseViewController{
         super.viewDidLoad()
         
         setDelegate()
-        setBar()
-        setUI()
+        getRecommendProduct()
+        resizeCollectionView()
         
     }
     
@@ -34,14 +40,44 @@ class HomeRecommendProductViewController : BaseViewController{
         productCollectionView.dataSource = self
     }
     
-    private func setBar(){
-        true
+    private func getRecommendProduct(){
+        RecommendProductManager.shared.getProduct(page: 0) { (response) in
+            switch response {
+
+            case .success(let data) :
+                let responseData = data as! RecommendProductResponse
+                
+                self.setRecommendData(responseData.result)
+            
+            case .requestErr(let msg):
+                print(msg)
+            case .pathErr :
+                print("pathErr")
+            case .serverErr :
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .decodeErr:
+                print("decodeError")
+            }
+
+        }
     }
     
-    private func setUI(){
-        true
+    private func setRecommendData(_ data: [ProductGetResult]){
+        recommendProductData = data
+        productCollectionView.reloadData()
+        resizeCollectionView()
+        
     }
     
+    private func resizeCollectionView(){
+        let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * ProductModel.sampleData.count / 2
+        //let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * recommendProductData.count / 2
+        
+        DataCheet.shard.height = height
+        
+    }
     
     //MARK: - IBAction
     
@@ -52,11 +88,14 @@ extension HomeRecommendProductViewController : UICollectionViewDelegate,UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         ProductModel.sampleData.count
+        //return recommendProductData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendProductCollectionViewCell.cellIdentifier, for: indexPath) as? RecommendProductCollectionViewCell else { return UICollectionViewCell() }
         cell.setData(ProductModel.sampleData[indexPath.row])
+        //cell.setData(recommendProductData[indexPath.row])
+        
         return cell
     }
     
