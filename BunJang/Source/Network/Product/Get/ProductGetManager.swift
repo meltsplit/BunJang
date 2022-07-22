@@ -19,12 +19,6 @@ extension ProductGetManager{
     
     func getProduct(productId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         
-//        let token = UserDefaults.standard.string(forKey: "token") ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEwMDk5MjQwLCJleHAiOjE2MzYwMTkyNDAsImlzcyI6ImJlbWUifQ.JeYfzJsg-kdatqhIOqfJ4oXUvUdsiLUaGHwLl1mJRvQ"
-        
-//        let header: HTTPHeaders = [
-//            "Content-Type":"application/json",
-//            "token": token
-//        ]
         
         let url = API.productURL + "/" + String(User.shared.userId) + "/" + String(productId)
         

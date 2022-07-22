@@ -41,7 +41,6 @@ class PostMainViewController : BaseViewController {
     
     @IBOutlet weak var registerView: UIView!
     @IBOutlet weak var safePayView: UIView!
-    @IBOutlet weak var safePayLogo: UIButton!
     @IBOutlet weak var safePayCheckBtn: UIImageView!
     @IBOutlet weak var registerBtn: UIButton!
     
@@ -135,7 +134,6 @@ class PostMainViewController : BaseViewController {
         contentsTextView.makeCornerRound(radius: 10)
         
         safePayView.makeBorder(width: 2, color: UIColor.systemGray5)
-        safePayLogo.makeCornerRound(radius: 10)
         safePayView.makeCornerRound(radius: 10)
         registerBtn.makeCornerRound(radius: 10)
     }

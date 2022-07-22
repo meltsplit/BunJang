@@ -26,7 +26,7 @@ struct ProductGetResult : Codable {
     let pay: Bool
     let title: String
     let location: String
-    //let updatedAt: String
+    let updatedAt: String
     let viewCnt: Int
     let heartCnt: Int
     let chatCnt: Int

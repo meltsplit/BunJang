@@ -128,7 +128,7 @@ class ProductViewController : BaseViewController{
         self.priceLabel.text = makePriceString(data.price)! + " 원"
         self.titleLabel.text = data.title
         self.locationLabel.text = data.location
-        //self.updatedAt.text = data.updatedAt
+        self.updatedAt.text = data.updatedAt
         self.viewCountLabel.text = String(data.viewCnt)
         self.heartCountLabel.text = String(data.heartCnt)
         self.chatCountLabel.text = String(data.chatCnt)
