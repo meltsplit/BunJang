@@ -49,4 +49,10 @@
 |1️⃣4️⃣| 7.29 | ⛺️[개발일지 14일차] |
 
 ## 📌 배운점
-
+```
+1. Alamofire 사용법, 싱글턴 패턴의 API Manager 관리
+2. Extension 을 활용한 코드 효율성 높이기
+3. gitignore를 통해 중요파일 감추기
+4. do-try-catch 문을 통해 예외처리, 그에 따른 메세지 알림 띄우기
+5. Delegate 패턴을 통해 Cell -> VC 로 데이터 전달
+```
