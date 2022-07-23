@@ -21,7 +21,8 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Properties
     
-    
+    var userID: Int?
+    var productID: Int?
    
     
     //MARK: - IBAction
@@ -32,25 +33,30 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Custom Method
     
-//    func setData(_ data : ProductGetResult){
-//        productImageView.makeCornerRound(radius: 14)
-//        productImageView.load(urlString: "https://img.29cm.co.kr/next-product/2022/07/18/8732d52104224bba84307166c28145c7_20220718153123.jpg?width=700")
-//        priceLabel.text = makePriceString(data.price)
-//        titleLabel.text = data.title
-//        locationLabel.text = data.location
-//        timeLabel.text = data.updatedAt
+    func setData(_ data : ProductGetResult){
+        self.userID = data.userId
+        self.productID = data.productId
+        
+        productImageView.makeCornerRound(radius: 14)
+        productImageView.load(urlString: "https://img.29cm.co.kr/next-product/2022/07/18/8732d52104224bba84307166c28145c7_20220718153123.jpg?width=700")
+        priceLabel.text = makePriceString(data.price)
+        titleLabel.text = data.title
+        locationLabel.text = data.location
+        timeLabel.text = data.updatedAt
+        
+        
+
+    }
+    
+//    func setData(_ data : ProductModel){
+//            productImageView.makeCornerRound(radius: 14)
+//            productImageView.load(urlString: "https://img.29cm.co.kr/next-product/2022/07/18/8732d52104224bba84307166c28145c7_20220718153123.jpg?width=700")
+//            priceLabel.text = makePriceString(data.price!)
+//            titleLabel.text = data.title
+//            locationLabel.text = "강서구 마곡동"
+//            timeLabel.text = "3일 전"
 //
-//    }
-    
-    func setData(_ data : ProductModel){
-            productImageView.makeCornerRound(radius: 14)
-            productImageView.load(urlString: "https://img.29cm.co.kr/next-product/2022/07/18/8732d52104224bba84307166c28145c7_20220718153123.jpg?width=700")
-            priceLabel.text = makePriceString(data.price!)
-            titleLabel.text = data.title
-            locationLabel.text = "강서구 마곡동"
-            timeLabel.text = "3일 전"
-    
-        }
+//        }
 
     
 }

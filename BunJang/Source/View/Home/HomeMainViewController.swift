@@ -24,7 +24,7 @@ class HomeMainViewController : BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("AAAAAAAA")
         setDelegate()
         setUI()
         getBanner()

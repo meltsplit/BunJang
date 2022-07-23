@@ -49,6 +49,8 @@ class ProductViewController : BaseViewController{
     //MARK: - Properties
     
     var productId : Int?
+    var userID : Int?
+    
     var productImageList : [AlamofireSource] = []
     var testImageList = [AlamofireSource(urlString: "https://image.msscdn.net/images/goods_img/20191105/1214164/1214164_8_500.jpg?t=20220311170314")]
     

@@ -20,6 +20,7 @@ struct ProductGetResponse : Codable {
 struct ProductGetResult : Codable {
     
     let productId : Int
+    let userId : Int
     let condition: String
     let productImgs: [ProductImgs]
     let price: Int
@@ -40,7 +41,7 @@ struct ProductGetResult : Codable {
     let tags: [Tags]
     let profileImgUrl: String
     let nickname: String
-    //let star: Double
+    let star: Double
     let follower: Int
     let follow: Bool
     let commentCount: Int

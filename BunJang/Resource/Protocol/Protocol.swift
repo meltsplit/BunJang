@@ -34,4 +34,5 @@ protocol StringDelegate{
 
 protocol IntDelegate{
     func sendInt(_ data : Int)
+    
 }

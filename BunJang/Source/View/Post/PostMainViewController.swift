@@ -168,11 +168,11 @@ class PostMainViewController : BaseViewController {
         
         
         if images == nil{ throw PostError.inValidData(msg: "상품사진을 등록 해주세요.") }
-        else if title == nil { throw PostError.inValidData(msg: "상품명을 두글자 이상 작성해주세요.") }
+        else if title == nil && title?.count ?? 0 < 2{ throw PostError.inValidData(msg: "상품명을 두글자 이상 작성해주세요.") }
         else if category == nil { throw PostError.inValidData(msg: "카테고리를 선택해주세요.") }
         else if tag == nil { throw PostError.inValidData(msg: "태그를 입력해주세요.")}
         else if price == nil {throw PostError.inValidData(msg: "가격을 입력해주세요.")}
-        else if contents == nil {throw PostError.inValidData(msg: "상품설명을 10글자 이상 입력해주세요.")}
+        else if contents == nil && contents?.count ?? 0 < 10 {throw PostError.inValidData(msg: "상품설명을 10글자 이상 입력해주세요.")}
         
         return ProductPostModel(
                          productImgs: images!,

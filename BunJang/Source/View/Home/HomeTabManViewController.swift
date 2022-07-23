@@ -22,7 +22,7 @@ class HomeTabmanViewController : TabmanViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("BBBBBBB")
         setDelegate()
         setBar()
         setNotification()

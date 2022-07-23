@@ -26,7 +26,7 @@ class HomeRecommendProductViewController : BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("CCCCCC")
         setDelegate()
         getRecommendProduct()
         resizeCollectionView()
@@ -75,6 +75,7 @@ class HomeRecommendProductViewController : BaseViewController{
         let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * ProductModel.sampleData.count / 2
         //let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * recommendProductData.count / 2
         
+        
         DataCheet.shard.height = height
         
     }
@@ -87,14 +88,14 @@ class HomeRecommendProductViewController : BaseViewController{
 extension HomeRecommendProductViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        ProductModel.sampleData.count
-        //return recommendProductData.count
+        //ProductModel.sampleData.count
+        return recommendProductData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendProductCollectionViewCell.cellIdentifier, for: indexPath) as? RecommendProductCollectionViewCell else { return UICollectionViewCell() }
-        cell.setData(ProductModel.sampleData[indexPath.row])
-        //cell.setData(recommendProductData[indexPath.row])
+        //cell.setData(ProductModel.sampleData[indexPath.row])
+        cell.setData(recommendProductData[indexPath.row])
         
         return cell
     }
@@ -102,7 +103,8 @@ extension HomeRecommendProductViewController : UICollectionViewDelegate,UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("셀 선택됨")
         let productVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
-        productVC.productId = 1
+        productVC.userID =  recommendProductData[indexPath.row].userId
+        productVC.productId = recommendProductData[indexPath.row].productId
         navigationController?.pushViewController(productVC, animated: true)
     }
 }
