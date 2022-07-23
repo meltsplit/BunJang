@@ -263,7 +263,7 @@
             <objects>
                 <viewController id="bVK-Xc-IRX" customClass="HomeTabmanViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h32-10-dDc">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="948"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="947.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="cXz-Pm-GOg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

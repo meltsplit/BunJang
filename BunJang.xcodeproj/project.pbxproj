@@ -66,6 +66,7 @@
 		877334F7288C8D02000556DD /* ConditionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877334F6288C8D02000556DD /* ConditionBottomSheet.swift */; };
 		877334FA288C9323000556DD /* HeartPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877334F9288C9323000556DD /* HeartPostManager.swift */; };
 		877334FC288C950F000556DD /* HeartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877334FB288C950F000556DD /* HeartResponse.swift */; };
+		877334FE288CAA77000556DD /* PostStartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877334FD288CAA77000556DD /* PostStartVC.swift */; };
 		877C4073288AB6A1001F4C28 /* ProductGetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4072288AB6A1001F4C28 /* ProductGetManager.swift */; };
 		877C4075288AB6AD001F4C28 /* ProductGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4074288AB6AD001F4C28 /* ProductGetResponse.swift */; };
 		877C4078288AC139001F4C28 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4077288AC139001F4C28 /* SignUpModel.swift */; };
@@ -175,6 +176,7 @@
 		877334F6288C8D02000556DD /* ConditionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionBottomSheet.swift; sourceTree = "<group>"; };
 		877334F9288C9323000556DD /* HeartPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartPostManager.swift; sourceTree = "<group>"; };
 		877334FB288C950F000556DD /* HeartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartResponse.swift; sourceTree = "<group>"; };
+		877334FD288CAA77000556DD /* PostStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStartVC.swift; sourceTree = "<group>"; };
 		877C4072288AB6A1001F4C28 /* ProductGetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGetManager.swift; sourceTree = "<group>"; };
 		877C4074288AB6AD001F4C28 /* ProductGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGetResponse.swift; sourceTree = "<group>"; };
 		877C4077288AC139001F4C28 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 				877F20352885A01F00F1EEA9 /* Option */,
 				87442BD92883F46000E7AF3A /* Category */,
 				87442BDA2883F46700E7AF3A /* Tag */,
+				877334FD288CAA77000556DD /* PostStartVC.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -978,6 +981,7 @@
 				87701977288266EF0003441E /* IndicatorView.swift in Sources */,
 				8770199F288273730003441E /* UITableViewCell+.swift in Sources */,
 				877C89752888156300C79ADC /* FirstCategoryResponse.swift in Sources */,
+				877334FE288CAA77000556DD /* PostStartVC.swift in Sources */,
 				877334FA288C9323000556DD /* HeartPostManager.swift in Sources */,
 				87442BCF28833A0C00E7AF3A /* HomeRecommendProductViewController.swift in Sources */,
 				877C89892889E74000C79ADC /* Int+.swift in Sources */,

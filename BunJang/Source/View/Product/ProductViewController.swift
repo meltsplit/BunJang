@@ -94,7 +94,7 @@ class ProductViewController : BaseViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        showNavBar()
         showTabBar()
     }
     
@@ -312,7 +312,7 @@ class ProductViewController : BaseViewController{
         changeProductVC.priceData = productData?.price
         changeProductVC.contentsData = productData?.contents
         
-        changeProductVC.modalPresentationStyle = .fullScreen
+        changeProductVC.modalPresentationStyle = .overFullScreen
         
         
         present(changeProductVC, animated: true)

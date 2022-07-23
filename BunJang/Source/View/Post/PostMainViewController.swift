@@ -235,7 +235,7 @@ class PostMainViewController : BaseViewController {
     //MARK: - IBAction
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
-        if (isPatch) { print("popopopopopopop");popVC() } else {
+        if (isPatch) { dismiss(animated: true) } else {
         let storyboard = UIStoryboard(name: "Tab", bundle: nil)
         
         guard let BaseVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
