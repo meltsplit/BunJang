@@ -164,15 +164,7 @@ extension HomeMainViewController : UICollectionViewDelegateFlowLayout{
 extension HomeMainViewController : UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
-//            homeScrollView.isScrollEnabled = false
-//
-//            //0.4 초 뒤에 바로 해제
-//            Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { timer in
-//
-//                self.homeScrollView.isScrollEnabled = true
-//            }
             NotificationCenter.default.post(name: NSNotification.Name("getRecommend"), object: page)
-            print(scrollView.contentOffset.y)
         }
     }
 }

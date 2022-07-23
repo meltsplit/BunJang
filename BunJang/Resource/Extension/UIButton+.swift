@@ -9,6 +9,17 @@ import UIKit
 
 // MARK: UIButton 내에 Indicator 표시
 extension UIButton {
+    
+    var condition : Condition {
+        switch self.tag{
+        case 0: return .sell
+        case 1: return .reservation
+        case 2: return .soldOut
+        default: return .sell
+        }
+           
+    }
+    
     func showIndicator() {
         let indicator = UIActivityIndicatorView()
         let buttonHeight = self.bounds.size.height

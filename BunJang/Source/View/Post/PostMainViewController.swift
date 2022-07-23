@@ -261,13 +261,22 @@ class PostMainViewController : BaseViewController {
     @IBAction func postCompleteBtnPressed(_ sender: UIButton) {
         do {
             postData = try checkValidPostData(images: imagesData, title: titleData, category: categoryData, tag: tagData, price: priceData, contents: contentsData)
-            print(postData)
             
             ProductPostManager.shared.postProduct(product: postData!) { (response) in
                 switch response {
+                
                 case .success(let data) :
-                    let result = data as! ProductPostResult
-                    print("상품 ID: \(result.productId)")
+                    // MARK: - 상품 등록 성공!!
+                    let responseData = data as! ProductPostResponse
+                    
+                    print("상품 ID: \(responseData.result.productId) 등록 완료.")
+                    
+                    guard let BaseVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
+                    
+                    BaseVC.modalPresentationStyle = .fullScreen
+                    self.present(BaseVC, animated: false)
+                    
+                    
                     
                 case .requestErr(let msg):
                     if let message = msg as? String {

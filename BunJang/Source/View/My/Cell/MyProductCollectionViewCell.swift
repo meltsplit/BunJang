@@ -9,7 +9,7 @@ import UIKit
 
 class MyProductCollectionViewCell: UICollectionViewCell {
     
-    //MARK: - Properties
+    //MARK: - IBOutlet
     
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var bgPayImageView: UIImageView!
@@ -18,6 +18,13 @@ class MyProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var quickSellBtn: UIButton!
+    
+    //MARK: - Properties
+    
+    var userID : Int?
+    var productID : Int?
+    
+    
     
     //MARK: - Life Cycle
     
@@ -31,7 +38,10 @@ class MyProductCollectionViewCell: UICollectionViewCell {
     //MARK: - Custom Method
     
     func setData(_ data : MyProductGetResult){
-        productImageView.load(urlString: data.productImgs[0].productImgUrl)
+        self.productID = data.productId
+        self.userID = data.userId
+        
+                productImageView.load(urlString: data.productImgs[0].productImgUrl)
         updatedAtLabel.text = data.updatedAt
         titleLabel.text = data.title
         priceLabel.text = makePriceString(data.price)

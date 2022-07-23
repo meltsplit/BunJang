@@ -20,6 +20,8 @@ struct MyProductGetResponse : Codable {
 struct MyProductGetResult : Codable {
     
     let productImgs: [ProductImgs]
+    let productId : Int
+    let userId
     let price: Int
     let pay: Bool
     let title: String

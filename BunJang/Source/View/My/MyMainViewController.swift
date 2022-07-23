@@ -15,6 +15,16 @@ class MyMainViewController : BaseViewController{
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
     
+    @IBOutlet weak var heartLabel: UILabel!
+    @IBOutlet weak var reviewLabel: UILabel!
+    @IBOutlet weak var followerLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    
+    
+    @IBOutlet var conditionBtnList: [UIButton]!
+    
+    @IBOutlet weak var productCountLabel: UILabel!
+    
     @IBOutlet weak var myProductCollectionView: UICollectionView!
     
     //MARK: - Properties
@@ -32,6 +42,7 @@ class MyMainViewController : BaseViewController{
         
         setDelegate()
         setUI()
+        getMyPage()
         getMyProduct(condition: Condition.sell)
     }
     
@@ -58,7 +69,36 @@ class MyMainViewController : BaseViewController{
     
     
     private func setUI(){
-        true
+        for btn in conditionBtnList{
+            btn.setTitleColor(.black, for: .selected)
+            btn.setTitleColor(.systemGray, for: .normal)
+            
+            }
+        
+        
+    }
+    
+    private func getMyPage(){
+        MyPageManager.shared.getMyPage {
+            switch $0 {
+            case .success(let data) :
+                let response = data as! MyPageResponse
+                self.setMyPage(response.result)
+                
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr :
+                print("pathErr")
+            case .serverErr :
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .decodeErr:
+                print("decodeError")
+            }
+        }
     }
     
     private func getMyProduct(condition: Condition){
@@ -84,16 +124,42 @@ class MyMainViewController : BaseViewController{
         }
     }
     
+    private func setMyPage(_ data: MyPageResult){
+        heartLabel.text = String(data.heartCnt)
+        reviewLabel.text = String(data.reviewCnt)
+        followerLabel.text = String(data.followerCnt)
+        followingLabel.text = String(data.followingCnt)
+    }
+    
     private func setMyProduct(_ data: [MyProductGetResult]){
         myProductData = data
+        
+        productCountLabel.text = "\(data.count) 개"
         myProductCollectionView.reloadData()
         
-        myProductCollectionView.snp.makeConstraints {
+        
+        myProductCollectionView.snp.remakeConstraints {
             $0.height.equalTo((Int(collectionViewCellHeight) + Int(collectionViewLineSpacing)) * myProductData.count )
         }
     }
     
     //MARK: - IBAction
+    
+    @IBAction func conditionBtnPressed(_ sender: UIButton) {
+        
+        conditionBtnList.forEach {
+            if $0 == sender{
+                $0.isSelected = true
+                $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .heavy)
+                getMyProduct(condition: sender.condition)
+        
+            } else {
+                $0.isSelected = false
+                $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+            }
+        }
+         
+    }
     
 }
 
@@ -108,7 +174,17 @@ extension MyMainViewController : UICollectionViewDelegate,UICollectionViewDataSo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyProductCollectionViewCell.cellIdentifier, for: indexPath) as? MyProductCollectionViewCell else {return UICollectionViewCell()}
         
         cell.setData(myProductData[indexPath.row])
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("셀 선택됨")
+        let productVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+        
+        productVC.userID =  myProductData[indexPath.row].userId
+        productVC.productId = myProductData[indexPath.row].productId
+        navigationController?.pushViewController(productVC, animated: true)
     }
     
 }

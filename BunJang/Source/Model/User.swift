@@ -19,7 +19,7 @@ struct User : Codable{
     //let date : Date?
     var phoneNum : String?
     
-    var userId : Int = 0
+    var userId : String = "0"
     var jwt : String = "Default JWT Token"
     var isLogin : Bool?
     

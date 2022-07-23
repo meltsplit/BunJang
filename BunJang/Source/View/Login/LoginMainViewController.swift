@@ -72,6 +72,21 @@ class LoginMainViewController : BaseViewController{
     }
     @IBAction func appleLoginBtnPressed(_ sender: UIButton) {
         print("애플 로그인은 개발자 계정이 있어야 가능합니다.")
+        User.shared.userId = "1"
+        ProductPostManager.shared.postProduct(product: ProductPostModel(productImgs: [""], title: "123", firstCategoryId: 1, lastCategoryId: 1, tags: [""], price: 123123, contents: "123123123123123", amount: 123, isUsed: true, changeable: true, shippingFee: true, pay: true)) { (response) in
+            switch response{
+            case .success(let data):
+                print(data as! ProductPostResponse)
+            default: print("fail")
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
         
 //        let userData = User.shared
 //        SignUpManager.shared.postRegister(user: userData) { (result) in
@@ -108,7 +123,7 @@ class LoginMainViewController : BaseViewController{
         User.shared.phoneNum = "010199711712"
         User.shared.location = "강서구 마곡동"
         User.shared.jwt = Secret.jwtToken
-        User.shared.userId = 1
+        User.shared.userId = "1"
         
         changeRootViewController(mainTabVC)
     }

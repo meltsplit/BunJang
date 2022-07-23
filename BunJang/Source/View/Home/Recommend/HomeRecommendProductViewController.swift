@@ -87,12 +87,8 @@ class HomeRecommendProductViewController : BaseViewController{
     private func resizeCollectionView(){
        //let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * ProductModel.sampleData.count / 2
         let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * recommendProductData.count / 2
-        print("데이터 전송NC ")
         DataCheet.shard.height = height + 250
         NotificationCenter.default.post(name: NSNotification.Name("resize"), object: height)
-        print("높이: \(height)")
-        
-        
     }
     
     //MARK: - IBAction

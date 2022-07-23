@@ -20,7 +20,7 @@ extension MyProductGetManager{
     func getProduct(condition: Condition, completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        let url = API.userURL + "/" + condition.rawValue + "/" + String(User.shared.userId)
+        let url = API.userURL + "/" + condition.rawValue + "/" + User.shared.userId
         
         
         let header : HTTPHeaders = [

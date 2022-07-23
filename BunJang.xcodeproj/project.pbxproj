@@ -61,6 +61,8 @@
 		877019A3288274B00003441E /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877019A2288274B00003441E /* My.storyboard */; };
 		877019A52882D65B0003441E /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A42882D65B0003441E /* LoginMainViewController.swift */; };
 		877019A82882D7A00003441E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877019A72882D7A00003441E /* Image.swift */; };
+		877334EE288C39BC000556DD /* MyPageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877334ED288C39BC000556DD /* MyPageManager.swift */; };
+		877334F0288C39C7000556DD /* MyPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877334EF288C39C7000556DD /* MyPageResponse.swift */; };
 		877C4073288AB6A1001F4C28 /* ProductGetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4072288AB6A1001F4C28 /* ProductGetManager.swift */; };
 		877C4075288AB6AD001F4C28 /* ProductGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4074288AB6AD001F4C28 /* ProductGetResponse.swift */; };
 		877C4078288AC139001F4C28 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C4077288AC139001F4C28 /* SignUpModel.swift */; };
@@ -165,6 +167,8 @@
 		877019A2288274B00003441E /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
 		877019A42882D65B0003441E /* LoginMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		877019A72882D7A00003441E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		877334ED288C39BC000556DD /* MyPageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageManager.swift; sourceTree = "<group>"; };
+		877334EF288C39C7000556DD /* MyPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageResponse.swift; sourceTree = "<group>"; };
 		877C4072288AB6A1001F4C28 /* ProductGetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGetManager.swift; sourceTree = "<group>"; };
 		877C4074288AB6AD001F4C28 /* ProductGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGetResponse.swift; sourceTree = "<group>"; };
 		877C4077288AC139001F4C28 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
@@ -611,6 +615,8 @@
 		877C4085288B1432001F4C28 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				877334ED288C39BC000556DD /* MyPageManager.swift */,
+				877334EF288C39C7000556DD /* MyPageResponse.swift */,
 				877C4086288B1596001F4C28 /* MyProductGetManager.swift */,
 				877C4088288B15A5001F4C28 /* MyProductGetResponse.swift */,
 			);
@@ -889,6 +895,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877334F0288C39C7000556DD /* MyPageResponse.swift in Sources */,
 				87442BCD2883389900E7AF3A /* HomeTabManViewController.swift in Sources */,
 				877F205F2887AE5300F1EEA9 /* Cell.swift in Sources */,
 				87442BC62883035900E7AF3A /* BaseTabBarController.swift in Sources */,
@@ -925,6 +932,7 @@
 				87442C0128845BF400E7AF3A /* ReviewTableViewCell.swift in Sources */,
 				87442BB62882EB9E00E7AF3A /* HomeMainViewController.swift in Sources */,
 				87701979288266FF0003441E /* Device.swift in Sources */,
+				877334EE288C39BC000556DD /* MyPageManager.swift in Sources */,
 				877C4078288AC139001F4C28 /* SignUpModel.swift in Sources */,
 				87442BBD2883016600E7AF3A /* ChatMainViewController.swift in Sources */,
 				877F20462885F17D00F1EEA9 /* SecondCategoryViewController.swift in Sources */,
