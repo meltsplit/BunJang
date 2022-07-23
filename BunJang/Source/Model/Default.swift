@@ -15,6 +15,6 @@ struct Default{
     
     static var categoryDefaultImageURL = "https://drive.google.com/file/d/17pIagEFMMiCUogGydGxyIITxtVZgWndt/view?usp=sharing"
     
-    static var defaultImage = "https://en.pimg.jp/025/506/179/1/25506179.jpg"
+    static var defaultImage = "https://www.vuescript.com/wp-content/uploads/2018/11/Show-Loader-During-Image-Loading-vue-load-image.png"
     static var productImageURL = "https://img.29cm.co.kr/next-product/2022/07/18/8732d52104224bba84307166c28145c7_20220718153123.jpg?width=700"
 }

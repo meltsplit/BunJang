@@ -73,13 +73,7 @@ class LoginMainViewController : BaseViewController{
     @IBAction func appleLoginBtnPressed(_ sender: UIButton) {
         print("애플 로그인은 개발자 계정이 있어야 가능합니다.")
         User.shared.userId = "1"
-        ProductPostManager.shared.postProduct(product: ProductPostModel(productImgs: [""], title: "123", firstCategoryId: 1, lastCategoryId: 1, tags: [""], price: 123123, contents: "123123123123123", amount: 123, isUsed: true, changeable: true, shippingFee: true, pay: true)) { (response) in
-            switch response{
-            case .success(let data):
-                print(data as! ProductPostResponse)
-            default: print("fail")
-            }
-        }
+
         
         
         

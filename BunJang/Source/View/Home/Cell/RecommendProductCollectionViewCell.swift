@@ -38,7 +38,7 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
         self.productID = data.productId
         
         productImageView.makeCornerRound(radius: 14)
-        productImageView.load(urlString: "https://img.29cm.co.kr/next-product/2022/07/18/8732d52104224bba84307166c28145c7_20220718153123.jpg?width=700")
+        productImageView.load(urlString: data.productImgs[0].productImgUrl)
         priceLabel.text = makePriceString(data.price)
         titleLabel.text = data.title
         locationLabel.text = data.location

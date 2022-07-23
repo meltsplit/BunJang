@@ -8,19 +8,19 @@
 import Foundation
 import Alamofire
 
-class ProductPostManager{
-    static let shared = ProductPostManager()
+class HeartPostManager{
+    static let shared = HeartPostManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-extension ProductPostManager{
+extension HeartPostManager{
     
-    func postPatchProduct(method: HTTPMethod,product: ProductPostModel, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func pressHeart(productId : Int, status: Bool,completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        let url = API.productURL + "/" + User.shared.userId
+        let url = API.heartListURL + "/" + User.shared.userId + "/" + String(productId)
         
         
         let header : HTTPHeaders = [
@@ -29,27 +29,12 @@ extension ProductPostManager{
         ]
         
         let param : Parameters = [
-            
-            "productImgs" : product.productImgs,
-            "title" : product.title,
-            "firstCategoryId" : product.firstCategoryId,
-            "lastCategoryId" : product.lastCategoryId,
-            "tags" : product.tags,
-            "price" : product.price,
-            "contents" : product.contents,
-            "amount" : product.amount,
-            "isUsed" : product.isUsed,
-            "changeable" : product.changeable,
-            "pay" : product.pay,
-            "shippingFee" : product.shippingFee
-            
+            "status" : status
         ]
-    
-        
         
         let dataRequest = AF.request(
                                      url,
-                                     method: method,
+                                     method: .post,
                                      parameters: param,
                                      encoding: JSONEncoding.default,
                                      headers: header
@@ -63,9 +48,9 @@ extension ProductPostManager{
                 switch response.result {
                 case .success:
                     guard let statusCode = response.response?.statusCode else { return }
-                    guard let value = response.value else { return }
-                    
-                    let networkResult = self.judge(status: statusCode, data: value )
+                    guard let data = response.value else { return }
+             
+                    let networkResult = self.judge(status: statusCode, data: data )
                     
                     completion(networkResult)
                     
@@ -83,7 +68,7 @@ extension ProductPostManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(ProductPostResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(HeartPostResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .decodeErr
@@ -91,12 +76,16 @@ extension ProductPostManager{
         
         switch status{
         case 200..<300:
+            print("\(self.managerID) - 통신 성공했습니다.")
             return .success(decodedData)
         case 400..<500 :
+            print("\(self.managerID) - Request Error 발생했습니다.")
             return .requestErr(decodedData)
         case 500 :
+            print("\(self.managerID) - Server Error 발생했습니다.")
             return .serverErr
         default :
+            print("\(self.managerID) - NetWork Fail 입니다.")
             return .networkFail
             
             

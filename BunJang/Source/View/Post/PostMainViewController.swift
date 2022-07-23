@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import MaterialComponents.MaterialBottomSheet
+import Alamofire
 
 class PostMainViewController : BaseViewController {
     
@@ -75,13 +76,15 @@ class PostMainViewController : BaseViewController {
     
     
     //MARK: - Properties
+    var isPatch : Bool = false
+    var method = HTTPMethod.post
     
     var postData : ProductPostModel?
     
     var imagesData = [Default.defaultImage]
     var titleData: String?
     var categoryData: SecondCategoryResult?
-    var tagData: [String]?
+    var tagData: [String] = []
     var priceData: Int?
     var shippingFeeData = false
     var optionData = OptionModel()
@@ -89,6 +92,7 @@ class PostMainViewController : BaseViewController {
     var payData = false
     
     lazy var textViewY = contentsTextView.frame.origin.y
+    var placeHolder = "여러 장의 상품사진과 구입연도, 브랜드, 사용감, 하자 유뮤 등 구매자에게 필요한 정보를 꼭 포함해 주세요. 문의를 줄이고 더 쉽게 판매할 수 있어요.(10자 이상)"
     
     //MARK: - Life Cycle
     
@@ -98,7 +102,11 @@ class PostMainViewController : BaseViewController {
         setDelegate()
         setUI()
         
-        self.dismissKeyboardWhenTappedAround()
+        if ( isPatch ){
+            setData()
+            method = HTTPMethod.patch
+        }
+        dismissKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,6 +131,7 @@ class PostMainViewController : BaseViewController {
     }
     
     private func setUI(){
+       
         cameraView.makeCornerRound(radius: 10)
         
         registerView.layer.addBorder([.top], color: UIColor.systemGray5, width: 1)
@@ -138,12 +147,22 @@ class PostMainViewController : BaseViewController {
         registerBtn.makeCornerRound(radius: 10)
     }
     
+    private func setData(){
+        
+        self.titleTextField.text = titleData
+        showCategoryLabel()
+        showTagStackView()
+        priceTextField.text = makePriceString(priceData ?? 0)
+        contentsTextView.text = contentsData
+        contentsTextView.textColor = .black
+    }
+    
     private func showCategoryLabel(){
         
         categoryPlaceHolderLabel.isHidden = true
         
-        firstCategoryLabel.text = categoryData!.firstCategory
-        secondCategoryLabel.text = categoryData!.lastCategory
+//        firstCategoryLabel.text = categoryData!.firstCategory
+//        secondCategoryLabel.text = categoryData!.lastCategory
         
         view.addSubview(firstCategoryLabel)
         view.addSubview(rightShift)
@@ -155,11 +174,33 @@ class PostMainViewController : BaseViewController {
         categoryStackView.addArrangedSubview(secondCategoryLabel)
     }
     
+    private func showTagStackView(){
+        tagStackView.removeAllArrangedSubviews()
+        if !tagData.isEmpty{
+            for tag in tagData{
+                
+                tagStackView.addArrangedSubview(makeLabel(text: "#\(tag)", color: .black, font: .systemFont(ofSize: 16, weight: .semibold)))
+                tagStackView.addArrangedSubview(makeTagSeperateView())
+            }
+        
+        
+        } else{
+            tagStackView.addArrangedSubview(makeLabel(text: "# 태그", color: .systemGray3, font: .systemFont(ofSize: 20, weight: .bold)))
+        }
+        
+    }
+    
+    private func showOptionLabel(){
+        countLabel.text = "\(optionData.amount)개"
+        stateLabel.text = optionData.isUsed ? "중고상품" : "새상품"
+        changeLabel.text = optionData.changeable ? "교환가능" : "교환불가"
+    }
+    
     
     private func makeTagSeperateView() -> UIView{
         let view = UIView()
         view.frame.size = CGSize(width: 5, height: 7)
-        
+
         view.backgroundColor = .systemGray3
         return view
     }
@@ -194,12 +235,15 @@ class PostMainViewController : BaseViewController {
     //MARK: - IBAction
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
+        if (isPatch) { print("popopopopopopop");popVC() } else {
         let storyboard = UIStoryboard(name: "Tab", bundle: nil)
         
         guard let BaseVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
         
         BaseVC.modalPresentationStyle = .fullScreen
-        present(BaseVC, animated: false)
+            present(BaseVC, animated: false)
+            
+        }
     }
     
     @IBAction func cameraBtnPressed(_ sender: UITapGestureRecognizer) {
@@ -217,7 +261,7 @@ class PostMainViewController : BaseViewController {
         let tagVC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "PostTagViewController") as! PostTagViewController
         
         tagVC.delegate = self
-        tagVC.tagData = tagData ?? []
+        tagVC.tagData = tagData
         pushVC(tagVC)
     }
     
@@ -237,8 +281,6 @@ class PostMainViewController : BaseViewController {
         let optionBS = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "OptionBottomSheet") as! OptionBottomSheet
         
         optionBS.delegate = self
-        print(optionData)
-        print("----")
         optionBS.optionData = optionData
         
         let bottomSheet = MDCBottomSheetController(contentViewController: optionBS)
@@ -259,10 +301,15 @@ class PostMainViewController : BaseViewController {
     
     //MARK: - 최종 등록 버튼!!
     @IBAction func postCompleteBtnPressed(_ sender: UIButton) {
+        view.endEditing(true)
+        titleData = titleTextField.text
+        priceData = Int(priceTextField.text!)
+        contentsData = contentsTextView.text
+       
         do {
             postData = try checkValidPostData(images: imagesData, title: titleData, category: categoryData, tag: tagData, price: priceData, contents: contentsData)
             
-            ProductPostManager.shared.postProduct(product: postData!) { (response) in
+            ProductPostManager.shared.postPatchProduct(method: method, product: postData!) { (response) in
                 switch response {
                 
                 case .success(let data) :
@@ -279,9 +326,8 @@ class PostMainViewController : BaseViewController {
                     
                     
                 case .requestErr(let msg):
-                    if let message = msg as? String {
-                        print(message)
-                    }
+                    self.presentBottomAlert(message: msg as! String)
+                    print(msg)
                 case .decodeErr:
                     print("decodeError")
                 case .pathErr :
@@ -353,6 +399,11 @@ extension PostMainViewController : UITextFieldDelegate{
 extension PostMainViewController : UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == placeHolder{
+            textView.text = ""
+        }
+        textView.font = .systemFont(ofSize: 14, weight: .medium)
+        textView.textColor = .black
         UIView.animate(withDuration: 0.4) {
             self.contentsTextView.frame.origin.y = CGFloat(self.textViewY - 200)
         }
@@ -363,10 +414,18 @@ extension PostMainViewController : UITextViewDelegate {
             self.contentsTextView.frame.origin.y = CGFloat(self.textViewY)
         }
         
-        guard let text = textView.text else {return }
-        if !text.isEmpty {
+        guard let text = textView.text else { return }
+        if !text.isEmpty && text != placeHolder {
             contentsData = text
+        } else {
+            textView.text = placeHolder
+            textView.font = .systemFont(ofSize: 16, weight: .regular)
+            textView.textColor = .systemGray
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        true
     }
 }
 
@@ -386,22 +445,7 @@ extension PostMainViewController : optionDataDelegate,SecondCategoryDelegate,Arr
     func sendArrayString(_ data: [String]) {
         //유저가 태그 선택완료시 델리게이트로 데이터 받아옴
         tagData = data
-        tagStackView.removeAllArrangedSubviews()
-        if !tagData!.isEmpty{
-            for tag in tagData!{
-                
-                tagStackView.addArrangedSubview(makeLabel(text: "#\(tag)", color: .black, font: .systemFont(ofSize: 16, weight: .semibold)))
-                tagStackView.addArrangedSubview(makeTagSeperateView())
-            }
-        
-        
-        } else{
-            tagStackView.addArrangedSubview(makeLabel(text: "# 태그", color: .systemGray3, font: .systemFont(ofSize: 20, weight: .bold)))
-        }
-        
-            
-        
-        
+        showTagStackView()
     }
     
     
@@ -410,10 +454,8 @@ extension PostMainViewController : optionDataDelegate,SecondCategoryDelegate,Arr
     func sendData(_ data: OptionModel) {
         
         optionData = data
-
-        countLabel.text = "\(data.amount)개"
-        stateLabel.text = data.isUsed ? "중고상품" : "새상품"
-        changeLabel.text = data.changeable ? "교환가능" : "교환불가"
+        showOptionLabel()
+        
     }
     
     

@@ -376,11 +376,11 @@
                                     <constraint firstItem="Xnj-1v-Ky3" firstAttribute="top" secondItem="U50-7x-eGO" secondAttribute="top" constant="10" id="nZ7-ek-aIH"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="상품 설명 (10자 이상)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="znw-h2-a9I">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="여러 장의 상품사진과 구입연도, 브랜드, 사용감, 하자 유뮤 등 구매자에게 필요한 정보를 꼭 포함해 주세요. 문의를 줄이고 더 쉽게 판매할 수 있어요.(10자 이상)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="znw-h2-a9I">
                                 <rect key="frame" x="20" y="571.5" width="374" height="102.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>

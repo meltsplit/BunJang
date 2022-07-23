@@ -36,8 +36,15 @@ struct ProductGetResult : Codable {
     let shippingFee: Bool
     let changeable: Bool
     let contents: String
-    let lastCategoryImgUrl : String
-    let lastCategory: String
+    
+//  let firstCategoryId : Int
+//  let firstCategoryImgUrl : String
+//  let firstCategory: String
+//  let lastCategoryId : Int
+    
+    let lastCategoryImgUrl: String
+    let lastCategory : String
+    
     let tags: [Tags]
     let profileImgUrl: String
     let nickname: String
@@ -45,7 +52,8 @@ struct ProductGetResult : Codable {
     let follower: Int
     let follow: Bool
     let commentCount: Int
-
+    
+   
 }
 
 struct ProductImgs : Codable {

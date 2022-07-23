@@ -169,5 +169,18 @@ extension UIViewController {
         return numberFormatter.string(from: NSNumber(value: int))
     }
     
+    func makeButton(systemImage : String, title : String, target : Selector) -> UIButton{
+        let btn = UIButton()
+        btn.setBackgroundImage(nil, for: .normal)
+        btn.setImage(UIImage(systemName: systemImage), for: .normal)
+        btn.tintColor = .black
+        btn.setTitle(title, for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+        btn.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
+        btn.backgroundColor = .white
+        btn.addTarget(self, action: target, for: .touchUpInside)
+        return btn
+    }
+
  
 }

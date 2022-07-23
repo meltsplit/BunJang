@@ -41,8 +41,7 @@ class PostCategoryViewController : BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        showNavBar()
-        showTabBar()
+        
     }
     
     //MARK: - Custom Method

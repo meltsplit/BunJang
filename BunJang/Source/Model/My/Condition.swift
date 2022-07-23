@@ -7,7 +7,9 @@
 
 import Foundation
 enum Condition : String{
+    
 case sell = "sell"
 case reservation = "reservation"
 case soldOut = "sold-out"
+    
 }

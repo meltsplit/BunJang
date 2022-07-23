@@ -21,7 +21,7 @@ struct MyProductGetResult : Codable {
     
     let productImgs: [ProductImgs]
     let productId : Int
-    let userId
+    let userId : Int
     let price: Int
     let pay: Bool
     let title: String

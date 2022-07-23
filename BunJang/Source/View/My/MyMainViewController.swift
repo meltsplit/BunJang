@@ -15,6 +15,8 @@ class MyMainViewController : BaseViewController{
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
     
+    @IBOutlet weak var eventView: UIView!
+    
     @IBOutlet weak var heartLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var followerLabel: UILabel!
@@ -22,6 +24,7 @@ class MyMainViewController : BaseViewController{
     
     
     @IBOutlet var conditionBtnList: [UIButton]!
+    @IBOutlet var conditionLineViewList: [UIView]!
     
     @IBOutlet weak var productCountLabel: UILabel!
     
@@ -69,12 +72,19 @@ class MyMainViewController : BaseViewController{
     
     
     private func setUI(){
+        profileImageView.makeCornerRound(radius: 2)
+        eventView.makeCornerRound(radius: 10)
         for btn in conditionBtnList{
             btn.setTitleColor(.black, for: .selected)
             btn.setTitleColor(.systemGray, for: .normal)
             
             }
-        
+        conditionLineViewList[1].snp.remakeConstraints {
+            $0.height.equalTo(1)
+        }
+        conditionLineViewList[2].snp.remakeConstraints {
+            $0.height.equalTo(1)
+        }
         
     }
     
@@ -152,10 +162,17 @@ class MyMainViewController : BaseViewController{
                 $0.isSelected = true
                 $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .heavy)
                 getMyProduct(condition: sender.condition)
+                conditionLineViewList[$0.tag].backgroundColor = .black
+                conditionLineViewList[$0.tag].snp.remakeConstraints { $0.height.equalTo(2)
+                }
         
             } else {
                 $0.isSelected = false
                 $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+                conditionLineViewList[$0.tag].backgroundColor = .systemGray5
+                conditionLineViewList[$0.tag].snp.remakeConstraints { $0.height.equalTo(1)
+                    
+                }
             }
         }
          
