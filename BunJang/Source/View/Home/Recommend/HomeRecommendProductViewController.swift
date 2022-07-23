@@ -16,7 +16,7 @@ class HomeRecommendProductViewController : BaseViewController{
     //MARK: - Properties
     
     var recommendProductData : [ProductGetResult] = []
-    
+    var page = 0
     
     var collectionViewWidth = Device.width / 2 - 7
     lazy var collectionViewCellHeight = collectionViewWidth * 2.2
@@ -28,6 +28,7 @@ class HomeRecommendProductViewController : BaseViewController{
         super.viewDidLoad()
         print("CCCCCC")
         setDelegate()
+        setNotification()
         getRecommendProduct()
         resizeCollectionView()
         
@@ -38,10 +39,22 @@ class HomeRecommendProductViewController : BaseViewController{
     private func setDelegate(){
         productCollectionView.delegate = self
         productCollectionView.dataSource = self
+        
+    }
+    
+    private func setNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(getPage), name: NSNotification.Name("getRecommend"), object: nil)
+    }
+    
+    @objc private func getPage(_ notification : Notification){
+        if (recommendProductData.count / 6 == page + 1){
+            page = page + 1
+            getRecommendProduct() //전체 상품 조회 API
+        }
     }
     
     private func getRecommendProduct(){
-        RecommendProductManager.shared.getProduct(page: 0) { (response) in
+        RecommendProductManager.shared.getProduct(page: page) { (response) in
             switch response {
 
             case .success(let data) :
@@ -65,18 +78,20 @@ class HomeRecommendProductViewController : BaseViewController{
     }
     
     private func setRecommendData(_ data: [ProductGetResult]){
-        recommendProductData = data
+        recommendProductData.append(contentsOf: data)
         productCollectionView.reloadData()
         resizeCollectionView()
         
     }
     
     private func resizeCollectionView(){
-        let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * ProductModel.sampleData.count / 2
-        //let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * recommendProductData.count / 2
+       //let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * ProductModel.sampleData.count / 2
+        let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * recommendProductData.count / 2
+        print("데이터 전송NC ")
+        DataCheet.shard.height = height + 250
+        NotificationCenter.default.post(name: NSNotification.Name("resize"), object: height)
+        print("높이: \(height)")
         
-        
-        DataCheet.shard.height = height
         
     }
     
@@ -137,6 +152,8 @@ extension HomeRecommendProductViewController : UICollectionViewDelegateFlowLayou
     
     
 }
+
+//MARK: - ScrollView Delegate
 
 
 

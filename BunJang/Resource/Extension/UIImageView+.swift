@@ -8,9 +8,10 @@
 import Foundation
 import UIKit
 extension UIImageView{
+    
 func load(urlString: String){
-    let url = URL(string: urlString)
-    load(url: url!)
+    let url = URL(string: urlString) ?? URL(string: Default.defaultImage)!
+    load(url: url)
 }
 
 func load(url: URL) {

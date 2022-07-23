@@ -104,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="RRd-oB-hgo" userLabel="Home Scroll View">
-                                <rect key="frame" x="0.0" y="0.0" width="380" height="883.00000000000011"/>
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="883"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RzA-6y-pm9" userLabel="homeContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="1500"/>
@@ -185,7 +185,7 @@
                                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NMF-bL-bpw">
                                                 <rect key="frame" x="0.0" y="552.33333333333348" width="380" height="947.66666666666652"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="900" id="o5A-WU-FfY"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="o5A-WU-FfY"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="bVK-Xc-IRX" kind="embed" id="vJH-3J-gAv"/>
@@ -250,6 +250,7 @@
                     <connections>
                         <outlet property="contentView" destination="NMF-bL-bpw" id="Nqj-bp-59t"/>
                         <outlet property="eventImageSlide" destination="TSa-fD-ShZ" id="xY9-eT-raA"/>
+                        <outlet property="homeScrollView" destination="RRd-oB-hgo" id="NBb-K1-JqR"/>
                         <outlet property="menuCollectionView" destination="aSW-oz-Svg" id="6ZF-Xd-YNu"/>
                     </connections>
                 </viewController>
@@ -262,7 +263,7 @@
             <objects>
                 <viewController id="bVK-Xc-IRX" customClass="HomeTabmanViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h32-10-dDc">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="947.66666666666663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="948"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="cXz-Pm-GOg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

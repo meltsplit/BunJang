@@ -10,7 +10,8 @@ import Foundation
 struct DataCheet{
     static var shard = DataCheet()
     
-    var height = 900
+    var height = 350
+    
     
     private init() {}
 }
