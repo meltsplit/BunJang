@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol optionDataDelegate{
     
@@ -36,3 +37,9 @@ protocol IntDelegate{
     func sendInt(_ data : Int)
     
 }
+
+protocol ViewControllerDelegate{
+    func sendViewController(_ vc : UIViewController)
+}
+
+

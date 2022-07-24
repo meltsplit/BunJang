@@ -24,12 +24,38 @@
                                 <color key="textColor" name="BGJT_RedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mR1-VM-ypG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiD-Y1-Iw3" userLabel="backBtn">
+                                        <rect key="frame" x="25" y="9.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="RFW-vT-Fhd"/>
+                                            <constraint firstAttribute="height" constant="25" id="aFd-wI-xJ3"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <backgroundConfiguration key="background" image="chevron.left" catalog="system" imageContentMode="scaleAspectFit"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xiD-Y1-Iw3" firstAttribute="centerY" secondItem="mR1-VM-ypG" secondAttribute="centerY" id="FYA-wL-ftO"/>
+                                    <constraint firstItem="xiD-Y1-Iw3" firstAttribute="leading" secondItem="mR1-VM-ypG" secondAttribute="leading" constant="25" id="LrP-13-56b"/>
+                                    <constraint firstAttribute="height" constant="44" id="flu-yE-MpC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mR1-VM-ypG" secondAttribute="trailing" id="E46-E1-z43"/>
                             <constraint firstItem="iG5-mx-cA6" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="GEv-dR-sms"/>
                             <constraint firstItem="iG5-mx-cA6" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Qj3-er-3PO"/>
+                            <constraint firstItem="mR1-VM-ypG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="c53-yH-dZf"/>
+                            <constraint firstItem="mR1-VM-ypG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ibi-Ec-YIZ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,6 +65,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <namedColor name="BGJT_RedColor">
             <color red="0.84313725490196079" green="0.1803921568627451" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

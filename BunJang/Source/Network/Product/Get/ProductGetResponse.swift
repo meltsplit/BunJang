@@ -37,11 +37,10 @@ struct ProductGetResult : Codable {
     let changeable: Bool
     let contents: String
     
-//  let firstCategoryId : Int
-//  let firstCategoryImgUrl : String
-//  let firstCategory: String
-//  let lastCategoryId : Int
-    
+    let firstCategoryId : Int
+    let firstCategoryImgUrl : String
+    let firstCategory: String
+    let lastCategoryId : Int
     let lastCategoryImgUrl: String
     let lastCategory : String
     
@@ -53,6 +52,7 @@ struct ProductGetResult : Codable {
     let follow: Bool
     let commentCount: Int
     
+    let heart : Bool
    
 }
 

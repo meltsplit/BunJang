@@ -72,7 +72,7 @@ class LoginMainViewController : BaseViewController{
     }
     @IBAction func appleLoginBtnPressed(_ sender: UIButton) {
         print("애플 로그인은 개발자 계정이 있어야 가능합니다.")
-       
+       presentBottomAlert(message: "애플 로그인은 개발자 계정이 있어야 가능합니다.")
 
         
         
@@ -116,8 +116,8 @@ class LoginMainViewController : BaseViewController{
         User.shared.nickname = "파이내쁠"
         User.shared.phoneNum = "010199711712"
         User.shared.location = "강서구 마곡동"
-        User.shared.jwt = Secret.jwtToken2
-        User.shared.userId = "2"
+        User.shared.jwt = Secret.jwtToken1
+        User.shared.userId = "1"
         
         changeRootViewController(mainTabVC)
     }

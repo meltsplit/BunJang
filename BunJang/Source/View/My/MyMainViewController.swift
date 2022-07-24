@@ -112,7 +112,7 @@ class MyMainViewController : BaseViewController{
     }
     
     private func getMyProduct(condition: Condition){
-        MyProductGetManager.shared.getProduct( condition: condition ) { (response) in
+        MyProductGetManager.shared.getProduct(userID: User.shared.userId ,condition: condition ) { (response) in
             switch response {
             case .success(let data) :
                 let responseData = data as! MyProductGetResponse
@@ -135,10 +135,12 @@ class MyMainViewController : BaseViewController{
     }
     
     private func setMyPage(_ data: MyPageResult){
+        
         heartLabel.text = String(data.heartCnt)
         reviewLabel.text = String(data.reviewCnt)
         followerLabel.text = String(data.followerCnt)
         followingLabel.text = String(data.followingCnt)
+        
     }
     
     private func setMyProduct(_ data: [MyProductGetResult]){

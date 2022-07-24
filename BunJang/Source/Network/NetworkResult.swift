@@ -23,7 +23,7 @@ enum NetworkResult<T> {
 //case .success(let data) :
 //    let responseData = data as! MyProductGetResponse
 //case .requestErr(let msg):
-//    presentBottomAlert(message: msg as! String)
+//    self.presentBottomAlert(message: msg as! String)
 //case .pathErr :
 //    print("pathErr")
 //case .serverErr :

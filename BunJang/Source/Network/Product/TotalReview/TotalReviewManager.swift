@@ -1,34 +1,31 @@
 //
-//  productPostManager.swift
+//  TotalReviewResponse.swift
 //  BunJang
 //
-//  Created by 장석우 on 2022/07/22.
+//  Created by 장석우 on 2022/07/24.
 //
 
 import Foundation
 import Alamofire
 
-class MyProductGetManager{
-    static let shared = MyProductGetManager()
+class TotalReviewManager{
+    static let shared = TotalReviewManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-extension MyProductGetManager{
+extension TotalReviewManager{
     
-    func getProduct(userID : String,condition: Condition, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getProduct(productUserId : Int,completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        let url = API.userURL + "/" + condition.rawValue + "/" + userID
+        let url = API.reviewURL + "/" + String(productUserId)
         
         
         let header : HTTPHeaders = [
-            //"Content-Type":"application/json"
-            //"X-ACCESS-TOKEN": User.shared.jwt
+            
         ]
-        
-        
         
         let dataRequest = AF.request(
                                      url,
@@ -65,7 +62,7 @@ extension MyProductGetManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(MyProductGetResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(TotalReviewResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .decodeErr

@@ -163,8 +163,10 @@ extension HomeMainViewController : UICollectionViewDelegateFlowLayout{
 
 extension HomeMainViewController : UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
-            NotificationCenter.default.post(name: NSNotification.Name("getRecommend"), object: page)
+        if scrollView == homeScrollView{
+            if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+                NotificationCenter.default.post(name: NSNotification.Name("getRecommend"), object: page)
+            }
         }
     }
 }

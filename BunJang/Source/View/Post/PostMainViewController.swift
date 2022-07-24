@@ -161,8 +161,8 @@ class PostMainViewController : BaseViewController {
         
         categoryPlaceHolderLabel.isHidden = true
         
-//        firstCategoryLabel.text = categoryData!.firstCategory
-//        secondCategoryLabel.text = categoryData!.lastCategory
+        firstCategoryLabel.text = categoryData!.firstCategory
+        secondCategoryLabel.text = categoryData!.lastCategory
         
         view.addSubview(firstCategoryLabel)
         view.addSubview(rightShift)

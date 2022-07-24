@@ -9,9 +9,9 @@ import Foundation
 
 struct API{
     
-    static let base1URL = "http://221.153.137.164:9000"
+    static let baseURL = "http://221.153.137.164:9000"
     static let domainURL = "http://njeat.shop:9000"
-    static let baseURL = "http://13.209.204.136:9000"
+    static let base1URL = "http://13.209.204.136:9000"
     
     static let signUpURL = baseURL + "/app/users/sign-up"
     static let userURL = baseURL + "/app/users"
@@ -32,5 +32,6 @@ struct API{
     
     static let myPageURL = userURL + "/my-page"
     static let heartListURL = userURL + "/heart-list"
+    static let reviewURL = userURL + "/shop/review"
 }
 
