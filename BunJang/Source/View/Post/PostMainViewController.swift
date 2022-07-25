@@ -303,12 +303,13 @@ class PostMainViewController : BaseViewController {
     @IBAction func postCompleteBtnPressed(_ sender: UIButton) {
         view.endEditing(true)
         titleData = titleTextField.text
-        priceData = Int(priceTextField.text!)
+        //priceData = Int(priceTextField.text!)
         contentsData = contentsTextView.text
        
         do {
+            print("여기 가격은 \(priceData)")
             postData = try checkValidPostData(images: imagesData, title: titleData, category: categoryData, tag: tagData, price: priceData, contents: contentsData)
-            
+            print("post 가격은 \(postData?.price)")
             ProductPostManager.shared.postPatchProduct(method: method, product: postData!) { (response) in
                 switch response {
                 
@@ -384,8 +385,9 @@ extension PostMainViewController : UITextFieldDelegate{
                 wonLabel.textColor = .systemGray3
                 priceLine.backgroundColor = .systemGray5
                 
+                print("가격이 얼마노 \(text)")
                 priceData = !text.isEmpty ? Int(text) ?? 0 : nil
-                
+                print("가격이 얼마노 \(priceData)")
             default: print("")
             }
         

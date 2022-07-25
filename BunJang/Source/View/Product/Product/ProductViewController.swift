@@ -58,16 +58,28 @@ class ProductViewController : BaseViewController{
     @IBOutlet weak var purchaseBtn: UIButton!
     
     
+    @IBOutlet weak var userProductCountLabel: UILabel!
+    @IBOutlet weak var userTotalReviewCountLabel: UILabel!
+    
+    @IBOutlet weak var userTotalReviewTableView: UITableView!
+    @IBOutlet weak var userProductsCollectionView: UICollectionView!
+    
+    
+    
     //MARK: - Properties
     
     var productId : Int?
     var userID : Int?
-    var myProduct : Bool?
+    var myProduct : Bool = false
     
     var productData : ProductGetResult?
-    
+    var userProductsData : [MyProductGetResult] = []
+    var totalReviewData : [TotalReviewResult] = []
     var productImageList : [AlamofireSource] = []
-    var testImageList = [AlamofireSource(urlString: "https://image.msscdn.net/images/goods_img/20191105/1214164/1214164_8_500.jpg?t=20220311170314")]
+    
+    var collectionViewWidth = Device.width / 3 - 40
+    lazy var collectionViewCellHeight = collectionViewWidth * 2.4
+    var collectionViewLineSpacing : CGFloat = 5
     
     //MARK: - Life Cycle
     
@@ -85,11 +97,11 @@ class ProductViewController : BaseViewController{
         hideNavBar()
         hideTabBar()
         
-        if productId != nil{
-            getProduct()
-        } else{
-           presentBottomAlert(message: "불러올 상품이 없습니다.")
-        }
+        
+        getProduct()
+        getUserProducts()
+        getTotalReview()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -101,7 +113,14 @@ class ProductViewController : BaseViewController{
     //MARK: - Custom Method
     
     private func setDelegate(){
-        true
+        
+        let productXib = UINib(nibName: String(describing: ProductsCollectionViewCell.self), bundle: nil)
+        userProductsCollectionView.register(productXib, forCellWithReuseIdentifier: ProductsCollectionViewCell.cellIdentifier)
+        
+        userTotalReviewTableView.delegate = self
+        userTotalReviewTableView.dataSource = self
+        userProductsCollectionView.delegate = self
+        userProductsCollectionView.dataSource = self
     }
     
     
@@ -130,7 +149,7 @@ class ProductViewController : BaseViewController{
         }
     }
     
-    private func setMyProductUI(){
+    func setMyProductUI(){
         followBtn.isHidden = true
         
         payView.snp.remakeConstraints {
@@ -153,31 +172,8 @@ class ProductViewController : BaseViewController{
     }
     
         
-    private func getProduct(){
-        
-        ProductGetManager.shared.getProduct(productId: productId!) { (response) in
-            switch response {
-            case .success(let data) :
-                let responseData = data as! ProductGetResponse
-                self.setProduct(responseData.result)
-                
-            case .requestErr(let msg):
-                if let message = msg as? String {
-                    print(message)
-                }
-            case .pathErr :
-                print("pathErr")
-            case .decodeErr:
-                print("decodeError")
-            case .serverErr :
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
-    }
-    
-    private func setProduct(_ data: ProductGetResult){
+       
+    func setProduct(_ data: ProductGetResult){
         
         productData = data
         productImageList = []
@@ -195,15 +191,30 @@ class ProductViewController : BaseViewController{
         self.shippingFeeLabel.text = data.shippingFee ? "배송비포함" : "배송비별도"
         self.changeableLabel.text = data.changeable ? "교환가능" : "교환불가"
         self.contentsLabel.text = data.contents
+        if !myProduct{
+            if data.heart{
+                wishBtn.isSelected = true
+                wishBtn.tintColor = Color.Red
+                // TODO: 찜 API
+            } else{
+                wishBtn.isSelected = false
+                wishBtn.tintColor = .lightGray
+            }
+        }
+        print("상품 조회 ㅍㅊ")
+        print("UserID는 : \(data.userId)")
+        print("상품 ID는 : \(data.productId)")
+        
+        
         
         self.categoryImageView.image = Image.cloth
         //self.categoryImageView.load(urlString: data.lastCategoryImgUrl)
         self.categoryLabel.text = data.lastCategory
         var i = 0
+        
         for tagView in tagViewList{
             let count = data.tags.count
             if ( i+1 <= count ){
-                print("i : \(i) count: \(count)")
                 self.tagLabelList[i].text = "#\(data.tags[i].tagContents)"
                 
             } else{
@@ -214,7 +225,7 @@ class ProductViewController : BaseViewController{
         
         self.profileImageView.load(urlString: data.profileImgUrl)
         self.nicknameLabel.text = data.nickname
-        //self.starLabel.text = String(data.star!)
+        self.starLabel.text = String(data.star)
         self.followerLabel.text = String(data.follower)
         
         if data.follow {
@@ -228,31 +239,57 @@ class ProductViewController : BaseViewController{
         for image in self.productImageSlide.slideshowItems {
             image.imageView.contentMode = .scaleAspectFill
         }
-                                                              
+        
+       
+    }
+    
+    
+    
+    func setUserProduct(_ data : [MyProductGetResult]){
+        userProductCountLabel.text = String(data.count)
+        userProductsData = data
+        userProductsCollectionView.reloadData()
         
     }
     
-    private func postHeart(){
-        HeartPostManager.shared.pressHeart(productId: productId!, status: wishBtn.isSelected) { (response) in
-            switch response {
+    
+    func setTotalReview(_ data : [TotalReviewResult]){
+        userTotalReviewCountLabel.text = String(data.count)
+        totalReviewData = data
+        userTotalReviewTableView.reloadData()
+    }
+    
+    
+    func resizeCollectionView(){
 
-            case .success(let data) :
-                let responseData = data as! HeartPostResponse
-            case .requestErr(let msg):
-                self.presentBottomAlert(message: msg as! String)
-            case .pathErr :
-                print("pathErr")
-            case .serverErr :
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            case .decodeErr:
-                print("decodeError")
-            }
+        var height = 0
+        if userProductsData.count > 3 {
+            print(collectionViewCellHeight)
+            height = Int(collectionViewCellHeight * 2 + collectionViewLineSpacing * 2)} else { height = Int(collectionViewCellHeight + collectionViewLineSpacing) }
+        print(height)
+        userProductsCollectionView.snp.remakeConstraints {
+            $0.height.equalTo(height)
         }
     }
     
+    func resizeTableView(){
+        var height = 120
+        switch totalReviewData.count{
+        case 0 : break
+        case 1: break
+        case 2: height = height * 2
+        case 3: height = height * 3
+        default: height = height * 3
+        }
+        
+        userTotalReviewTableView.snp.remakeConstraints {
+            $0.height.equalTo(height)
+        }
+    }
+    
+    
     //MARK: - IBAction
+    
     @IBAction func backBtnPressed(_ sender: UIButton) { popVC() }
     
     @IBAction func followBtnPressed(_ sender: UIButton) {
@@ -271,6 +308,9 @@ class ProductViewController : BaseViewController{
     }
     
     @IBAction func showTotalCommentBtnPressed(_ sender: UIButton) {
+        let totalReviewVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "TotalReviewViewController") as! TotalReviewViewController
+        totalReviewVC.productUserId = productData?.userId
+        pushVC(totalReviewVC)
         
     }
     
@@ -285,7 +325,7 @@ class ProductViewController : BaseViewController{
         }
         print("isSelected \(wishBtn.isSelected)")
         postHeart()
-        getProduct()
+       
         
     }
     
@@ -304,7 +344,7 @@ class ProductViewController : BaseViewController{
         productData?.productImgs.forEach({ changeProductVC.imagesData.append($0.productImgUrl) })
         
         changeProductVC.titleData = productData?.title
-//        changeProductVC.categoryData = SecondCategoryResult(firstCategory: productData!.firstCategory, firstCategoryId: productData!.firstCategoryId, firstCategoryImgUrl: productData!.firstCategoryImgUrl, lastCategory: productData!.lastCategory, lastCategoryId: productData!.lastCategoryId, lastCategoryImgUrl: productData!.firstCategoryImgUrl)
+        changeProductVC.categoryData = SecondCategoryResult(firstCategory: productData!.firstCategory, firstCategoryId: productData!.firstCategoryId, firstCategoryImgUrl: productData!.firstCategoryImgUrl, lastCategory: productData!.lastCategory, lastCategoryId: productData!.lastCategoryId, lastCategoryImgUrl: productData!.firstCategoryImgUrl)
 //        
         productData?.tags.forEach({ changeProductVC.tagData.append($0.tagContents) })
         
@@ -334,7 +374,56 @@ class ProductViewController : BaseViewController{
     }
 }
 
-extension ProductViewController {
+extension ProductViewController :UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch totalReviewData.count{
+        case 0 : return 0
+        case 1: return 1
+        case 2: return 2
+        case 3: return 3
+        default: return 3
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewTableViewCell.cellIdentifier, for: indexPath) as? ReviewTableViewCell else { return UITableViewCell()}
+        
+        cell.setData( totalReviewData[indexPath.row] )
+        return cell
+    }
+    
     
 }
 
+extension ProductViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if userProductsData.count <= 6 { return userProductsData.count } else { return 6 }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsCollectionViewCell.cellIdentifier, for: indexPath) as? ProductsCollectionViewCell else { return UICollectionViewCell()}
+        cell.setData( userProductsData[indexPath.row] )
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let productVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+        productVC.productId = userProductsData[indexPath.row].productId
+        productVC.userID = userProductsData[indexPath.row].userId
+        pushVC(productVC)
+    }
+    
+    
+}
+
+extension ProductViewController : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: collectionViewWidth, height: collectionViewCellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return collectionViewLineSpacing
+    }
+}
