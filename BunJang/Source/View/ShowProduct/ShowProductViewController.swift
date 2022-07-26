@@ -37,6 +37,7 @@ class ShowProductViewController : BaseViewController{
     var isLastCategory = false
     var categoryId : Int?
     var page = 0
+    var keyword : String?
     
     var secondCategoryData : [SecondCategoryResult] = []
     var productsData : [ProductGetResult] = []
@@ -65,6 +66,9 @@ class ShowProductViewController : BaseViewController{
         
         hideNavBar()
         hideTabBar()
+        productsData = []
+        secondCategoryData = []
+        userProductsData = []
         
         switch show {
         case .userProduct:
@@ -92,6 +96,11 @@ class ShowProductViewController : BaseViewController{
             
         case .keywordProduct:
             print("키워드 검색 상품 조회입니다잉")
+            lastCategoryCollectionView.isHidden = true
+            categoryStackView.isHidden = true
+            filterStackView.snp.remakeConstraints {
+                $0.top.equalToSuperview().offset(20)
+            }
             getKeywordProducts()
         }
         
@@ -132,7 +141,7 @@ class ShowProductViewController : BaseViewController{
         resizeCategoryCollectionView()
         
     }
-    func setCategoryProduct(_ data : [ProductGetResult]){
+    func setProducts(_ data : [ProductGetResult]){
         
         switch show {
         case .userProduct:
@@ -152,7 +161,7 @@ class ShowProductViewController : BaseViewController{
         resizeProductsCollectionView()
     }
     
-    func setCategoryProduct(_ data : [UserProductGetResult]){
+    func setUserProduct(_ data : [UserProductGetResult]){
         
         userProductsData.append(contentsOf: data)
         productCollectionView.reloadData()
@@ -229,10 +238,6 @@ extension ShowProductViewController : UICollectionViewDelegate,UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        
-        
         
         if show == Show.userProduct{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsCollectionViewCell.cellIdentifier, for: indexPath) as! ProductsCollectionViewCell

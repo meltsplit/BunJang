@@ -175,7 +175,7 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xs-Ve-WhW">
-                                                <rect key="frame" x="10" y="482.33333333333326" width="360" height="60"/>
+                                                <rect key="frame" x="20" y="482.33333333333326" width="350" height="60"/>
                                                 <string key="text">전국의 사람과 물건이 
 다시 만나는 번개장터 입니다💞</string>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -195,7 +195,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="aSW-oz-Svg" firstAttribute="top" secondItem="TSa-fD-ShZ" secondAttribute="bottom" constant="10" id="7FN-5h-bEv"/>
-                                            <constraint firstItem="0Xs-Ve-WhW" firstAttribute="leading" secondItem="RzA-6y-pm9" secondAttribute="leading" constant="10" id="MsL-mI-32c"/>
+                                            <constraint firstItem="0Xs-Ve-WhW" firstAttribute="leading" secondItem="RzA-6y-pm9" secondAttribute="leading" constant="20" id="MsL-mI-32c"/>
                                             <constraint firstItem="TSa-fD-ShZ" firstAttribute="leading" secondItem="RzA-6y-pm9" secondAttribute="leading" id="N0z-Ut-diu"/>
                                             <constraint firstAttribute="trailing" secondItem="NMF-bL-bpw" secondAttribute="trailing" id="Rw8-B5-hiX"/>
                                             <constraint firstAttribute="trailing" secondItem="aSW-oz-Svg" secondAttribute="trailing" id="TVX-ld-wGO"/>
@@ -263,7 +263,7 @@
             <objects>
                 <viewController id="bVK-Xc-IRX" customClass="HomeTabmanViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h32-10-dDc">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="948"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="947.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urx-Ba-HBc">

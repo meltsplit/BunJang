@@ -14,7 +14,7 @@ extension ShowProductViewController {
             case .success(let data) :
                 let responseData = data as! UserProductGetResponse
                 
-                self.setCategoryProduct(responseData.result)
+                self.setUserProduct(responseData.result)
                 
             case .requestErr(let msg):
                 if let message = msg as? String {
@@ -64,7 +64,7 @@ extension ShowProductViewController {
                 
                 let responseData = data as! CategoryProductResponse
                 print("\(self.filter.rawValue)로 상품을 재조회 했습니다.")
-                self.setCategoryProduct(responseData.result)
+                self.setProducts(responseData.result)
                 
             case .requestErr(let msg):
                 print("요청에러")
@@ -81,7 +81,28 @@ extension ShowProductViewController {
     }
     
     func getKeywordProducts(){
-        
+        KeywordProductManager.shared.getProduct(keyword: keyword!, page: page, filter: filter) { response in
+            switch response {
+            
+            case .success(let data) :
+                
+                let responseData = data as! KeywordProductResponse
+                
+                print("\(self.filter.rawValue)로 상품을 재조회 했습니다.")
+                self.setProducts(responseData.result)
+                
+            case .requestErr(let msg):
+                print("요청에러")
+            case .pathErr :
+                print("pathErr")
+            case .serverErr :
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .decodeErr:
+                print("decodeError")
+            }
+        }
         
     }
     

@@ -126,6 +126,17 @@
 		8781814A288F184600E39B6F /* CategoryProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87818149288F184600E39B6F /* CategoryProductResponse.swift */; };
 		8781814C2890099F00E39B6F /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781814B2890099F00E39B6F /* Show.swift */; };
 		87818151289015E100E39B6F /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87818150289015E100E39B6F /* Type.swift */; };
+		87818153289061FE00E39B6F /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87818152289061FE00E39B6F /* UITextField+.swift */; };
+		878181562890642900E39B6F /* RecentSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878181552890642900E39B6F /* RecentSearchCollectionViewCell.swift */; };
+		87818158289064E700E39B6F /* RecentSearchManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87818157289064E700E39B6F /* RecentSearchManger.swift */; };
+		8781815B2890659500E39B6F /* RecentSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781815A2890659500E39B6F /* RecentSearchResponse.swift */; };
+		8781815D2890691900E39B6F /* HotSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781815C2890691900E39B6F /* HotSearchCollectionViewCell.swift */; };
+		8781815F2890699C00E39B6F /* HotSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781815E2890699C00E39B6F /* HotSearchManager.swift */; };
+		87818161289069A600E39B6F /* HotSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87818160289069A600E39B6F /* HotSearchResponse.swift */; };
+		8781816328906D9900E39B6F /* DeleteRecentSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781816228906D9900E39B6F /* DeleteRecentSearchManager.swift */; };
+		8781816528906DB000E39B6F /* DeleteRecentSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781816428906DB000E39B6F /* DeleteRecentSearchResponse.swift */; };
+		878181672890739B00E39B6F /* KeywordProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878181662890739B00E39B6F /* KeywordProductManager.swift */; };
+		87818169289073AA00E39B6F /* KeywordProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87818168289073AA00E39B6F /* KeywordProductResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -251,6 +262,17 @@
 		87818149288F184600E39B6F /* CategoryProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProductResponse.swift; sourceTree = "<group>"; };
 		8781814B2890099F00E39B6F /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		87818150289015E100E39B6F /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		87818152289061FE00E39B6F /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		878181552890642900E39B6F /* RecentSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		87818157289064E700E39B6F /* RecentSearchManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchManger.swift; sourceTree = "<group>"; };
+		8781815A2890659500E39B6F /* RecentSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchResponse.swift; sourceTree = "<group>"; };
+		8781815C2890691900E39B6F /* HotSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		8781815E2890699C00E39B6F /* HotSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSearchManager.swift; sourceTree = "<group>"; };
+		87818160289069A600E39B6F /* HotSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSearchResponse.swift; sourceTree = "<group>"; };
+		8781816228906D9900E39B6F /* DeleteRecentSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRecentSearchManager.swift; sourceTree = "<group>"; };
+		8781816428906DB000E39B6F /* DeleteRecentSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRecentSearchResponse.swift; sourceTree = "<group>"; };
+		878181662890739B00E39B6F /* KeywordProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordProductManager.swift; sourceTree = "<group>"; };
+		87818168289073AA00E39B6F /* KeywordProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordProductResponse.swift; sourceTree = "<group>"; };
 		B78BAAEF7C1078C23C4ED23D /* Pods-BunJang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.release.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -287,6 +309,7 @@
 		87442BC0288301FA00E7AF3A /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				878181542890638000E39B6F /* Cell */,
 				87442BC12883020C00E7AF3A /* Search.storyboard */,
 				87442BC32883021800E7AF3A /* SearchMainViewController.swift */,
 			);
@@ -370,6 +393,7 @@
 				877C89712888153F00C79ADC /* Category */,
 				87442BF52884346A00E7AF3A /* Product */,
 				8781814D28900FF500E39B6F /* Products */,
+				87818159289064EC00E39B6F /* Search */,
 				877C4085288B1432001F4C28 /* My */,
 			);
 			path = Network;
@@ -432,8 +456,8 @@
 		87442BF8288434FA00E7AF3A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				877334F3288C890A000556DD /* Enum */,
 				877019632882651E0003441E /* Assets.xcassets */,
+				877334F3288C890A000556DD /* Enum */,
 				877C898C2889EF7000C79ADC /* Error */,
 				8770196F288266950003441E /* Util */,
 				87442BF92884352300E7AF3A /* Protocol */,
@@ -623,6 +647,7 @@
 				87442BDF288414B700E7AF3A /* CALayer+.swift */,
 				877C89862889DCB500C79ADC /* UIStackView+.swift */,
 				877C4079288AD73E001F4C28 /* UIImageView+.swift */,
+				87818152289061FE00E39B6F /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -928,8 +953,32 @@
 		8781814F2890101D00E39B6F /* Keyword */ = {
 			isa = PBXGroup;
 			children = (
+				878181662890739B00E39B6F /* KeywordProductManager.swift */,
+				87818168289073AA00E39B6F /* KeywordProductResponse.swift */,
 			);
 			path = Keyword;
+			sourceTree = "<group>";
+		};
+		878181542890638000E39B6F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				878181552890642900E39B6F /* RecentSearchCollectionViewCell.swift */,
+				8781815C2890691900E39B6F /* HotSearchCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		87818159289064EC00E39B6F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				87818157289064E700E39B6F /* RecentSearchManger.swift */,
+				8781815A2890659500E39B6F /* RecentSearchResponse.swift */,
+				8781815E2890699C00E39B6F /* HotSearchManager.swift */,
+				87818160289069A600E39B6F /* HotSearchResponse.swift */,
+				8781816228906D9900E39B6F /* DeleteRecentSearchManager.swift */,
+				8781816428906DB000E39B6F /* DeleteRecentSearchResponse.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		8AE4C1C67F71AF556431CF53 /* Frameworks */ = {
@@ -1070,6 +1119,7 @@
 				87733513288DC214000556DD /* ProductsCollectionViewCell.swift in Sources */,
 				87442BCD2883389900E7AF3A /* HomeTabManViewController.swift in Sources */,
 				877F205F2887AE5300F1EEA9 /* Cell.swift in Sources */,
+				87818158289064E700E39B6F /* RecentSearchManger.swift in Sources */,
 				87442BC62883035900E7AF3A /* BaseTabBarController.swift in Sources */,
 				87442BBB2883014900E7AF3A /* PostMainViewController.swift in Sources */,
 				877F20442885EBF900F1EEA9 /* Segue.swift in Sources */,
@@ -1099,9 +1149,13 @@
 				877C407A288AD73E001F4C28 /* UIImageView+.swift in Sources */,
 				877C89872889DCB500C79ADC /* UIStackView+.swift in Sources */,
 				8770195B2882651D0003441E /* AppDelegate.swift in Sources */,
+				8781815D2890691900E39B6F /* HotSearchCollectionViewCell.swift in Sources */,
+				878181672890739B00E39B6F /* KeywordProductManager.swift in Sources */,
 				877C408F288B2E1C001F4C28 /* RecommendProductManager.swift in Sources */,
 				877C4087288B1596001F4C28 /* UserProductGetManager.swift in Sources */,
+				87818161289069A600E39B6F /* HotSearchResponse.swift in Sources */,
 				877C408C288B17A6001F4C28 /* Condition.swift in Sources */,
+				878181562890642900E39B6F /* RecentSearchCollectionViewCell.swift in Sources */,
 				87733525288F0E73000556DD /* FilterBottomSheet.swift in Sources */,
 				8770198728826A4B0003441E /* String+.swift in Sources */,
 				877019A52882D65B0003441E /* LoginMainViewController.swift in Sources */,
@@ -1109,6 +1163,7 @@
 				87442BB62882EB9E00E7AF3A /* HomeMainViewController.swift in Sources */,
 				87701979288266FF0003441E /* Device.swift in Sources */,
 				877334EE288C39BC000556DD /* MyPageManager.swift in Sources */,
+				8781816328906D9900E39B6F /* DeleteRecentSearchManager.swift in Sources */,
 				87818148288F16FE00E39B6F /* CategoryProductManager.swift in Sources */,
 				877C4078288AC139001F4C28 /* SignUpModel.swift in Sources */,
 				87442BBD2883016600E7AF3A /* ChatMainViewController.swift in Sources */,
@@ -1117,6 +1172,7 @@
 				877C8981288893E900C79ADC /* TagCollectionViewCell.swift in Sources */,
 				877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
+				87818153289061FE00E39B6F /* UITextField+.swift in Sources */,
 				877C4073288AB6A1001F4C28 /* ProductGetManager.swift in Sources */,
 				87442BFD28844D8900E7AF3A /* CategoryTagCollectionViewCell.swift in Sources */,
 				877C898B2889EF6D00C79ADC /* Error.swift in Sources */,
@@ -1126,6 +1182,7 @@
 				87442BE0288414B700E7AF3A /* CALayer+.swift in Sources */,
 				87442BB42882E6B400E7AF3A /* LoginViewController.swift in Sources */,
 				87442BEF2884301E00E7AF3A /* ProductViewController.swift in Sources */,
+				8781815B2890659500E39B6F /* RecentSearchResponse.swift in Sources */,
 				87701983288269E70003441E /* BaseViewController.swift in Sources */,
 				87701977288266EF0003441E /* IndicatorView.swift in Sources */,
 				8770199F288273730003441E /* UITableViewCell+.swift in Sources */,
@@ -1142,6 +1199,7 @@
 				877C4089288B15A5001F4C28 /* UserProductGetResponse.swift in Sources */,
 				87733510288D7183000556DD /* TotalReviewResponse.swift in Sources */,
 				87442BE328841EC100E7AF3A /* BannerManager.swift in Sources */,
+				8781816528906DB000E39B6F /* DeleteRecentSearchResponse.swift in Sources */,
 				877F20422885EB7400F1EEA9 /* CategoryTableViewCell.swift in Sources */,
 				877C896B2887CDB500C79ADC /* MenuCollectionCell.swift in Sources */,
 				8770199128826A960003441E /* UINavigationBar+.swift in Sources */,
@@ -1156,6 +1214,7 @@
 				8770198928826A590003441E /* UIColor+.swift in Sources */,
 				87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */,
 				877C4095288B4302001F4C28 /* DataCheat.swift in Sources */,
+				87818169289073AA00E39B6F /* KeywordProductResponse.swift in Sources */,
 				8770198D28826A730003441E /* UIButton+.swift in Sources */,
 				877C897B28884B8E00C79ADC /* Storyboard.swift in Sources */,
 				8773350E288D717A000556DD /* TotalReviewManager.swift in Sources */,
@@ -1168,6 +1227,7 @@
 				877C4093288B3E53001F4C28 /* NotificationCenter.swift in Sources */,
 				87442BDC2883F48F00E7AF3A /* PostCategoryViewController.swift in Sources */,
 				877C898F288A009200C79ADC /* productPostManager.swift in Sources */,
+				8781815F2890699C00E39B6F /* HotSearchManager.swift in Sources */,
 				87442BB22882E5A300E7AF3A /* User.swift in Sources */,
 				877F205128874B2C00F1EEA9 /* HomeTotalMenuViewController.swift in Sources */,
 			);

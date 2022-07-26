@@ -31,5 +31,8 @@ struct API{
     static let heartListURL = userURL + "/heart-list"
     static let reviewURL = userURL + "/shop/review"
     static let categoryURL = productURL + "/categories"
+    
+    static let recentSearchURL = searchURL + "/log"
+    static let hotSearchURL = searchURL + "/hot-keywords"
 }
 

@@ -8,32 +8,34 @@
 import Foundation
 import Alamofire
 
-class UserProductGetManager{
-    static let shared = UserProductGetManager()
+class KeywordProductManager{
+    static let shared = KeywordProductManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-extension UserProductGetManager{
+extension KeywordProductManager{
     
-    func getProduct(userID : Int,condition: Condition, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getProduct( keyword : String, page : Int , filter : Filter, completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        var url = API.userURL + "/" + condition.rawValue + "/\(User.shared.userId)"
-        
-        if condition == Condition.sell{
-            url = url + String(userID)
-        }
-        
+        var url = API.searchURL + "/" + User.shared.userId
+        url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN": User.shared.jwt
+        ]
+        let param : Parameters = [
+            "keyword": keyword,
+            "page": 1,
+            "type": filter.rawValue
         ]
         
         
         let dataRequest = AF.request(
                                      url,
                                      method: .get,
+                                     parameters: param,
                                      encoding: URLEncoding.default,
                                      headers: header
                                     )
@@ -66,7 +68,7 @@ extension UserProductGetManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(UserProductGetResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(KeywordProductResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .decodeErr

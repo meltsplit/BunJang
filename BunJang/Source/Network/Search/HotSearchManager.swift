@@ -8,28 +8,24 @@
 import Foundation
 import Alamofire
 
-class UserProductGetManager{
-    static let shared = UserProductGetManager()
+class HotSearchManager{
+    static let shared = HotSearchManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-extension UserProductGetManager{
+extension HotSearchManager{
     
-    func getProduct(userID : Int,condition: Condition, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getHotSearch(completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        var url = API.userURL + "/" + condition.rawValue + "/\(User.shared.userId)"
+        let url = API.hotSearchURL + "/" 
         
-        if condition == Condition.sell{
-            url = url + String(userID)
-        }
         
         let header : HTTPHeaders = [
             "X-ACCESS-TOKEN": User.shared.jwt
         ]
-        
         
         let dataRequest = AF.request(
                                      url,
@@ -66,7 +62,7 @@ extension UserProductGetManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(UserProductGetResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(HotSearchResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .decodeErr
