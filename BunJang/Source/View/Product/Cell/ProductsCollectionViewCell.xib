@@ -91,7 +91,7 @@
             <connections>
                 <outlet property="bgPayImageView" destination="dbG-as-d6Q" id="Mau-Uu-MkM"/>
                 <outlet property="heartBtn" destination="8kR-Rb-iHa" id="pb4-ff-UzB"/>
-                <outlet property="priceLabel" destination="Ls4-6G-x9D" id="Pkv-wI-gEz"/>
+                <outlet property="priceLabel" destination="UtN-ik-yee" id="Hxt-a0-zCO"/>
                 <outlet property="productImageView" destination="eKE-yt-JVx" id="pSw-OI-jx1"/>
                 <outlet property="titleLabel" destination="Ls4-6G-x9D" id="rsj-7K-61z"/>
             </connections>

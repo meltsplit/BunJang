@@ -13,6 +13,11 @@ protocol optionDataDelegate{
     func sendData(_ data : OptionModel)
 }
 
+protocol FilterDelegate{
+    
+    func sendFilter(_ data : Filter)
+}
+
 protocol FirstCategoryDelegate{
     
     func sendFirstCategory(_ data : FirstCategoryResult)
@@ -38,8 +43,11 @@ protocol IntDelegate{
     
 }
 
+
+
 protocol ViewControllerDelegate{
     func sendViewController(_ vc : UIViewController)
 }
+
 
 

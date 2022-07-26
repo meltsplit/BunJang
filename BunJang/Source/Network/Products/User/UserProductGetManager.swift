@@ -8,19 +8,19 @@
 import Foundation
 import Alamofire
 
-class MyProductGetManager{
-    static let shared = MyProductGetManager()
+class UserProductGetManager{
+    static let shared = UserProductGetManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-extension MyProductGetManager{
+extension UserProductGetManager{
     
-    func getProduct(userID : String,condition: Condition, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getProduct(userID : Int,condition: Condition, completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        let url = API.userURL + "/" + condition.rawValue + "/\(User.shared.userId)" +  "/\(userID)"
+        let url = API.userURL + "/" + condition.rawValue + "/\(User.shared.userId)" +  "/\(String(userID))"
         
         
         let header : HTTPHeaders = [
@@ -63,7 +63,7 @@ extension MyProductGetManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(MyProductGetResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(UserProductGetResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .decodeErr

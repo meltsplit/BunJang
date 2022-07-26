@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct MyProductGetResponse : Codable {
+struct UserProductGetResponse : Codable {
     
     let isSuccess : Bool
     let code : Int
     let message : String
-    let result : [MyProductGetResult]
+    let result : [UserProductGetResult]
     
 }
 
 
-struct MyProductGetResult : Codable {
+struct UserProductGetResult : Codable {
     
     let productImgs: [ProductImgs]
     let productId : Int

@@ -17,7 +17,7 @@ class CategoryProductManager{
 
 extension CategoryProductManager{
     
-    func getProducts(page : Int ,categoryId: Int, isLast : Bool,  completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getProducts(page : Int ,categoryId: Int, isLast : Bool, filter : Filter,completion: @escaping (NetworkResult<Any>) -> Void) {
         var category = ""
         
         if isLast{
@@ -38,12 +38,12 @@ extension CategoryProductManager{
         let param : Parameters = [
             
             "page" : page,
-            "type" : "recent",
+            "type" : filter.rawValue,
             category : categoryId
             
         ]
         
-        
+        print("\(filter.rawValue)로 상품 조회를 시도중입니다")
         let dataRequest = AF.request(
                                      url,
                                      method: .get,

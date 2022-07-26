@@ -37,7 +37,7 @@ class MyProductCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Custom Method
     
-    func setData(_ data : MyProductGetResult){
+    func setData(_ data : UserProductGetResult){
         self.productID = data.productId
         self.userID = data.userId
         

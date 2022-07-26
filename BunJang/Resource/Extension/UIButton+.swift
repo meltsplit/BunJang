@@ -20,6 +20,16 @@ extension UIButton {
            
     }
     
+    var filter : Filter {
+        switch self.tag{
+        case 0: return .recent
+        case 1: return .ascend
+        case 2: return .descend
+        default: return .recent
+        }
+           
+    }
+    
     func showIndicator() {
         let indicator = UIActivityIndicatorView()
         let buttonHeight = self.bounds.size.height

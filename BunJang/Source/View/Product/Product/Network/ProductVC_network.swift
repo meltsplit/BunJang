@@ -34,10 +34,10 @@ extension ProductViewController{
     }
     
     func getUserProducts(){
-        MyProductGetManager.shared.getProduct(userID: String(userID!) ,condition: Condition.sell ) { (response) in
+        UserProductGetManager.shared.getProduct(userID: userID! ,condition: Condition.sell ) { (response) in
             switch response {
             case .success(let data) :
-                let responseData = data as! MyProductGetResponse
+                let responseData = data as! UserProductGetResponse
                 self.setUserProduct(responseData.result)
                 self.resizeCollectionView()
             case .requestErr(let msg):

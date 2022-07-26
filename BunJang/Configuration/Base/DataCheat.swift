@@ -11,7 +11,7 @@ struct DataCheet{
     static var shard = DataCheet()
     
     var height = 350
-    
+    var filter = Filter.recent
     
     private init() {}
 }

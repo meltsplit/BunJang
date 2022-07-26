@@ -81,9 +81,7 @@ class LoginMainViewController : BaseViewController{
         
         UIStoryboard(name: "ShowProduct", bundle: nil)
         let categoryProductVC = UIStoryboard(name: "ShowProduct", bundle: nil).instantiateViewController(withIdentifier: "ShowProductViewController") as! ShowProductViewController
-        categoryProductVC.isCategory = true
-        categoryProductVC.isLastCategory = false
-        categoryProductVC.page = 0
+        categoryProductVC.show = Show.firstCategoryProduct
         categoryProductVC.categoryId = 1
         pushVC(categoryProductVC)
         

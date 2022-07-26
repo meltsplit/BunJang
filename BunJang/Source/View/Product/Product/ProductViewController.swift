@@ -73,7 +73,7 @@ class ProductViewController : BaseViewController{
     var myProduct : Bool = false
     
     var productData : ProductGetResult?
-    var userProductsData : [MyProductGetResult] = []
+    var userProductsData : [UserProductGetResult] = []
     var totalReviewData : [TotalReviewResult] = []
     var productImageList : [AlamofireSource] = []
     
@@ -246,7 +246,7 @@ class ProductViewController : BaseViewController{
     
     
     
-    func setUserProduct(_ data : [MyProductGetResult]){
+    func setUserProduct(_ data : [UserProductGetResult]){
         userProductCountLabel.text = String(data.count)
         userProductsData = data
         userProductsCollectionView.reloadData()
@@ -305,7 +305,11 @@ class ProductViewController : BaseViewController{
     }
     
     @IBAction func showTotalProductBtnPressed(_ sender: UIButton) {
-        
+        let userProductVC = UIStoryboard(name: "ShowProduct", bundle: nil).instantiateViewController(withIdentifier: "ShowProductViewController") as! ShowProductViewController
+        userProductVC.prevTab = false
+        userProductVC.show = Show.userProduct
+        userProductVC.userId = 1
+        pushVC(userProductVC)
     }
     
     @IBAction func showTotalCommentBtnPressed(_ sender: UIButton) {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductsCollectionViewCell: UICollectionViewCell {
 
@@ -22,14 +23,13 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     //MARK: - Properties
     
     var productId : Int?
-    var myProductGetResult : MyProductGetResult?
+    var myProductGetResult : UserProductGetResult?
     var productGetResult : ProductGetResult?
     
     //MARK: - Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         
         heartBtn.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .selected)
         heartBtn.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
@@ -39,9 +39,11 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         print("prepareFor REsuse")
-        print(productGetResult?.productId)
+        priceLabel.text = ""
+        titleLabel.text = ""
         heartBtn.isSelected = false
         heartBtn.tintColor = .white
+        heartBtn.isHidden = false
     }
     
     //MARK: - IBOutlet
@@ -78,13 +80,18 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setData(_ data: MyProductGetResult){
+    func setData(_ data: UserProductGetResult){
         myProductGetResult = data
         productId = data.productId
         
         productImageView.makeCornerRound(radius: 15)
-        productImageView.load(urlString: data.productImgs[0].productImgUrl )
-        priceLabel.text = String(data.price)
+        
+        let imageURL = URL(string: data.productImgs[0].productImgUrl)
+        productImageView.kf.indicatorType = .activity
+        productImageView.kf.setImage(with: imageURL, placeholder: nil, options: [.transition(.fade(2.0))], progressBlock: nil)
+        
+        
+        priceLabel.text = makePriceString(data.price)
         titleLabel.text = data.title
         
             
@@ -97,7 +104,8 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         
         productImageView.makeCornerRound(radius: 15)
         productImageView.load(urlString: data.productImgs[0].productImgUrl )
-        priceLabel.text = String(data.price)
+        
+        priceLabel.text = makePriceString(data.price)
         titleLabel.text = data.title
         
         if ( Int(User.shared.userId) == data.userId){

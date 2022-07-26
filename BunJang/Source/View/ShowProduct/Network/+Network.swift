@@ -8,6 +8,30 @@
 import Foundation
 extension ShowProductViewController {
     
+    func getUserProducts(){
+        UserProductGetManager.shared.getProduct(userID: userId! ,condition: Condition.sell ) { (response) in
+            switch response {
+            case .success(let data) :
+                let responseData = data as! UserProductGetResponse
+                
+                self.setCategoryProduct(responseData.result)
+                
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr :
+                print("pathErr")
+            case .serverErr :
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .decodeErr:
+                print("decodeError")
+            }
+        }
+    }
+    
     func getCategory(){
         SecondCategoryManager.shared.getSecondCategory(categoryId!) { response in
             switch response {
@@ -32,12 +56,14 @@ extension ShowProductViewController {
     }
     
     func getCategoryProducts(){
-        CategoryProductManager.shared.getProducts(page: page, categoryId: categoryId!, isLast: isLastCategory) { response in
+        CategoryProductManager.shared.getProducts(page: page, categoryId: categoryId!, isLast: isLastCategory, filter: filter) { response in
+            
             switch response {
             
             case .success(let data) :
                 
                 let responseData = data as! CategoryProductResponse
+                print("\(self.filter.rawValue)로 상품을 재조회 했습니다.")
                 self.setCategoryProduct(responseData.result)
                 
             case .requestErr(let msg):

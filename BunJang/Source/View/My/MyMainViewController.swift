@@ -36,7 +36,7 @@ class MyMainViewController : BaseViewController{
     lazy var collectionViewCellHeight = collectionViewWidth / 350 * 120
     var collectionViewLineSpacing : CGFloat = 20
     
-    var myProductData : [MyProductGetResult] = []
+    var myProductData : [UserProductGetResult] = []
     
     //MARK: - Life Cycle
     
@@ -112,10 +112,10 @@ class MyMainViewController : BaseViewController{
     }
     
     private func getMyProduct(condition: Condition){
-        MyProductGetManager.shared.getProduct(userID: User.shared.userId ,condition: condition ) { (response) in
+        UserProductGetManager.shared.getProduct(userID: Int(User.shared.userId)! ,condition: condition ) { (response) in
             switch response {
             case .success(let data) :
-                let responseData = data as! MyProductGetResponse
+                let responseData = data as! UserProductGetResponse
                 self.setMyProduct(responseData.result)
                 
             case .requestErr(let msg):
@@ -143,7 +143,7 @@ class MyMainViewController : BaseViewController{
         
     }
     
-    private func setMyProduct(_ data: [MyProductGetResult]){
+    private func setMyProduct(_ data: [UserProductGetResult]){
         myProductData = data
         
         productCountLabel.text = "\(data.count) 개"
