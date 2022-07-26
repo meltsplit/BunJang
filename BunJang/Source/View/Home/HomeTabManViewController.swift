@@ -12,6 +12,7 @@ import Pageboy
 class HomeTabmanViewController : TabmanViewController{
     
     //MARK: - Properties
+    @IBOutlet weak var tabView: UIView!
     
     private let recommendVC = UIStoryboard.init(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeRecommendProductViewController") as! HomeRecommendProductViewController
     private let brandVC = UIStoryboard.init(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeBrandViewController") as! HomeBrandViewController
@@ -55,7 +56,7 @@ class HomeTabmanViewController : TabmanViewController{
         bar.layout.contentMode = .fit
         // 버튼 사이 간격
            
-        addBar(bar, dataSource: self, at: .top)
+        addBar(bar, dataSource: self, at: .custom(view: tabView, layout: .none))
     }
     
     private func setNotification(){

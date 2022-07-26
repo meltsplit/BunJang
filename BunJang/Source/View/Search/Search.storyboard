@@ -61,6 +61,9 @@
                             <constraint firstItem="mR1-VM-ypG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ibi-Ec-YIZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="xiD-Y1-Iw3" id="3Es-4M-kKg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

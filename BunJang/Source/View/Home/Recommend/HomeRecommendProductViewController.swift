@@ -18,15 +18,15 @@ class HomeRecommendProductViewController : BaseViewController{
     var recommendProductData : [ProductGetResult] = []
     var page = 0
     
-    var collectionViewWidth = Device.width / 2 - 7
+    var collectionViewWidth = (Device.width - 20) / 2 - 10
     lazy var collectionViewCellHeight = collectionViewWidth * 2.2
-    var collectionViewLineSpacing = 5
+    var collectionViewLineSpacing = 10
     
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("CCCCCC")
+        
         setDelegate()
         setNotification()
         getRecommendProduct()
@@ -86,8 +86,8 @@ class HomeRecommendProductViewController : BaseViewController{
     
     private func resizeCollectionView(){
        //let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * ProductModel.sampleData.count / 2
-        let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * recommendProductData.count / 2
-        DataCheet.shard.height = height + 250
+        let height = (Int(collectionViewCellHeight) + collectionViewLineSpacing) * (recommendProductData.count + 1) / 2
+        DataCheet.shard.height = height
         NotificationCenter.default.post(name: NSNotification.Name("resize"), object: height)
     }
     
@@ -124,21 +124,21 @@ extension HomeRecommendProductViewController : UICollectionViewDelegate,UICollec
 extension HomeRecommendProductViewController : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return CGFloat(collectionViewLineSpacing)
     }
     
-    //행간 높이
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
+//    //행간 높이
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = collectionView.frame.width / 2 - 7
         let height = width * 2.2
-        let size = CGSize(width: width, height: height)
+        let size = CGSize(width: collectionViewWidth, height: collectionViewCellHeight)
         
-        return size
+        return CGSize(width: collectionViewWidth, height: collectionViewCellHeight)
         
     }
     

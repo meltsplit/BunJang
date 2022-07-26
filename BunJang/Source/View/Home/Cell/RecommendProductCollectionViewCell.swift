@@ -24,7 +24,28 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
     
     var userID: Int?
     var productID: Int?
-   
+    
+    var isHeart : Bool = false
+    var heartCnt : Int = 0
+    var productGetResult : ProductGetResult?
+    //MARK: - Life Cycle
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        priceLabel.text = ""
+        titleLabel.text = ""
+        
+        heartLabel.text = String(heartCnt)
+        timeLabel.text = ""
+        locationLabel.text = ""
+        bgPayLogo.isHidden = false
+        
+        heartBtn.isSelected = isHeart
+        heartBtn.tintColor = .white
+        heartBtn.isHidden = false
+    }
+    
+    
     
     //MARK: - IBAction
     
@@ -39,6 +60,7 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
             heartBtn.tintColor = .white
         }
         print("isSelected \(heartBtn.isSelected)")
+        
         postHeart()
     }
     
@@ -50,6 +72,29 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
 
             case .success(let data) :
                 print("찜하기 성공적으로 통신했습니다.")
+                self.getProduct()
+            case .requestErr(let msg):
+                print("찜하기 요청에러가 발생했습니다.")
+            case .pathErr :
+                print("pathErr")
+            case .serverErr :
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .decodeErr:
+                print("decodeError")
+            }
+        }
+    }
+    
+    private func getProduct(){
+        ProductGetManager.shared.getProduct(productId: productGetResult!.productId) { response in
+            switch response {
+
+            case .success(let data) :
+                print("찜하기 성공적으로 통신했습니다.")
+                let responseData = data as! ProductGetResponse
+                self.setData(responseData.result)
             case .requestErr(let msg):
                 print("찜하기 요청에러가 발생했습니다.")
             case .pathErr :
@@ -65,7 +110,7 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
     }
     
     func setData(_ data : ProductGetResult){
-        
+        self.productGetResult = data
         self.userID = data.userId
         self.productID = data.productId
         
@@ -77,10 +122,14 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
         
         priceLabel.text = makePriceString(data.price)
         titleLabel.text = data.title
+        heartLabel.text = String(data.heartCnt)
         locationLabel.text = data.location
         timeLabel.text = data.updatedAt
         
+        
+        heartCnt = data.heartCnt
         if ( !data.pay) { bgPayLogo.isHidden = true}
+        
         if ( Int(User.shared.userId) == data.userId){
             heartBtn.isHidden = true
         }
@@ -89,10 +138,18 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
             heartBtn.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
             
         }
+        
         if data.heart{
             heartBtn.isSelected = true
             heartBtn.tintColor = Color.Red
+            
+        } else {
+           
+            
         }
+        
+        isHeart = data.heart
+        heartCnt = data.heartCnt
     }
     
 

@@ -263,11 +263,28 @@
             <objects>
                 <viewController id="bVK-Xc-IRX" customClass="HomeTabmanViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h32-10-dDc">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="947.66666666666663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="948"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urx-Ba-HBc">
+                                <rect key="frame" x="20" y="0.0" width="180" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mbm-hh-Nx7"/>
+                                    <constraint firstAttribute="width" constant="180" id="YaB-DE-nEu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cXz-Pm-GOg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="urx-Ba-HBc" firstAttribute="top" secondItem="h32-10-dDc" secondAttribute="top" id="DH3-2W-LfC"/>
+                            <constraint firstItem="urx-Ba-HBc" firstAttribute="leading" secondItem="cXz-Pm-GOg" secondAttribute="leading" constant="20" id="uWh-H9-dFs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tabView" destination="urx-Ba-HBc" id="60c-H6-gyE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J87-Fe-7f5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,7 +299,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-fZ-nNr">
-                                <rect key="frame" x="10" y="44" width="370" height="766"/>
+                                <rect key="frame" x="10" y="40" width="370" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XbO-Tw-kWX">
                                     <size key="itemSize" width="212" height="408"/>
@@ -419,11 +436,11 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dbk-1Y-5X6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dbk-1Y-5X6" firstAttribute="bottom" secondItem="jAu-fZ-nNr" secondAttribute="bottom" id="5eQ-z4-T4W"/>
                             <constraint firstItem="dbk-1Y-5X6" firstAttribute="trailing" secondItem="jAu-fZ-nNr" secondAttribute="trailing" constant="10" id="IWo-lU-n8z"/>
-                            <constraint firstItem="jAu-fZ-nNr" firstAttribute="top" secondItem="dbk-1Y-5X6" secondAttribute="top" id="J5y-79-2an"/>
+                            <constraint firstItem="jAu-fZ-nNr" firstAttribute="top" secondItem="eyf-Ac-a0Z" secondAttribute="top" constant="40" id="J5y-79-2an"/>
                             <constraint firstItem="jAu-fZ-nNr" firstAttribute="leading" secondItem="dbk-1Y-5X6" secondAttribute="leading" constant="10" id="paY-CY-ftY"/>
                         </constraints>
                     </view>
@@ -494,8 +511,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hc-JU-bAf" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1156"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기 취향/취미" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDf-Rc-DBs">
-                                                <rect key="frame" x="20" y="30" width="137.33333333333334" height="28.666666666666671"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상위 카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDf-Rc-DBs">
+                                                <rect key="frame" x="20" y="30" width="129.66666666666666" height="28.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -556,8 +573,8 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중고거래" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf3-Y3-V85">
-                                                <rect key="frame" x="20" y="368.66666666666669" width="83.333333333333329" height="28.666666666666686"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하위 카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf3-Y3-V85">
+                                                <rect key="frame" x="20" y="368.66666666666669" width="129.66666666666666" height="28.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -744,8 +761,8 @@
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="best" width="60" height="60"/>
         <image name="bg pay" width="109" height="48"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart" width="380" height="380"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

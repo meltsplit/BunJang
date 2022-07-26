@@ -10,9 +10,10 @@ import UIKit
 class SearchMainViewController : BaseViewController{
     
     //MARK: - IBOutlet
+    @IBOutlet weak var backBtn: UIButton!
     
     //MARK: - Properties
-    
+    var prevTab = true
     
     //MARK: - Life Cycle
     
@@ -37,15 +38,18 @@ class SearchMainViewController : BaseViewController{
     }
     
     private func setUI(){
-        true
+        if prevTab{
+            backBtn.isHidden = true
+        }
     }
     
     
     //MARK: - IBAction
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
+        
         print("dismisws")
-        dismiss(animated: true)
+        
         popVC()
         
     }

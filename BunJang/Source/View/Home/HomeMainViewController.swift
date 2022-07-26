@@ -102,7 +102,6 @@ class HomeMainViewController : BaseViewController{
     }
     
     @objc func dataReceived(_ notification: Notification) {
-        print("데이터 받았어 \(DataCheet.shard.height)")
             
             resizeScrollViewContents()
             

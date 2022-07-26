@@ -77,7 +77,7 @@ class ProductViewController : BaseViewController{
     var totalReviewData : [TotalReviewResult] = []
     var productImageList : [AlamofireSource] = []
     
-    var collectionViewWidth = Device.width / 3 - 40
+    var collectionViewWidth = ( Device.width - 40 ) / 3 - 10
     lazy var collectionViewCellHeight = collectionViewWidth * 2.0
     var collectionViewLineSpacing : CGFloat = 5
     
