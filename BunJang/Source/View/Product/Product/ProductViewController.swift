@@ -81,6 +81,15 @@ class ProductViewController : BaseViewController{
     lazy var collectionViewCellHeight = collectionViewWidth * 2.0
     var collectionViewLineSpacing : CGFloat = 5
     
+    let productImageCountView : UIView = {
+       let view = UIView()
+        view.backgroundColor = .darkGray
+        view.alpha = 0.5
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+        }()
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -88,6 +97,7 @@ class ProductViewController : BaseViewController{
         
         setDelegate()
         setUI()
+        setImageSlide()
         if ( userID == Int(User.shared.userId) ) { myProduct = true; setMyProductUI()} else { myProduct = false}
         
     }
@@ -96,7 +106,6 @@ class ProductViewController : BaseViewController{
         super.viewWillAppear(animated)
         hideNavBar()
         hideTabBar()
-        
         
         getProduct()
         getUserProducts()
@@ -147,6 +156,25 @@ class ProductViewController : BaseViewController{
         
             
         }
+    }
+    
+    private func setImageSlide(){
+        let labelIndicator = LabelPageIndicator()
+        labelIndicator.textColor = .white
+        
+        productImageSlide.pageIndicator = labelIndicator
+        
+        productImageSlide.addSubview(productImageCountView)
+        productImageSlide.bringSubviewToFront(labelIndicator)
+        productImageCountView.snp.makeConstraints {
+            $0.center.equalTo(labelIndicator.snp.center)
+            $0.width.equalTo(labelIndicator).offset(10)
+            $0.height.equalTo(labelIndicator).offset(18)
+        }
+        productImageSlide.pageIndicatorPosition = .init(horizontal: .right(padding: 20), vertical: .customBottom(padding: 20))
+        
+        
+        productImageSlide.contentMode = .scaleAspectFill
     }
     
     func setMyProductUI(){
@@ -209,7 +237,7 @@ class ProductViewController : BaseViewController{
         
         
         self.categoryImageView.image = Image.cloth
-        //self.categoryImageView.load(urlString: data.lastCategoryImgUrl)
+        self.categoryImageView.load(urlString: data.lastCategoryImgUrl)
         self.categoryLabel.text = data.lastCategory
         var i = 0
         
@@ -308,7 +336,8 @@ class ProductViewController : BaseViewController{
         let userProductVC = UIStoryboard(name: "ShowProduct", bundle: nil).instantiateViewController(withIdentifier: "ShowProductViewController") as! ShowProductViewController
         userProductVC.prevTab = false
         userProductVC.show = Show.userProduct
-        userProductVC.userId = 1
+        userProductVC.userId = userID
+        userProductVC.nickname = productData?.nickname
         pushVC(userProductVC)
     }
     

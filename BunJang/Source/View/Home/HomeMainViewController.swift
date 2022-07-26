@@ -11,7 +11,7 @@ import ImageSlideshow
 class HomeMainViewController : BaseViewController{
     
     //MARK: - IBOutlet
-   
+    
     @IBOutlet weak var homeScrollView: UIScrollView!
     @IBOutlet weak var eventImageSlide: ImageSlideshow!
     @IBOutlet weak var menuCollectionView: UICollectionView!
@@ -22,6 +22,15 @@ class HomeMainViewController : BaseViewController{
     var eventImage : [AlamofireSource] = []
     var page = 0
     
+    let bannerCountView : UIView = {
+           let view = UIView()
+        view.backgroundColor = .darkGray
+        view.alpha = 0.3
+            view.layer.cornerRadius = 10
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -29,6 +38,7 @@ class HomeMainViewController : BaseViewController{
         setNotificationCenter()
         setDelegate()
         setUI()
+        setImageSlide()
         getBanner()
         
     }
@@ -52,9 +62,28 @@ class HomeMainViewController : BaseViewController{
         menuCollectionView.dataSource = self
     }
     
+    private func setImageSlide(){
+        let labelIndicator = LabelPageIndicator()
+        labelIndicator.textColor = .white
+        
+        eventImageSlide.pageIndicator = labelIndicator
+        
+        eventImageSlide.addSubview(bannerCountView)
+        eventImageSlide.bringSubviewToFront(labelIndicator)
+        bannerCountView.snp.makeConstraints {
+            $0.center.equalTo(labelIndicator.snp.center)
+            $0.width.equalTo(labelIndicator).offset(10)
+            $0.height.equalTo(labelIndicator).offset(18)
+        }
+        eventImageSlide.pageIndicatorPosition = .init(horizontal: .right(padding: 20), vertical: .customBottom(padding: 20))
+        
+        eventImageSlide.setImageInputs(eventImage)
+        eventImageSlide.contentMode = .scaleAspectFill
+    }
     
     private func setUI(){
-        eventImageSlide.setImageInputs(eventImage)
+        
+        
         resizeScrollViewContents()
         
     }

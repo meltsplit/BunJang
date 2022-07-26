@@ -19,6 +19,7 @@ struct UserProductGetResponse : Codable {
 
 struct UserProductGetResult : Codable {
     
+    let nickname : String
     let productImgs: [ProductImgs]
     let productId : Int
     let userId : Int

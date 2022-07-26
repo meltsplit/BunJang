@@ -18,8 +18,8 @@ class HomeRecommendProductViewController : BaseViewController{
     var recommendProductData : [ProductGetResult] = []
     var page = 0
     
-    var collectionViewWidth = (Device.width - 20) / 2 - 10
-    lazy var collectionViewCellHeight = collectionViewWidth * 2.2
+    var collectionViewWidth = (Device.width - 40) / 2 - 5
+    lazy var collectionViewCellHeight = collectionViewWidth * 2.0
     var collectionViewLineSpacing = 10
     
     //MARK: - Life Cycle
@@ -127,16 +127,12 @@ extension HomeRecommendProductViewController : UICollectionViewDelegateFlowLayou
         return CGFloat(collectionViewLineSpacing)
     }
     
-//    //행간 높이
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
+    //행간 높이
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let width = collectionView.frame.width / 2 - 7
-        let height = width * 2.2
-        let size = CGSize(width: collectionViewWidth, height: collectionViewCellHeight)
         
         return CGSize(width: collectionViewWidth, height: collectionViewCellHeight)
         

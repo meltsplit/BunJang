@@ -148,6 +148,8 @@ class SearchMainViewController : BaseViewController{
             keywordProductVC.show = Show.keywordProduct
             keywordProductVC.prevTab = false
             keywordProductVC.keyword = searchData
+            keywordProductVC.searchText = searchData
+            keywordProductVC.prevSearch = true
             print("이걸로 검색할게\(searchData)")
             pushVC(keywordProductVC)
         }

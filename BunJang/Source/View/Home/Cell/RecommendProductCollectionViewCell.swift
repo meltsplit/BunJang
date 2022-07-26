@@ -114,7 +114,7 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
         self.userID = data.userId
         self.productID = data.productId
         
-        productImageView.makeCornerRound(radius: 14)
+        productImageView.makeCornerRound(radius: 50)
         
         let imageURL = URL(string: data.productImgs[0].productImgUrl)
         productImageView.kf.indicatorType = .activity

@@ -25,7 +25,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Kf5-aA-dGe">
                                         <rect key="frame" x="328" y="9.5" width="61" height="25"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE4-l8-lsj" userLabel="backBtn">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE4-l8-lsj" userLabel="SearchBtn">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="CKU-Ff-hsg"/>
@@ -36,6 +36,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="">
                                                     <backgroundConfiguration key="background" image="magnifyingglass" catalog="system" imageContentMode="scaleAspectFit"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="searchBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RhG-OV-Qcl"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYY-jY-hSf" userLabel="backBtn">
                                                 <rect key="frame" x="36" y="0.0" width="25" height="25"/>
@@ -240,7 +243,7 @@
                                             <constraint firstItem="PSM-mU-C5y" firstAttribute="leading" secondItem="4ww-xs-93l" secondAttribute="leading" constant="20" id="Nwr-QC-xvg"/>
                                             <constraint firstItem="53B-YK-zXl" firstAttribute="top" secondItem="4ww-xs-93l" secondAttribute="top" constant="20" id="ZVb-0y-tc8"/>
                                             <constraint firstItem="61u-6u-UvW" firstAttribute="leading" secondItem="4ww-xs-93l" secondAttribute="leading" constant="20" id="adv-LK-8fk"/>
-                                            <constraint firstItem="PSM-mU-C5y" firstAttribute="top" secondItem="61u-6u-UvW" secondAttribute="bottom" constant="20" id="b0a-fy-xfK"/>
+                                            <constraint firstItem="PSM-mU-C5y" firstAttribute="top" secondItem="61u-6u-UvW" secondAttribute="bottom" constant="15" id="b0a-fy-xfK"/>
                                             <constraint firstAttribute="trailing" secondItem="53B-YK-zXl" secondAttribute="trailing" constant="20" id="j49-RD-U4b"/>
                                             <constraint firstAttribute="bottom" secondItem="PSM-mU-C5y" secondAttribute="bottom" id="lDq-Sx-vxg"/>
                                             <constraint firstItem="53B-YK-zXl" firstAttribute="leading" secondItem="4ww-xs-93l" secondAttribute="leading" constant="20" id="m47-QT-E5v"/>
@@ -280,13 +283,13 @@
                         <outlet property="lastCategoryCollectionView" destination="jOu-mW-gnw" id="veC-qt-y0P"/>
                         <outlet property="mainScrollView" destination="q6X-hT-WAN" id="eVf-66-K6l"/>
                         <outlet property="productCollectionView" destination="PSM-mU-C5y" id="6wl-xD-mGR"/>
-                        <outlet property="userLabel" destination="uXH-vg-td0" id="mrg-Yt-nSi"/>
+                        <outlet property="titleLabel" destination="uXH-vg-td0" id="mrg-Yt-nSi"/>
                         <outlet property="whichCategoryLabel" destination="vHc-EI-IkG" id="M2c-pW-hxa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63.768115942028992" y="57.589285714285708"/>
+            <point key="canvasLocation" x="229" y="15"/>
         </scene>
         <!--Filter Bottom Sheet-->
         <scene sceneID="NWz-ga-Fmm">

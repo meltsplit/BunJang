@@ -41,7 +41,8 @@ class MyProductCollectionViewCell: UICollectionViewCell {
         self.productID = data.productId
         self.userID = data.userId
         
-                productImageView.load(urlString: data.productImgs[0].productImgUrl)
+        productImageView.load(urlString: data.productImgs[0].productImgUrl)
+        productImageView.makeCornerRound(radius: 15)
         updatedAtLabel.text = data.updatedAt
         titleLabel.text = data.title
         priceLabel.text = makePriceString(data.price)

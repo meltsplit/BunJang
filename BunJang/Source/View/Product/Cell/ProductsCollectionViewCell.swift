@@ -84,7 +84,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         myProductGetResult = data
         productId = data.productId
         
-        productImageView.makeCornerRound(radius: 15)
+        productImageView.makeCornerRound(radius: 20)
         
         let imageURL = URL(string: data.productImgs[0].productImgUrl)
         productImageView.kf.indicatorType = .activity
@@ -102,8 +102,10 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         productGetResult = data
         productId = data.productId
         
-        productImageView.makeCornerRound(radius: 15)
-        productImageView.load(urlString: data.productImgs[0].productImgUrl )
+        productImageView.makeCornerRound(radius: 20)
+        let imageURL = URL(string: data.productImgs[0].productImgUrl)
+        productImageView.kf.indicatorType = .activity
+        productImageView.kf.setImage(with: imageURL, placeholder: nil, options: [.transition(.fade(2.0))], progressBlock: nil)
         
         priceLabel.text = makePriceString(data.price)
         titleLabel.text = data.title

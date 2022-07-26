@@ -23,7 +23,7 @@ extension UserProductGetManager{
         var url = API.userURL + "/" + condition.rawValue + "/\(User.shared.userId)"
         
         if condition == Condition.sell{
-            url = url + String(userID)
+            url = url + "/" + String(userID)
         }
         
         let header : HTTPHeaders = [

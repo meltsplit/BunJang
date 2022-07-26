@@ -14,7 +14,7 @@ class ShowProductViewController : BaseViewController{
     
     @IBOutlet weak var whichCategoryLabel: UILabel!
     @IBOutlet weak var mainScrollView: UIScrollView!
-    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var filterStackView: UIStackView!
     @IBOutlet weak var categoryStackView: UIStackView!
@@ -31,8 +31,11 @@ class ShowProductViewController : BaseViewController{
     
     //MARK: - Properties
     var prevTab = true
+    var prevSearch = false
     var filter : Filter = Filter.recent
     var userId : Int?
+    var nickname : String?
+    var searchText : String?
     var show : Show = Show.userProduct
     var isLastCategory = false
     var categoryId : Int?
@@ -46,8 +49,8 @@ class ShowProductViewController : BaseViewController{
     var categoryCVWidth : CGFloat = (Device.width - 40) / 2 - 10
     lazy var categoryCVHeight : CGFloat = 30
     
-    var collectionViewWidth = (Device.width - 40) / 3 - 10
-    lazy var collectionViewCellHeight = collectionViewWidth * 2
+    var collectionViewWidth = (Device.width - 40) / 3 - 5
+    lazy var collectionViewCellHeight = collectionViewWidth * 2.2
     var collectionViewLineSpacing : CGFloat = 5
     
     
@@ -76,7 +79,7 @@ class ShowProductViewController : BaseViewController{
             lastCategoryCollectionView.isHidden = true
             categoryStackView.isHidden = true
             getUserProducts()
-            userLabel.text = "\(userId)님의 상품"
+            titleLabel.text = "\(nickname)님의 상품"
             filterStackView.snp.remakeConstraints {
                 $0.top.equalToSuperview().offset(20)
             }
@@ -98,6 +101,7 @@ class ShowProductViewController : BaseViewController{
             print("키워드 검색 상품 조회입니다잉")
             lastCategoryCollectionView.isHidden = true
             categoryStackView.isHidden = true
+            titleLabel.text = searchText!
             filterStackView.snp.remakeConstraints {
                 $0.top.equalToSuperview().offset(20)
             }
@@ -189,7 +193,7 @@ class ShowProductViewController : BaseViewController{
     }
     
     func reloadPage(){
-        if (productsData.count / 9 == page + 1){
+        if (productsData.count / 6 == page + 1){
             page = page + 1
             getCategoryProducts()
         }
@@ -217,6 +221,19 @@ class ShowProductViewController : BaseViewController{
         let bottomSheet = MDCBottomSheetController(contentViewController: filterBS)
         present(bottomSheet, animated: true, completion: nil)
     }
+    
+    @IBAction func searchBtnPressed(_ sender: UIButton) {
+        if prevSearch {
+            popVC()
+            
+        }else{
+            let searchVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchMainViewController") as! SearchMainViewController
+            searchVC.prevTab = false
+            pushVC(searchVC)
+        }
+     
+    }
+    
     
 }
 
@@ -306,6 +323,10 @@ extension ShowProductViewController : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return collectionViewLineSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        5
     }
 }
 

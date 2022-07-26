@@ -29,7 +29,7 @@ struct API{
     static let signUpURL = userURL + "/sign-up"
     static let myPageURL = userURL + "/my-page"
     static let heartListURL = userURL + "/heart-list"
-    static let reviewURL = userURL + "/shop/review"
+    static let reviewURL = userURL + "/shop/reviews"
     static let categoryURL = productURL + "/categories"
     
     static let recentSearchURL = searchURL + "/log"
