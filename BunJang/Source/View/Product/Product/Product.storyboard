@@ -1288,6 +1288,7 @@
                     <connections>
                         <outlet property="reviewTableView" destination="j7w-NS-pnB" id="TxI-Ze-1ZO"/>
                         <outlet property="writeReviewBtn" destination="gzQ-kf-SI9" id="EnK-ZO-Jpq"/>
+                        <outlet property="writeReviewView" destination="9lA-Bg-imK" id="6sn-QY-Kk8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwd-pR-f3U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,29 +8,46 @@
 import Foundation
 import Alamofire
 
-class MyProductGetManager{
-    static let shared = MyProductGetManager()
+class CategoryProductManager{
+    static let shared = CategoryProductManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-extension MyProductGetManager{
+extension CategoryProductManager{
     
-    func getProduct(userID : String,condition: Condition, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getProducts(page : Int ,categoryId: Int, isLast : Bool,  completion: @escaping (NetworkResult<Any>) -> Void) {
+        var category = ""
+        
+        if isLast{
+            category = "lastCategoryId"
+        } else{
+            category = "firstCategoryId"
+        }
         
         
-        let url = API.userURL + "/" + condition.rawValue + "/\(User.shared.userId)" +  "/\(userID)"
         
+        let url = API.categoryURL + "/\(User.shared.userId)"
         
         let header : HTTPHeaders = [
+            //"Content-Type":"application/json"
             "X-ACCESS-TOKEN": User.shared.jwt
+        ]
+        
+        let param : Parameters = [
+            
+            "page" : page,
+            "type" : "recent",
+            category : categoryId
+            
         ]
         
         
         let dataRequest = AF.request(
                                      url,
                                      method: .get,
+                                     parameters: param,
                                      encoding: URLEncoding.default,
                                      headers: header
                                     )
@@ -63,7 +80,7 @@ extension MyProductGetManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(MyProductGetResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(CategoryProductResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .decodeErr
@@ -90,3 +107,4 @@ extension MyProductGetManager{
     }
     
 }
+

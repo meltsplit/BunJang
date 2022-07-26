@@ -292,12 +292,16 @@
                                                                     </stackView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <gestureRecognizers/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="60" id="0mq-Mv-xXI"/>
                                                                     <constraint firstItem="6Se-0J-aSp" firstAttribute="centerY" secondItem="J3w-Aq-c0F" secondAttribute="centerY" id="L8B-Sj-lLJ"/>
                                                                     <constraint firstAttribute="height" constant="80" id="Yqd-Fa-grs"/>
                                                                     <constraint firstItem="6Se-0J-aSp" firstAttribute="centerX" secondItem="J3w-Aq-c0F" secondAttribute="centerX" id="szv-k0-uO2"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="wzz-2p-tVs" appends="YES" id="LpF-Nf-MjM"/>
+                                                                </connections>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40H-Io-IPK">
                                                                 <rect key="frame" x="104.5" y="0.0" width="60" height="80"/>
@@ -321,12 +325,16 @@
                                                                     </stackView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <gestureRecognizers/>
                                                                 <constraints>
                                                                     <constraint firstItem="dQg-a1-1gw" firstAttribute="centerX" secondItem="40H-Io-IPK" secondAttribute="centerX" id="0Nd-FH-XkS"/>
                                                                     <constraint firstAttribute="width" constant="60" id="1Vk-RG-m3Z"/>
                                                                     <constraint firstItem="dQg-a1-1gw" firstAttribute="centerY" secondItem="40H-Io-IPK" secondAttribute="centerY" id="lDa-r2-db6"/>
                                                                     <constraint firstAttribute="height" constant="80" id="rwW-po-Ry6"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="dSk-jB-Kf6" appends="YES" id="Jph-Lk-H32"/>
+                                                                </connections>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-ee-fHX">
                                                                 <rect key="frame" x="209.5" y="0.0" width="60" height="80"/>
@@ -827,6 +835,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDE-qW-y6r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wzz-2p-tVs" userLabel="찜 Tapped">
+                    <connections>
+                        <action selector="wishedTapped:" destination="N1j-Bn-dxJ" id="zIA-pO-sXx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="dSk-jB-Kf6" userLabel="후기 Tapped">
+                    <connections>
+                        <action selector="reviewTapped:" destination="N1j-Bn-dxJ" id="9gr-AY-EzQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-284.05797101449275" y="57.589285714285708"/>
         </scene>

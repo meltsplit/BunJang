@@ -12,6 +12,7 @@ class TotalReviewViewController : BaseViewController{
     
     //MARK: - IBOutlet
     
+    @IBOutlet weak var writeReviewView: UIView!
     
     @IBOutlet weak var writeReviewBtn: UIButton!
     @IBOutlet weak var reviewTableView: UITableView!
@@ -20,6 +21,7 @@ class TotalReviewViewController : BaseViewController{
     
     var totalReviewData : [TotalReviewResult] = []
     var productUserId : Int?
+    var myReview = false
     
     //MARK: - Life Cycle
     
@@ -57,6 +59,10 @@ class TotalReviewViewController : BaseViewController{
     }
     
     private func setUI(){
+        if myReview {
+            writeReviewView.isHidden = true
+        }
+        
         writeReviewBtn.makeCornerRound(radius: 10)
         writeReviewBtn.makeBorder(width: 1, color: .lightGray)
     }

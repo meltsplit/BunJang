@@ -13,7 +13,7 @@ struct API{
     static let domainURL = "http://njeat.shop:9000"
     static let base1URL = "http://13.209.204.136:9000"
     
-    static let signUpURL = baseURL + "/app/users/sign-up"
+   
     static let userURL = baseURL + "/app/users"
     
     
@@ -26,12 +26,10 @@ struct API{
     static let secondCategoryURL = baseURL + "/app/last/categories"
     
     
-    
-    
-    
-    
+    static let signUpURL = userURL + "/sign-up"
     static let myPageURL = userURL + "/my-page"
     static let heartListURL = userURL + "/heart-list"
     static let reviewURL = userURL + "/shop/review"
+    static let categoryURL = productURL + "/categories"
 }
 

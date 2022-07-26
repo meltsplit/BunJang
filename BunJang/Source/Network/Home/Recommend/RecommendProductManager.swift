@@ -21,7 +21,7 @@ extension RecommendProductManager{
     func getProduct(page: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        let url = API.productURL
+        let url = API.productURL + "/" + User.shared.userId
         
         
         let header : HTTPHeaders = [
@@ -31,10 +31,12 @@ extension RecommendProductManager{
         
         let param : Parameters = [
             
-            "page" : page
+            "page" : page,
+            "type" : "recent"
+            
             
         ]
-        
+        print("페이지는 \(page)")
         let dataRequest = AF.request(
                                      url,
                                      method: .get,

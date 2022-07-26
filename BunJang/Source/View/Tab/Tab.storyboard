@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Hb-PF-KAD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="-304" y="1434"/>
         </scene>
-        <!--등록-->
+        <!--Post-->
         <scene sceneID="2cg-gN-Ux8">
             <objects>
-                <navigationController navigationBarHidden="YES" id="PQJ-lr-tbs" sceneMemberID="viewController">
+                <navigationController title="Post" navigationBarHidden="YES" id="PQJ-lr-tbs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="등록" image="plus.circle" catalog="system" id="JrX-rz-hTb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1aa-Jz-Rek">
                         <autoresizingMask key="autoresizingMask"/>
@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="1541" y="1430"/>
         </scene>
-        <!--검색-->
+        <!--Search-->
         <scene sceneID="xuX-CS-g6u">
             <objects>
-                <navigationController id="kLw-T1-0Yk" sceneMemberID="viewController">
+                <navigationController title="Search" id="kLw-T1-0Yk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="QPf-WO-VOP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qn9-1j-JCm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="-1193" y="872"/>
         </scene>
-        <!--번개톡-->
+        <!--Talk-->
         <scene sceneID="0Qq-X8-zxw">
             <objects>
-                <navigationController id="K6g-Ik-ng8" sceneMemberID="viewController">
+                <navigationController title="Talk" id="K6g-Ik-ng8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="번개톡" image="bubble.right" catalog="system" id="fPw-j2-UAu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aiY-T3-mmo">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

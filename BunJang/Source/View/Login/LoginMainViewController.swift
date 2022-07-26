@@ -74,6 +74,18 @@ class LoginMainViewController : BaseViewController{
         print("애플 로그인은 개발자 계정이 있어야 가능합니다.")
        presentBottomAlert(message: "애플 로그인은 개발자 계정이 있어야 가능합니다.")
 
+        User.shared.jwt = Secret.jwtToken1
+        User.shared.userId = "1"
+        
+        
+        
+        UIStoryboard(name: "ShowProduct", bundle: nil)
+        let categoryProductVC = UIStoryboard(name: "ShowProduct", bundle: nil).instantiateViewController(withIdentifier: "ShowProductViewController") as! ShowProductViewController
+        categoryProductVC.isCategory = true
+        categoryProductVC.isLastCategory = false
+        categoryProductVC.page = 0
+        categoryProductVC.categoryId = 1
+        pushVC(categoryProductVC)
         
         
         

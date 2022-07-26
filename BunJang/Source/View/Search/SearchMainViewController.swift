@@ -20,18 +20,19 @@ class SearchMainViewController : BaseViewController{
         super.viewDidLoad()
         
         setDelegate()
-        setBar()
         setUI()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        hideNavBar()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        showTabBar()
     }
     
     //MARK: - Custom Method
     
     private func setDelegate(){
-        true
-    }
-    
-    private func setBar(){
         true
     }
     
@@ -42,6 +43,12 @@ class SearchMainViewController : BaseViewController{
     
     //MARK: - IBAction
     
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        print("dismisws")
+        dismiss(animated: true)
+        popVC()
+        
+    }
 }
 
 extension SearchMainViewController {

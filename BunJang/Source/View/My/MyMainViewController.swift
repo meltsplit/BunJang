@@ -157,6 +157,20 @@ class MyMainViewController : BaseViewController{
     
     //MARK: - IBAction
     
+    @IBAction func wishedTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func reviewTapped(_ sender: Any) {
+        let totalReviewVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "TotalReviewViewController") as! TotalReviewViewController
+        totalReviewVC.productUserId = Int(User.shared.userId)
+        totalReviewVC.myReview = true
+        pushVC(totalReviewVC)
+        
+    }
+    
+    
+    
     @IBAction func conditionBtnPressed(_ sender: UIButton) {
         
         conditionBtnList.forEach {

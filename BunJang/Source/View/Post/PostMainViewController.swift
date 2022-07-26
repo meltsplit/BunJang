@@ -305,11 +305,11 @@ class PostMainViewController : BaseViewController {
         titleData = titleTextField.text
         //priceData = Int(priceTextField.text!)
         contentsData = contentsTextView.text
+        if contentsData == placeHolder { contentsData = nil}
        
         do {
-            print("여기 가격은 \(priceData)")
+            print("통신 메소드가 뭘까요! \(method)")
             postData = try checkValidPostData(images: imagesData, title: titleData, category: categoryData, tag: tagData, price: priceData, contents: contentsData)
-            print("post 가격은 \(postData?.price)")
             ProductPostManager.shared.postPatchProduct(method: method, product: postData!) { (response) in
                 switch response {
                 
