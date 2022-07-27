@@ -41,12 +41,12 @@
 |6️⃣| 7.21 | ⛺️[개발일지 6일차](https://www.notion.so/melt-split/6-f71aa1860e7a49b99a6bf687a0efbdd4) |
 |7️⃣| 7.22 | ⛺️[개발일지 7일차](https://www.notion.so/melt-split/7-0f48cc1a36fb4961964bebfd6c9fd1e0)|
 |8️⃣| 7.23 | ⛺️[개발일지 8일차](https://www.notion.so/melt-split/8-8c1e08d1d79d4cddb20be8210d12c16f)|
-|9️⃣| 7.24 | ⛺️[개발일지 9일차]() |
-|🔟| 7.25 | ⛺️[개발일지 10일차]() |
-|1️⃣1️⃣| 7.26 | ⛺️[개발일지 11일차]() |
-|1️⃣2️⃣| 7.27 | ⛺️[개발일지 12일차]() |
-|1️⃣3️⃣| 7.28 | ⛺️[개발일지 13일차]() |
-|1️⃣4️⃣| 7.29 | ⛺️[개발일지 14일차]() |
+|9️⃣| 7.24 | ⛺️[개발일지 9일차](https://www.notion.so/melt-split/9-8ad3a4db962644e286a888e99c79e8e7) |
+|🔟| 7.25 | ⛺️[개발일지 10일차](https://www.notion.so/melt-split/10-631aeb75cfb54584b51c610995190fdf) |
+|1️⃣1️⃣| 7.26 | ⛺️[개발일지 11일차](https://www.notion.so/melt-split/11-d30527f6c9074f0494b8525487b8f583) |
+|1️⃣2️⃣| 7.27 | ⛺️[개발일지 12일차](https://www.notion.so/melt-split/12-eec3ae0f11d642a69c1bf223b9658446) |
+|1️⃣3️⃣| 7.28 | ⛺️[개발일지 13일차](https://www.notion.so/melt-split/13-4ec7fb331e3b474aa0983a0f178ca891) |
+|1️⃣4️⃣| 7.29 | ⛺️[개발일지 14일차](https://www.notion.so/melt-split/14-b5fbb94d67e842e782b47a65274c4f0a) |
 
 ## 📌 배운점
 ```
