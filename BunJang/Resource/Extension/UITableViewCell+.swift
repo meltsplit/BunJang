@@ -9,4 +9,11 @@ import UIKit
 
 extension UITableViewCell{
     static var cellIdentifier : String{return String(describing: self)}
+    
+    func makePriceString(_ int: Int)-> String?{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+
+        return numberFormatter.string(from: NSNumber(value: int))!+"원"
+    }
 }

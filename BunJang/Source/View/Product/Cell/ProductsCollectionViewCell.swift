@@ -25,6 +25,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     var productId : Int?
     var myProductGetResult : UserProductGetResult?
     var productGetResult : ProductGetResult?
+    var heartListResult : HeartListResult?
     
     //MARK: - Life Cycle
     
@@ -121,5 +122,29 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         }
         if !data.pay{ bgPayImageView.isHidden = true}
     }
+    
+    func setData(_ data: HeartListResult){
+        heartListResult = data
+        
+        productId = data.productId
+        
+        productImageView.makeCornerRound(radius: 20)
+        productImageView.kfSetImage(urlSting: data.productImgs[0].productImgUrl)
+        
+        priceLabel.text = makePriceString(data.price)
+        titleLabel.text = data.title
+        
+        if data.heart{
+            heartBtn.isSelected = true
+            heartBtn.tintColor = Color.Red
+        } else{
+            heartBtn.isSelected = false
+            heartBtn.tintColor = .white
+        }
+            
+        if !data.pay{ bgPayImageView.isHidden = true}
+    }
+    
+    
 
 }

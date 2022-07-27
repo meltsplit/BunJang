@@ -24,7 +24,6 @@ extension MyPageManager{
         
         
         let header : HTTPHeaders = [
-            //"Content-Type":"application/json"
             "X-ACCESS-TOKEN": User.shared.jwt
         ]
         

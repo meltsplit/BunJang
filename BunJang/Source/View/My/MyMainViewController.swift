@@ -15,6 +15,8 @@ class MyMainViewController : BaseViewController{
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nicknameLabel: UILabel!
     
+    @IBOutlet var starList: [UIImageView]!
+    
     @IBOutlet weak var eventView: UIView!
     
     @IBOutlet weak var heartLabel: UILabel!
@@ -38,6 +40,8 @@ class MyMainViewController : BaseViewController{
     
     var myProductData : [UserProductGetResult] = []
     
+    
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -45,13 +49,16 @@ class MyMainViewController : BaseViewController{
         
         setDelegate()
         setUI()
-        getMyPage()
-        getMyProduct(condition: Condition.sell)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideNavBar()
+        print("willappear")
+        
+        getMyPage()
+        getMyProduct(condition: Condition.sell)
         
     }
     
@@ -74,6 +81,7 @@ class MyMainViewController : BaseViewController{
     private func setUI(){
         profileImageView.makeCornerRound(radius: 2)
         eventView.makeCornerRound(radius: 10)
+
         for btn in conditionBtnList{
             btn.setTitleColor(.black, for: .selected)
             btn.setTitleColor(.systemGray, for: .normal)
@@ -111,6 +119,7 @@ class MyMainViewController : BaseViewController{
         }
     }
     
+    
     private func getMyProduct(condition: Condition){
         UserProductGetManager.shared.getProduct(userID: Int(User.shared.userId)! ,condition: condition ) { (response) in
             switch response {
@@ -135,11 +144,25 @@ class MyMainViewController : BaseViewController{
     }
     
     private func setMyPage(_ data: MyPageResult){
+
+        profileImageView.kfSetImage(urlSting: data.profileImgUrl)
+        nicknameLabel.text = data.nickname
+        
+        for i in 0..<5{
+            if(i <= Int(data.star)){
+                starList[i].tintColor = Color.Red
+            } else {
+                starList[i].tintColor = .systemGray2
+                
+            }
+        }
         
         heartLabel.text = String(data.heartCnt)
         reviewLabel.text = String(data.reviewCnt)
         followerLabel.text = String(data.followerCnt)
         followingLabel.text = String(data.followingCnt)
+        
+        
         
     }
     
@@ -159,6 +182,8 @@ class MyMainViewController : BaseViewController{
     
     @IBAction func wishedTapped(_ sender: Any) {
         
+        let heartListVC = UIStoryboard(name: "My", bundle: nil).instantiateViewController(withIdentifier: "MyHeartListViewController") as! MyHeartListViewController
+        pushVC(heartListVC)
     }
     
     @IBAction func reviewTapped(_ sender: Any) {
@@ -167,6 +192,16 @@ class MyMainViewController : BaseViewController{
         totalReviewVC.myReview = true
         pushVC(totalReviewVC)
         
+    }
+    
+    @IBAction func followerTapped(_ sender: UITapGestureRecognizer) {
+        let followerVC = UIStoryboard(name: "My", bundle: nil).instantiateViewController(withIdentifier: "MyFollowerViewController") as! MyFollowerViewController
+        pushVC(followerVC)
+    }
+    
+    @IBAction func followingTapped(_ sender: UITapGestureRecognizer) {
+        let followingVC = UIStoryboard(name: "My", bundle: nil).instantiateViewController(withIdentifier: "MyFollowingViewController") as! MyFollowingViewController
+        pushVC(followingVC)
     }
     
     

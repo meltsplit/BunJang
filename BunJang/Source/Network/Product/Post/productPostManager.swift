@@ -17,11 +17,12 @@ class ProductPostManager{
 
 extension ProductPostManager{
     
-    func postPatchProduct(method: HTTPMethod,product: ProductPostModel, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func postPatchProduct(method: HTTPMethod,product: ProductPostModel, productId : Int ,completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        let url = API.productURL + "/" + User.shared.userId
         
+        var url = API.productURL + "/" + User.shared.userId
+        if method == .patch { url = url + "/" + String(productId) }
         
         let header : HTTPHeaders = [
             "Content-Type":"application/json",

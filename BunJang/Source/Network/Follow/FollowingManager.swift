@@ -8,37 +8,35 @@
 import Foundation
 import Alamofire
 
-class KeywordProductManager{
-    static let shared = KeywordProductManager()
+class FollowingManager{
+    static let shared = FollowingManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-
-extension KeywordProductManager{
+extension FollowingManager{
     
-    func getProduct( keyword : String, page : Int , filter : Filter, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func following(followUserId : Int, status: Bool,completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        let url = API.searchURL + "/" + User.shared.userId
-        url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let url = API.followURL + "/" + User.shared.userId + "/" + String(followUserId)
+        
         
         let header : HTTPHeaders = [
+            "Content-Type":"application/json",
             "X-ACCESS-TOKEN": User.shared.jwt
         ]
-        let param : Parameters = [
-            "keyword": keyword,
-            "page": page,
-            "type": filter.rawValue
-        ]
         
+        let param : Parameters = [
+            "status" : status
+        ]
         
         let dataRequest = AF.request(
                                      url,
-                                     method: .get,
+                                     method: .post,
                                      parameters: param,
-                                     encoding: URLEncoding.default,
+                                     encoding: JSONEncoding.default,
                                      headers: header
                                     )
         
@@ -70,7 +68,7 @@ extension KeywordProductManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(KeywordProductResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(FollowingResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .decodeErr

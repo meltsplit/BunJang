@@ -99,5 +99,26 @@ extension ProductViewController{
             }
         }
     }
+    
+    func postFollow(){
+        FollowingManager.shared.following(followUserId: userID!, status: followBtn.isSelected) { response in
+            switch response {
+            
+            case .success(let data) :
+                print("팔로잉 하였습니다.")
+                
+            case .requestErr(let msg):
+                print("요청에러")
+            case .pathErr :
+                print("pathErr")
+            case .serverErr :
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .decodeErr:
+                print("decodeError")
+            }
+        }
+    }
 
 }

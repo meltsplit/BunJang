@@ -311,7 +311,7 @@ class ProductViewController : BaseViewController{
     }
     
     func resizeTableView(){
-        var height = 120
+        var height = 80
         switch totalReviewData.count{
         case 0 : break
         case 1: break
@@ -342,10 +342,13 @@ class ProductViewController : BaseViewController{
         if followBtn.isSelected{
             btnSelectedUI(followBtn)
             followBtn.setTitle("팔로우", for: .normal)
+            
+         
         }else{
             btnUnSelectedUI(followBtn)
             followBtn.setTitle("팔로잉", for: .normal)
         }
+        postFollow()
     }
     
     @IBAction func showTotalProductBtnPressed(_ sender: UIButton) {
@@ -408,7 +411,7 @@ class ProductViewController : BaseViewController{
         changeProductVC.isPatch = true
         changeProductVC.priceData = productData?.price
         changeProductVC.contentsData = productData?.contents
-        
+        changeProductVC.productId = productData!.productId
         changeProductVC.modalPresentationStyle = .overFullScreen
         
         

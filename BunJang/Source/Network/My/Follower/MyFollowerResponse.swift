@@ -7,25 +7,20 @@
 
 import Foundation
 
-struct MyPageResponse : Codable {
+struct MyFollowerResponse : Codable {
     
     let isSuccess : Bool
     let code : Int
     let message : String
-    let result : MyPageResult
-    
+    let result : [MyFollowerResult]
 }
 
-
-struct MyPageResult : Codable {
+struct MyFollowerResult : Codable {
     
+    let userId: Int
     let profileImgUrl : String
     let nickname : String
-    let star : Double
-    let heartCnt : Int
-    let reviewCnt : Int
-    let followerCnt : Int
-    let followingCnt: Int
+    let productCount : Int
+    let followerNum : Int
+
 }
-
-

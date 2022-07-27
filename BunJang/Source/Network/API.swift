@@ -21,15 +21,19 @@ struct API{
     static let productURL = baseURL + "/app/products"
     static let brandURL = baseURL + "/app/brands"
     static let searchURL = baseURL + "/app/search"
-    
     static let firstCategoryURL = baseURL + "/app/categories"
     static let secondCategoryURL = baseURL + "/app/last/categories"
+    static let followURL = baseURL + "/app/follows"
     
     
     static let signUpURL = userURL + "/sign-up"
     static let myPageURL = userURL + "/my-page"
     static let heartListURL = userURL + "/heart-list"
     static let reviewURL = userURL + "/shop/reviews"
+    
+    static let followerURL = followURL + "/to-me"
+    static let followingURL = followURL + "/to-you"
+    
     static let categoryURL = productURL + "/categories"
     
     static let recentSearchURL = searchURL + "/log"

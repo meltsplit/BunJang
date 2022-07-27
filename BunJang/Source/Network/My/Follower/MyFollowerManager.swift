@@ -1,43 +1,38 @@
 //
-//  productPostManager.swift
+//  MyPageManager.swift
 //  BunJang
 //
-//  Created by 장석우 on 2022/07/22.
+//  Created by 장석우 on 2022/07/23.
 //
 
 import Foundation
 import Alamofire
 
-class KeywordProductManager{
-    static let shared = KeywordProductManager()
+class MyFollowerManager{
+    static let shared = MyFollowerManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-
-extension KeywordProductManager{
+extension MyFollowerManager{
     
-    func getProduct( keyword : String, page : Int , filter : Filter, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getFollower(completion: @escaping (NetworkResult<Any>) -> Void) {
         
         
-        let url = API.searchURL + "/" + User.shared.userId
-        url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let url = API.followerURL + "/" + User.shared.userId
+        
         
         let header : HTTPHeaders = [
+            //"Content-Type":"application/json"
             "X-ACCESS-TOKEN": User.shared.jwt
         ]
-        let param : Parameters = [
-            "keyword": keyword,
-            "page": page,
-            "type": filter.rawValue
-        ]
+        
         
         
         let dataRequest = AF.request(
                                      url,
                                      method: .get,
-                                     parameters: param,
                                      encoding: URLEncoding.default,
                                      headers: header
                                     )
@@ -49,14 +44,13 @@ extension KeywordProductManager{
                 
                 switch response.result {
                 case .success:
+                    
                     guard let statusCode = response.response?.statusCode else { return }
                     guard let data = response.value else { return }
              
                     let networkResult = self.judge(status: statusCode, data: data )
                     
                     completion(networkResult)
-                    
-                    
                     
                 case .failure:
                     print("\(self.managerID)에서 failure 발생하였습니다.")
@@ -70,7 +64,7 @@ extension KeywordProductManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(KeywordProductResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(MyFollowerResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .decodeErr

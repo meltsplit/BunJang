@@ -137,6 +137,20 @@
 		8781816528906DB000E39B6F /* DeleteRecentSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8781816428906DB000E39B6F /* DeleteRecentSearchResponse.swift */; };
 		878181672890739B00E39B6F /* KeywordProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878181662890739B00E39B6F /* KeywordProductManager.swift */; };
 		87818169289073AA00E39B6F /* KeywordProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87818168289073AA00E39B6F /* KeywordProductResponse.swift */; };
+		878889922891D3E800289F15 /* MyFollowerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889912891D3E800289F15 /* MyFollowerManager.swift */; };
+		878889942891D3F300289F15 /* MyFollowingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889932891D3F300289F15 /* MyFollowingManager.swift */; };
+		878889962891D3FC00289F15 /* MyFollowerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889952891D3FC00289F15 /* MyFollowerResponse.swift */; };
+		878889982891D40900289F15 /* MyFollowingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889972891D40900289F15 /* MyFollowingResponse.swift */; };
+		8788899C2891DCB100289F15 /* FollowingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8788899B2891DCB100289F15 /* FollowingCollectionViewCell.swift */; };
+		8788899E2891DCCD00289F15 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8788899D2891DCCD00289F15 /* FollowerTableViewCell.swift */; };
+		878889A12891DEF600289F15 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889A02891DEF600289F15 /* MarketViewController.swift */; };
+		87F3C85728919BFB003EE7A4 /* FollowingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85628919BFB003EE7A4 /* FollowingManager.swift */; };
+		87F3C85928919C0F003EE7A4 /* FollowingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85828919C0F003EE7A4 /* FollowingResponse.swift */; };
+		87F3C85D28919EC4003EE7A4 /* MyFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85C28919EC4003EE7A4 /* MyFollowingViewController.swift */; };
+		87F3C85F28919ED4003EE7A4 /* MyFollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85E28919ED4003EE7A4 /* MyFollowerViewController.swift */; };
+		87F3C86528919FE7003EE7A4 /* HeartListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C86428919FE7003EE7A4 /* HeartListManager.swift */; };
+		87F3C86728919FF7003EE7A4 /* HeartListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C86628919FF7003EE7A4 /* HeartListResponse.swift */; };
+		87F3C8692891A493003EE7A4 /* MyHeartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C8682891A493003EE7A4 /* MyHeartListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -273,6 +287,20 @@
 		8781816428906DB000E39B6F /* DeleteRecentSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRecentSearchResponse.swift; sourceTree = "<group>"; };
 		878181662890739B00E39B6F /* KeywordProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordProductManager.swift; sourceTree = "<group>"; };
 		87818168289073AA00E39B6F /* KeywordProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordProductResponse.swift; sourceTree = "<group>"; };
+		878889912891D3E800289F15 /* MyFollowerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowerManager.swift; sourceTree = "<group>"; };
+		878889932891D3F300289F15 /* MyFollowingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingManager.swift; sourceTree = "<group>"; };
+		878889952891D3FC00289F15 /* MyFollowerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowerResponse.swift; sourceTree = "<group>"; };
+		878889972891D40900289F15 /* MyFollowingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingResponse.swift; sourceTree = "<group>"; };
+		8788899B2891DCB100289F15 /* FollowingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingCollectionViewCell.swift; sourceTree = "<group>"; };
+		8788899D2891DCCD00289F15 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
+		878889A02891DEF600289F15 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		87F3C85628919BFB003EE7A4 /* FollowingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingManager.swift; sourceTree = "<group>"; };
+		87F3C85828919C0F003EE7A4 /* FollowingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingResponse.swift; sourceTree = "<group>"; };
+		87F3C85C28919EC4003EE7A4 /* MyFollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingViewController.swift; sourceTree = "<group>"; };
+		87F3C85E28919ED4003EE7A4 /* MyFollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowerViewController.swift; sourceTree = "<group>"; };
+		87F3C86428919FE7003EE7A4 /* HeartListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListManager.swift; sourceTree = "<group>"; };
+		87F3C86628919FF7003EE7A4 /* HeartListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartListResponse.swift; sourceTree = "<group>"; };
+		87F3C8682891A493003EE7A4 /* MyHeartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeartListViewController.swift; sourceTree = "<group>"; };
 		B78BAAEF7C1078C23C4ED23D /* Pods-BunJang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.release.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -363,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				87442BFB28844D7200E7AF3A /* Cell */,
+				87442BEC2884300F00E7AF3A /* Product.storyboard */,
 				87733517288E9AF4000556DD /* Product */,
 				877334FF288D6902000556DD /* TotalReview */,
 			);
@@ -389,6 +418,7 @@
 				87442BE428841F0500E7AF3A /* API.swift */,
 				87442BE9288425F700E7AF3A /* NetworkResult.swift */,
 				87442BF32884345F00E7AF3A /* Login */,
+				87F3C85528919BCB003EE7A4 /* Follow */,
 				87442BF42884346300E7AF3A /* Home */,
 				877C89712888153F00C79ADC /* Category */,
 				87442BF52884346A00E7AF3A /* Product */,
@@ -603,6 +633,10 @@
 				877C407C288B0BB7001F4C28 /* Cell */,
 				877019A2288274B00003441E /* My.storyboard */,
 				87442BBE2883017D00E7AF3A /* MyMainViewController.swift */,
+				87F3C86328919FC9003EE7A4 /* HeartList */,
+				87F3C85B28919EA3003EE7A4 /* Follower */,
+				87F3C85A28919E9B003EE7A4 /* Following */,
+				8788899F2891DEE000289F15 /* Market */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -705,7 +739,6 @@
 			isa = PBXGroup;
 			children = (
 				87442BEE2884301E00E7AF3A /* ProductViewController.swift */,
-				87442BEC2884300F00E7AF3A /* Product.storyboard */,
 				8773351A288E9B2A000556DD /* Network */,
 				87733518288E9B07000556DD /* ScrollDelegate */,
 			);
@@ -779,6 +812,8 @@
 			children = (
 				877C407F288B0EA1001F4C28 /* MyProductCollectionViewCell.swift */,
 				877C4080288B0EA1001F4C28 /* MyProductCollectionViewCell.xib */,
+				8788899D2891DCCD00289F15 /* FollowerTableViewCell.swift */,
+				8788899B2891DCB100289F15 /* FollowingCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -788,6 +823,9 @@
 			children = (
 				877334ED288C39BC000556DD /* MyPageManager.swift */,
 				877334EF288C39C7000556DD /* MyPageResponse.swift */,
+				87F3C86228919FB2003EE7A4 /* HeartList */,
+				87F3C86028919F9C003EE7A4 /* Follower */,
+				87F3C86128919FA4003EE7A4 /* Following */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -981,6 +1019,74 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		8788899F2891DEE000289F15 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				878889A02891DEF600289F15 /* MarketViewController.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		87F3C85528919BCB003EE7A4 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				87F3C85628919BFB003EE7A4 /* FollowingManager.swift */,
+				87F3C85828919C0F003EE7A4 /* FollowingResponse.swift */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		87F3C85A28919E9B003EE7A4 /* Following */ = {
+			isa = PBXGroup;
+			children = (
+				87F3C85C28919EC4003EE7A4 /* MyFollowingViewController.swift */,
+			);
+			path = Following;
+			sourceTree = "<group>";
+		};
+		87F3C85B28919EA3003EE7A4 /* Follower */ = {
+			isa = PBXGroup;
+			children = (
+				87F3C85E28919ED4003EE7A4 /* MyFollowerViewController.swift */,
+			);
+			path = Follower;
+			sourceTree = "<group>";
+		};
+		87F3C86028919F9C003EE7A4 /* Follower */ = {
+			isa = PBXGroup;
+			children = (
+				878889912891D3E800289F15 /* MyFollowerManager.swift */,
+				878889952891D3FC00289F15 /* MyFollowerResponse.swift */,
+			);
+			path = Follower;
+			sourceTree = "<group>";
+		};
+		87F3C86128919FA4003EE7A4 /* Following */ = {
+			isa = PBXGroup;
+			children = (
+				878889932891D3F300289F15 /* MyFollowingManager.swift */,
+				878889972891D40900289F15 /* MyFollowingResponse.swift */,
+			);
+			path = Following;
+			sourceTree = "<group>";
+		};
+		87F3C86228919FB2003EE7A4 /* HeartList */ = {
+			isa = PBXGroup;
+			children = (
+				87F3C86428919FE7003EE7A4 /* HeartListManager.swift */,
+				87F3C86628919FF7003EE7A4 /* HeartListResponse.swift */,
+			);
+			path = HeartList;
+			sourceTree = "<group>";
+		};
+		87F3C86328919FC9003EE7A4 /* HeartList */ = {
+			isa = PBXGroup;
+			children = (
+				87F3C8682891A493003EE7A4 /* MyHeartListViewController.swift */,
+			);
+			path = HeartList;
+			sourceTree = "<group>";
+		};
 		8AE4C1C67F71AF556431CF53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1116,12 +1222,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				877334F0288C39C7000556DD /* MyPageResponse.swift in Sources */,
+				878889A12891DEF600289F15 /* MarketViewController.swift in Sources */,
 				87733513288DC214000556DD /* ProductsCollectionViewCell.swift in Sources */,
 				87442BCD2883389900E7AF3A /* HomeTabManViewController.swift in Sources */,
 				877F205F2887AE5300F1EEA9 /* Cell.swift in Sources */,
 				87818158289064E700E39B6F /* RecentSearchManger.swift in Sources */,
 				87442BC62883035900E7AF3A /* BaseTabBarController.swift in Sources */,
 				87442BBB2883014900E7AF3A /* PostMainViewController.swift in Sources */,
+				87F3C85F28919ED4003EE7A4 /* MyFollowerViewController.swift in Sources */,
 				877F20442885EBF900F1EEA9 /* Segue.swift in Sources */,
 				87818151289015E100E39B6F /* Type.swift in Sources */,
 				877019A1288273800003441E /* UICollectionViewCell+.swift in Sources */,
@@ -1134,7 +1242,10 @@
 				877C896F2888123B00C79ADC /* Category.swift in Sources */,
 				8770198B28826A680003441E /* UIFont+.swift in Sources */,
 				8773351C288E9B5B000556DD /* ProductVC.swift in Sources */,
+				87F3C86528919FE7003EE7A4 /* HeartListManager.swift in Sources */,
+				878889942891D3F300289F15 /* MyFollowingManager.swift in Sources */,
 				877F204C2887225600F1EEA9 /* SignUpManager.swift in Sources */,
+				878889962891D3FC00289F15 /* MyFollowerResponse.swift in Sources */,
 				87442BD32883442400E7AF3A /* RecommendProductCollectionViewCell.swift in Sources */,
 				8773350B288D6A59000556DD /* TotalReviewTableViewCell.swift in Sources */,
 				87442BD1288340AD00E7AF3A /* HomeBrandViewController.swift in Sources */,
@@ -1153,6 +1264,7 @@
 				878181672890739B00E39B6F /* KeywordProductManager.swift in Sources */,
 				877C408F288B2E1C001F4C28 /* RecommendProductManager.swift in Sources */,
 				877C4087288B1596001F4C28 /* UserProductGetManager.swift in Sources */,
+				87F3C86728919FF7003EE7A4 /* HeartListResponse.swift in Sources */,
 				87818161289069A600E39B6F /* HotSearchResponse.swift in Sources */,
 				877C408C288B17A6001F4C28 /* Condition.swift in Sources */,
 				878181562890642900E39B6F /* RecentSearchCollectionViewCell.swift in Sources */,
@@ -1169,13 +1281,17 @@
 				87442BBD2883016600E7AF3A /* ChatMainViewController.swift in Sources */,
 				877F20462885F17D00F1EEA9 /* SecondCategoryViewController.swift in Sources */,
 				87442BE7288423BB00E7AF3A /* BannerResponse.swift in Sources */,
+				87F3C85D28919EC4003EE7A4 /* MyFollowingViewController.swift in Sources */,
 				877C8981288893E900C79ADC /* TagCollectionViewCell.swift in Sources */,
 				877F20372885A04200F1EEA9 /* OptionBottomSheet.swift in Sources */,
+				878889982891D40900289F15 /* MyFollowingResponse.swift in Sources */,
 				877019A82882D7A00003441E /* Image.swift in Sources */,
 				87818153289061FE00E39B6F /* UITextField+.swift in Sources */,
 				877C4073288AB6A1001F4C28 /* ProductGetManager.swift in Sources */,
 				87442BFD28844D8900E7AF3A /* CategoryTagCollectionViewCell.swift in Sources */,
+				8788899E2891DCCD00289F15 /* FollowerTableViewCell.swift in Sources */,
 				877C898B2889EF6D00C79ADC /* Error.swift in Sources */,
+				878889922891D3E800289F15 /* MyFollowerManager.swift in Sources */,
 				877C8979288816F900C79ADC /* SecondCategoryResponse.swift in Sources */,
 				87733509288D69ED000556DD /* ReviewTableViewCell.swift in Sources */,
 				877F20392885A8B800F1EEA9 /* Color.swift in Sources */,
@@ -1188,15 +1304,18 @@
 				8770199F288273730003441E /* UITableViewCell+.swift in Sources */,
 				877C89752888156300C79ADC /* FirstCategoryResponse.swift in Sources */,
 				877334FE288CAA77000556DD /* PostStartVC.swift in Sources */,
+				87F3C8692891A493003EE7A4 /* MyHeartListViewController.swift in Sources */,
 				877334FA288C9323000556DD /* HeartPostManager.swift in Sources */,
 				87442BCF28833A0C00E7AF3A /* HomeRecommendProductViewController.swift in Sources */,
 				87733523288EA722000556DD /* ShowProductViewController.swift in Sources */,
 				877C89892889E74000C79ADC /* Int+.swift in Sources */,
+				87F3C85728919BFB003EE7A4 /* FollowingManager.swift in Sources */,
 				877C89732888155700C79ADC /* FirstCategoryManager.swift in Sources */,
 				8770199D288272F80003441E /* UIView+.swift in Sources */,
 				8770198F28826A7E0003441E /* UIViewController+.swift in Sources */,
 				8770198528826A3B0003441E /* Date+.swift in Sources */,
 				877C4089288B15A5001F4C28 /* UserProductGetResponse.swift in Sources */,
+				8788899C2891DCB100289F15 /* FollowingCollectionViewCell.swift in Sources */,
 				87733510288D7183000556DD /* TotalReviewResponse.swift in Sources */,
 				87442BE328841EC100E7AF3A /* BannerManager.swift in Sources */,
 				8781816528906DB000E39B6F /* DeleteRecentSearchResponse.swift in Sources */,
@@ -1227,6 +1346,7 @@
 				877C4093288B3E53001F4C28 /* NotificationCenter.swift in Sources */,
 				87442BDC2883F48F00E7AF3A /* PostCategoryViewController.swift in Sources */,
 				877C898F288A009200C79ADC /* productPostManager.swift in Sources */,
+				87F3C85928919C0F003EE7A4 /* FollowingResponse.swift in Sources */,
 				8781815F2890699C00E39B6F /* HotSearchManager.swift in Sources */,
 				87442BB22882E5A300E7AF3A /* User.swift in Sources */,
 				877F205128874B2C00F1EEA9 /* HomeTotalMenuViewController.swift in Sources */,

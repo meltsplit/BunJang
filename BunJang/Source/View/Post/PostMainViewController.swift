@@ -78,7 +78,7 @@ class PostMainViewController : BaseViewController {
     //MARK: - Properties
     var isPatch : Bool = false
     var method = HTTPMethod.post
-    
+    var productId : Int = 0
     var postData : ProductPostModel?
     
     var imagesData = [Default.defaultImage]
@@ -310,7 +310,7 @@ class PostMainViewController : BaseViewController {
         do {
             print("통신 메소드가 뭘까요! \(method)")
             postData = try checkValidPostData(images: imagesData, title: titleData, category: categoryData, tag: tagData, price: priceData, contents: contentsData)
-            ProductPostManager.shared.postPatchProduct(method: method, product: postData!) { (response) in
+            ProductPostManager.shared.postPatchProduct(method: method, product: postData!, productId: productId) { (response) in
                 switch response {
                 
                 case .success(let data) :
