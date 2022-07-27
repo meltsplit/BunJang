@@ -71,6 +71,9 @@ class ProductViewController : BaseViewController{
     var productId : Int?
     var userID : Int?
     var myProduct : Bool = false
+    var prevHome = false
+    
+    var condition : Condition = Condition.sell
     
     var productData : ProductGetResult?
     var userProductsData : [UserProductGetResult] = []
@@ -208,6 +211,12 @@ class ProductViewController : BaseViewController{
         
         productData = data
         productImageList = []
+        
+        
+        if data.productImgs.count == 1 {
+            productImageCountView.isHidden = true
+        }
+        
         data.productImgs.forEach { self.productImageList.append( (AlamofireSource(urlString: $0.productImgUrl) ?? AlamofireSource(urlString: Default.defaultImage))! ) }
         productImageSlide.setImageInputs(productImageList)
         self.priceLabel.text = makePriceString(data.price)! + " 원"
@@ -319,7 +328,14 @@ class ProductViewController : BaseViewController{
     
     //MARK: - IBAction
     
-    @IBAction func backBtnPressed(_ sender: UIButton) { popVC() }
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        if prevHome{
+            dismissLeftToRight()
+        } else{
+            popVC()
+            
+        }
+    }
     
     @IBAction func followBtnPressed(_ sender: UIButton) {
         followBtn.isSelected = !followBtn.isSelected
@@ -362,6 +378,13 @@ class ProductViewController : BaseViewController{
        
         
     }
+    
+    @IBAction func searchBtnPressed(_ sender: UIButton) {
+        let searchVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchMainViewController") as! SearchMainViewController
+        searchVC.prevTab = false
+        pushVC(searchVC)
+    }
+    
     
     @IBAction func talkBtnPressed(_ sender: UIButton) {
         

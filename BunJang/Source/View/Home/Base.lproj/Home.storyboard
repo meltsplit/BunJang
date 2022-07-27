@@ -243,6 +243,9 @@
                             </barButtonItem>
                             <barButtonItem image="magnifyingglass" catalog="system" id="Z4Q-Zb-91Q">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="searchBtnPressed:" destination="p65-Sb-Y74" id="e93-zo-hsE"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>

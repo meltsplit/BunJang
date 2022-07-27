@@ -28,7 +28,8 @@ extension RecommendProductManager{
             //"Content-Type":"application/json"
             "X-ACCESS-TOKEN": User.shared.jwt
         ]
-        
+        print("user: " + User.shared.userId)
+        print("JWT" + User.shared.jwt)
         let param : Parameters = [
             
             "page" : page,

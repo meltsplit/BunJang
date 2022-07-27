@@ -26,11 +26,15 @@ class HomeRecommendProductViewController : BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("RecommendVC - ViewDidLoad")
         setDelegate()
         setNotification()
         getRecommendProduct()
         resizeCollectionView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("REcommend - viewwillAppaer")
         
     }
     
@@ -58,10 +62,13 @@ class HomeRecommendProductViewController : BaseViewController{
             switch response {
 
             case .success(let data) :
-                let responseData = data as! RecommendProductResponse
                 
+                let responseData = data as! RecommendProductResponse
+               
                 self.setRecommendData(responseData.result)
-            
+                
+                
+                
             case .requestErr(let msg):
                 print(msg)
             case .pathErr :

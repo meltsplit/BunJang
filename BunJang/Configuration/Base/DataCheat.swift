@@ -12,6 +12,7 @@ struct DataCheet{
     
     var height = 350
     var filter = Filter.recent
-    
+    var prevPost = false
+    var productId = 0
     private init() {}
 }

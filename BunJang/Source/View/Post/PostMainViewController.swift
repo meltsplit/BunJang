@@ -319,7 +319,12 @@ class PostMainViewController : BaseViewController {
                     
                     print("상품 ID: \(responseData.result.productId) 등록 완료.")
                     
-                    guard let BaseVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
+                    DataCheet.shard.prevPost = true
+                    DataCheet.shard.productId = responseData.result.productId
+                    
+                    let storyboard = UIStoryboard(name: "Tab", bundle: nil)
+                    
+                    guard let BaseVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
                     
                     BaseVC.modalPresentationStyle = .fullScreen
                     self.present(BaseVC, animated: false)
@@ -357,10 +362,8 @@ extension PostMainViewController : UITextFieldDelegate{
         
         switch textField{
         case titleTextField:
-            print("타이틀 수정중")
             titleLine.backgroundColor = .black
         case priceTextField:
-            print("가격 수정중")
             wonLabel.textColor = .black
             priceLine.backgroundColor = .black
         default: print("")
@@ -385,9 +388,8 @@ extension PostMainViewController : UITextFieldDelegate{
                 wonLabel.textColor = .systemGray3
                 priceLine.backgroundColor = .systemGray5
                 
-                print("가격이 얼마노 \(text)")
                 priceData = !text.isEmpty ? Int(text) ?? 0 : nil
-                print("가격이 얼마노 \(priceData)")
+                
             default: print("")
             }
         

@@ -22,6 +22,7 @@ class HomeMainViewController : BaseViewController{
     var eventImage : [AlamofireSource] = []
     var page = 0
     
+    
     let bannerCountView : UIView = {
            let view = UIView()
         view.backgroundColor = .darkGray
@@ -35,18 +36,27 @@ class HomeMainViewController : BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataCheet.shard.height = 350
         setNotificationCenter()
         setDelegate()
         setUI()
+        showTabBar()
         setImageSlide()
         getBanner()
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("home - ViewWillAppear")
         
-       
+        if DataCheet.shard.prevPost{
+            DataCheet.shard.prevPost = false
+            goProductVC()
+        }
+        
+        
     }
     
     //MARK: - Custom Method
@@ -72,7 +82,7 @@ class HomeMainViewController : BaseViewController{
         eventImageSlide.bringSubviewToFront(labelIndicator)
         bannerCountView.snp.makeConstraints {
             $0.center.equalTo(labelIndicator.snp.center)
-            $0.width.equalTo(labelIndicator).offset(10)
+            $0.width.equalTo(labelIndicator).offset(7)
             $0.height.equalTo(labelIndicator).offset(18)
         }
         eventImageSlide.pageIndicatorPosition = .init(horizontal: .right(padding: 20), vertical: .customBottom(padding: 20))
@@ -144,10 +154,26 @@ class HomeMainViewController : BaseViewController{
         
     }
     
+    private func goProductVC(){
+        print("goProductVC()")
+        let productVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+        
+        productVC.userID = Int(User.shared.userId)
+        productVC.productId = DataCheet.shard.productId
+        productVC.prevHome = true
+        productVC.modalPresentationStyle = .overFullScreen
+        present(productVC, animated: true)
+    }
+    
     
     
        
     //MARK: - IBAction
+    @IBAction func searchBtnPressed(_ sender: Any) {
+        let searchVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "SearchMainViewController") as! SearchMainViewController
+        searchVC.prevTab = false
+        pushVC(searchVC)
+    }
     
 }
 

@@ -670,6 +670,7 @@
 			children = (
 				8781814B2890099F00E39B6F /* Show.swift */,
 				87818150289015E100E39B6F /* Type.swift */,
+				877C408B288B17A6001F4C28 /* Condition.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -794,7 +795,6 @@
 		877C408A288B1795001F4C28 /* My */ = {
 			isa = PBXGroup;
 			children = (
-				877C408B288B17A6001F4C28 /* Condition.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";

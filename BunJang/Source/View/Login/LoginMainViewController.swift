@@ -119,7 +119,6 @@ class LoginMainViewController : BaseViewController{
    
     
     @IBAction func autoLogin(_ sender: UIButton) {
-        let mainTabVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
         
         User.shared.id = "pinaex00"
         User.shared.pwd = "password"
@@ -128,6 +127,10 @@ class LoginMainViewController : BaseViewController{
         User.shared.location = "강서구 마곡동"
         User.shared.jwt = Secret.jwtToken1
         User.shared.userId = "1"
+        
+        
+        let mainTabVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
+        
         
         changeRootViewController(mainTabVC)
     }

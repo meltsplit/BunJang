@@ -42,10 +42,9 @@
         <!--홈-->
         <scene sceneID="4fW-VN-TXc">
             <objects>
-                <navigationController id="dKn-9G-Wrg" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="dKn-9G-Wrg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="zNJ-Py-6Dk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GLn-Hw-G92">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -56,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="-2096" y="872"/>
         </scene>
-        <!--HomeMainViewController-->
+        <!--HomeNavigationController-->
         <scene sceneID="jaY-mM-zEi">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeMainViewController" id="Ufg-tl-10a" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeNavigationController" id="Ufg-tl-10a" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="sca-TM-w5a"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1GN-SR-fz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
