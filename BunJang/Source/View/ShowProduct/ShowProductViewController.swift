@@ -79,7 +79,7 @@ class ShowProductViewController : BaseViewController{
             lastCategoryCollectionView.isHidden = true
             categoryStackView.isHidden = true
             getUserProducts()
-            titleLabel.text = "\(nickname)님의 상품"
+            titleLabel.text = "\(nickname!)님의 상품"
             filterStackView.snp.remakeConstraints {
                 $0.top.equalToSuperview().offset(20)
             }

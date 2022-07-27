@@ -353,7 +353,7 @@ class ProductViewController : BaseViewController{
         userProductVC.prevTab = false
         userProductVC.show = Show.userProduct
         userProductVC.userId = userID
-        userProductVC.nickname = productData?.nickname
+        userProductVC.nickname = productData!.nickname
         pushVC(userProductVC)
     }
     
