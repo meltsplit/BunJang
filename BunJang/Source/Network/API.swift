@@ -13,7 +13,8 @@ struct API{
     static let domainURL = "http://njeat.shop:9000"
     static let base1URL = "http://13.209.204.136:9000"
     
-   
+   static let phoneRequestURL = baseURL + "/app/messages/code"
+    
     static let userURL = baseURL + "/app/users"
     static let kakaoURL = userURL + "/kakao"
     
@@ -26,9 +27,10 @@ struct API{
     static let followURL = baseURL + "/app/follows"
     
     
-    static let signUpURL = userURL + "/sign-up"
+    
     static let kakaoAutoURL = kakaoURL + "/auto/log-in"
     
+    static let signUpURL = userURL + "/sign-up"
     static let myPageURL = userURL + "/my-page"
     static let heartListURL = userURL + "/heart-list"
     static let reviewURL = userURL + "/shop/reviews"

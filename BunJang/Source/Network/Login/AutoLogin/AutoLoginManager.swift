@@ -33,7 +33,7 @@ extension AutoLoginManager{
         let dataRequest = AF.request(
                                      url,
                                      method: .post,
-                                     encoding: URLEncoding.default,
+                                     encoding: JSONEncoding.default,
                                      headers: header
                                     )
         

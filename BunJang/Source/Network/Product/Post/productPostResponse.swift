@@ -21,4 +21,5 @@ struct ProductPostResult : Codable {
     
     let productId : Int
     
+    
 }

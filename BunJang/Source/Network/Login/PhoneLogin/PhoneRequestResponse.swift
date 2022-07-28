@@ -6,19 +6,15 @@
 //
 
 import Foundation
-struct SignUpResponse : Codable {
+
+struct PhoneRequestResponse : Codable {
     
     let isSuccess : Bool
     let code : Int
     let message : String
-    let result : SignUpResult
-    
+    let result : PhoneRequestResult?
 }
 
-
-struct SignUpResult : Codable {
-    
-    let userId : Int
-    let jwt : String
-    
+struct PhoneRequestResult : Codable{
+    let certNum : String
 }

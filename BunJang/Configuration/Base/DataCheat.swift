@@ -10,6 +10,8 @@ import Foundation
 struct DataCheet{
     static var shard = DataCheet()
     
+    var phoneNum = "01012345678"
+    
     var height = 350
     var filter = Filter.recent
     var prevPost = false

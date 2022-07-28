@@ -13,9 +13,9 @@ extension ShowProductViewController {
             switch response {
             case .success(let data) :
                 let responseData = data as! UserProductGetResponse
-                
-                self.setUserProduct(responseData.result)
-                
+                if responseData.isSuccess{
+                    self.setUserProduct(responseData.result!)
+                }
             case .requestErr(let msg):
                 if let message = msg as? String {
                     print(message)

@@ -1,50 +1,35 @@
 //
-//  SignUpManager.swift
+//  MyPageManager.swift
 //  BunJang
 //
-//  Created by 장석우 on 2022/07/20.
+//  Created by 장석우 on 2022/07/23.
 //
 
 import Foundation
 import Alamofire
 
-class SignUpManager{
-    static let shared = SignUpManager()
+class PhoneRequestManager{
+    static let shared = PhoneRequestManager()
     
     private var managerID: String{ return String(describing: self)}
     private init(){}
 }
 
-extension SignUpManager{
+extension PhoneRequestManager{
     
-    func postRegister(nickname: String, location: String,phoneNum: String, imageurl : String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func requestNember(phoneNum : String,completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let url = API.signUpURL
-        url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        
-        let header : HTTPHeaders = [
-            "Content-Type":"application/json"
-        ]
-        
+        let url = API.phoneRequestURL + "/"
         
         let param : Parameters = [
-            "id":"",
-            "pwd":"",
-            "nickname": nickname,
-            "profileImgUrl": imageurl,
-            "location": location,
-            "phoneNum": phoneNum
-                
+            "phoneNum" : phoneNum
         ]
-    
-        
         
         let dataRequest = AF.request(
                                      url,
-                                     method: .post,
+                                     method: .get,
                                      parameters: param,
-                                     encoding: JSONEncoding.default,
-                                     headers: header
+                                     encoding: URLEncoding.default
                                     )
         
         
@@ -54,14 +39,13 @@ extension SignUpManager{
                 
                 switch response.result {
                 case .success:
-                    guard let statusCode = response.response?.statusCode else { return }
-                    guard let value = response.value else { return }
                     
-                    let networkResult = self.judge(status: statusCode, data: value )
+                    guard let statusCode = response.response?.statusCode else { return }
+                    guard let data = response.value else { return }
+             
+                    let networkResult = self.judge(status: statusCode, data: data )
                     
                     completion(networkResult)
-                    
-                    
                     
                 case .failure:
                     print("\(self.managerID)에서 failure 발생하였습니다.")
@@ -75,7 +59,7 @@ extension SignUpManager{
         
         let decoder = JSONDecoder()
         
-        guard let decodedData = try? decoder.decode(SignUpResponse.self, from : data)
+        guard let decodedData = try? decoder.decode(PhoneRequestResponse.self, from : data)
         else {
             print("\(managerID)에서 Decode를 실패하였습니다.")
             return .decodeErr
@@ -83,12 +67,16 @@ extension SignUpManager{
         
         switch status{
         case 200..<300:
+            print("\(self.managerID) - 통신 성공했습니다.")
             return .success(decodedData)
         case 400..<500 :
+            print("\(self.managerID) - Request Error 발생했습니다.")
             return .requestErr(decodedData)
         case 500 :
+            print("\(self.managerID) - Server Error 발생했습니다.")
             return .serverErr
         default :
+            print("\(self.managerID) - NetWork Fail 입니다.")
             return .networkFail
             
             

@@ -146,6 +146,13 @@
 		878889A12891DEF600289F15 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889A02891DEF600289F15 /* MarketViewController.swift */; };
 		878889A62892FFC400289F15 /* AutoLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889A52892FFC400289F15 /* AutoLoginManager.swift */; };
 		878889A82892FFCC00289F15 /* AutoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889A72892FFCC00289F15 /* AutoLoginResponse.swift */; };
+		878889AA28931EB700289F15 /* KaKaoAccessTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889A928931EB700289F15 /* KaKaoAccessTokenManager.swift */; };
+		878889AC289321F200289F15 /* KaKaoAccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889AB289321F200289F15 /* KaKaoAccessTokenResponse.swift */; };
+		878889AE28932B6F00289F15 /* LoginPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889AD28932B6F00289F15 /* LoginPhoneViewController.swift */; };
+		878889B028932B9900289F15 /* LoginCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889AF28932B9900289F15 /* LoginCertificationViewController.swift */; };
+		878889B228932BB000289F15 /* LoginUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889B128932BB000289F15 /* LoginUserInfoViewController.swift */; };
+		878889B42893302800289F15 /* PhoneRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889B32893302800289F15 /* PhoneRequestManager.swift */; };
+		878889B62893314400289F15 /* PhoneRequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889B52893314400289F15 /* PhoneRequestResponse.swift */; };
 		87F3C85728919BFB003EE7A4 /* FollowingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85628919BFB003EE7A4 /* FollowingManager.swift */; };
 		87F3C85928919C0F003EE7A4 /* FollowingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85828919C0F003EE7A4 /* FollowingResponse.swift */; };
 		87F3C85D28919EC4003EE7A4 /* MyFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85C28919EC4003EE7A4 /* MyFollowingViewController.swift */; };
@@ -298,6 +305,13 @@
 		878889A02891DEF600289F15 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		878889A52892FFC400289F15 /* AutoLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginManager.swift; sourceTree = "<group>"; };
 		878889A72892FFCC00289F15 /* AutoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginResponse.swift; sourceTree = "<group>"; };
+		878889A928931EB700289F15 /* KaKaoAccessTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoAccessTokenManager.swift; sourceTree = "<group>"; };
+		878889AB289321F200289F15 /* KaKaoAccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoAccessTokenResponse.swift; sourceTree = "<group>"; };
+		878889AD28932B6F00289F15 /* LoginPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPhoneViewController.swift; sourceTree = "<group>"; };
+		878889AF28932B9900289F15 /* LoginCertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCertificationViewController.swift; sourceTree = "<group>"; };
+		878889B128932BB000289F15 /* LoginUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInfoViewController.swift; sourceTree = "<group>"; };
+		878889B32893302800289F15 /* PhoneRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRequestManager.swift; sourceTree = "<group>"; };
+		878889B52893314400289F15 /* PhoneRequestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRequestResponse.swift; sourceTree = "<group>"; };
 		87F3C85628919BFB003EE7A4 /* FollowingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingManager.swift; sourceTree = "<group>"; };
 		87F3C85828919C0F003EE7A4 /* FollowingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingResponse.swift; sourceTree = "<group>"; };
 		87F3C85C28919EC4003EE7A4 /* MyFollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingViewController.swift; sourceTree = "<group>"; };
@@ -616,6 +630,9 @@
 				877019A42882D65B0003441E /* LoginMainViewController.swift */,
 				877F20482887166A00F1EEA9 /* SignUp */,
 				877F20472887165F00F1EEA9 /* SignIn */,
+				878889AD28932B6F00289F15 /* LoginPhoneViewController.swift */,
+				878889AF28932B9900289F15 /* LoginCertificationViewController.swift */,
+				878889B128932BB000289F15 /* LoginUserInfoViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1046,6 +1063,8 @@
 		878889A32892F69E00289F15 /* KaKaoLogin */ = {
 			isa = PBXGroup;
 			children = (
+				878889A928931EB700289F15 /* KaKaoAccessTokenManager.swift */,
+				878889AB289321F200289F15 /* KaKaoAccessTokenResponse.swift */,
 			);
 			path = KaKaoLogin;
 			sourceTree = "<group>";
@@ -1053,6 +1072,8 @@
 		878889A42892F6AC00289F15 /* PhoneLogin */ = {
 			isa = PBXGroup;
 			children = (
+				878889B32893302800289F15 /* PhoneRequestManager.swift */,
+				878889B52893314400289F15 /* PhoneRequestResponse.swift */,
 			);
 			path = PhoneLogin;
 			sourceTree = "<group>";
@@ -1252,6 +1273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				877334F0288C39C7000556DD /* MyPageResponse.swift in Sources */,
+				878889AA28931EB700289F15 /* KaKaoAccessTokenManager.swift in Sources */,
 				878889A12891DEF600289F15 /* MarketViewController.swift in Sources */,
 				87733513288DC214000556DD /* ProductsCollectionViewCell.swift in Sources */,
 				87442BCD2883389900E7AF3A /* HomeTabManViewController.swift in Sources */,
@@ -1263,6 +1285,7 @@
 				877F20442885EBF900F1EEA9 /* Segue.swift in Sources */,
 				87818151289015E100E39B6F /* Type.swift in Sources */,
 				877019A1288273800003441E /* UICollectionViewCell+.swift in Sources */,
+				878889AE28932B6F00289F15 /* LoginPhoneViewController.swift in Sources */,
 				87442BAF2882DED300E7AF3A /* Secret.swift in Sources */,
 				87442BE528841F0500E7AF3A /* API.swift in Sources */,
 				877C4081288B0EA1001F4C28 /* MyProductCollectionViewCell.swift in Sources */,
@@ -1286,6 +1309,7 @@
 				87442BC42883021800E7AF3A /* SearchMainViewController.swift in Sources */,
 				877C8983288960BA00C79ADC /* SignUpResponse.swift in Sources */,
 				877334FC288C950F000556DD /* HeartResponse.swift in Sources */,
+				878889B228932BB000289F15 /* LoginUserInfoViewController.swift in Sources */,
 				877C897D28888F3E00C79ADC /* Default.swift in Sources */,
 				877C89852889CCF300C79ADC /* ProductPostModel.swift in Sources */,
 				877C407A288AD73E001F4C28 /* UIImageView+.swift in Sources */,
@@ -1296,6 +1320,7 @@
 				878181672890739B00E39B6F /* KeywordProductManager.swift in Sources */,
 				877C408F288B2E1C001F4C28 /* RecommendProductManager.swift in Sources */,
 				877C4087288B1596001F4C28 /* UserProductGetManager.swift in Sources */,
+				878889B42893302800289F15 /* PhoneRequestManager.swift in Sources */,
 				87F3C86728919FF7003EE7A4 /* HeartListResponse.swift in Sources */,
 				87818161289069A600E39B6F /* HotSearchResponse.swift in Sources */,
 				877C408C288B17A6001F4C28 /* Condition.swift in Sources */,
@@ -1307,6 +1332,7 @@
 				87442BB62882EB9E00E7AF3A /* HomeMainViewController.swift in Sources */,
 				87701979288266FF0003441E /* Device.swift in Sources */,
 				877334EE288C39BC000556DD /* MyPageManager.swift in Sources */,
+				878889B028932B9900289F15 /* LoginCertificationViewController.swift in Sources */,
 				8781816328906D9900E39B6F /* DeleteRecentSearchManager.swift in Sources */,
 				87818148288F16FE00E39B6F /* CategoryProductManager.swift in Sources */,
 				877C4078288AC139001F4C28 /* SignUpModel.swift in Sources */,
@@ -1341,6 +1367,7 @@
 				87442BCF28833A0C00E7AF3A /* HomeRecommendProductViewController.swift in Sources */,
 				87733523288EA722000556DD /* ShowProductViewController.swift in Sources */,
 				877C89892889E74000C79ADC /* Int+.swift in Sources */,
+				878889AC289321F200289F15 /* KaKaoAccessTokenResponse.swift in Sources */,
 				87F3C85728919BFB003EE7A4 /* FollowingManager.swift in Sources */,
 				877C89732888155700C79ADC /* FirstCategoryManager.swift in Sources */,
 				8770199D288272F80003441E /* UIView+.swift in Sources */,
@@ -1364,6 +1391,7 @@
 				8773352A288F1129000556DD /* SecondCategoryCollectionViewCell.swift in Sources */,
 				8770198928826A590003441E /* UIColor+.swift in Sources */,
 				87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */,
+				878889B62893314400289F15 /* PhoneRequestResponse.swift in Sources */,
 				877C4095288B4302001F4C28 /* DataCheat.swift in Sources */,
 				87818169289073AA00E39B6F /* KeywordProductResponse.swift in Sources */,
 				8770198D28826A730003441E /* UIButton+.swift in Sources */,

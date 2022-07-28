@@ -125,8 +125,11 @@ class MyMainViewController : BaseViewController{
             switch response {
             case .success(let data) :
                 let responseData = data as! UserProductGetResponse
-                self.setMyProduct(responseData.result)
-                
+                if responseData.isSuccess{
+                    self.setMyProduct(responseData.result!)
+                } else{
+                    self.presentBottomAlert(message: responseData.message)
+                }
             case .requestErr(let msg):
                 if let message = msg as? String {
                     print(message)

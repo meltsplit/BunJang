@@ -38,7 +38,11 @@ extension ProductViewController{
             switch response {
             case .success(let data) :
                 let responseData = data as! UserProductGetResponse
-                self.setUserProduct(responseData.result)
+                if responseData.isSuccess{
+                    self.setUserProduct(responseData.result!)
+                } else {
+                    self.presentBottomAlert(message: responseData.message)
+                }
                 self.resizeCollectionView()
             case .requestErr(let msg):
                 if let message = msg as? String {

@@ -90,31 +90,23 @@ class LoginMainViewController : BaseViewController{
         
     }
     @IBAction func appleLoginBtnPressed(_ sender: UIButton) {
-        print("애플 로그인은 개발자 계정이 있어야 가능합니다.")
-       presentBottomAlert(message: "애플 로그인은 개발자 계정이 있어야 가능합니다.")
-
-        User.shared.jwt = Secret.jwtToken1
-        User.shared.userId = "1"
         
-        
-        
-        UIStoryboard(name: "ShowProduct", bundle: nil)
-        let categoryProductVC = UIStoryboard(name: "ShowProduct", bundle: nil).instantiateViewController(withIdentifier: "ShowProductViewController") as! ShowProductViewController
-        categoryProductVC.show = Show.firstCategoryProduct
-        categoryProductVC.categoryId = 1
-        pushVC(categoryProductVC)
-        
-      
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "LoginPhoneViewController") as! LoginPhoneViewController
+        pushVC(nextVC)
     }
    
     
+    
+    
+    
+    //        UIStoryboard(name: "ShowProduct", bundle: nil)
+    //        let categoryProductVC = UIStoryboard(name: "ShowProduct", bundle: nil).instantiateViewController(withIdentifier: "ShowProductViewController") as! ShowProductViewController
+    //        categoryProductVC.show = Show.firstCategoryProduct
+    //        categoryProductVC.categoryId = 1
+    //        pushVC(categoryProductVC)
+    
     @IBAction func autoLogin(_ sender: UIButton) {
         
-        User.shared.id = "pinaex00"
-        User.shared.pwd = "password"
-        User.shared.nickname = "파이내쁠"
-        User.shared.phoneNum = "010199711712"
-        User.shared.location = "강서구 마곡동"
         User.shared.jwt = Secret.jwtToken1
         User.shared.userId = "1"
         
