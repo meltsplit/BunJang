@@ -21,7 +21,7 @@ struct User : Codable{
     
     var userId : String = "0"
     var jwt : String = "Default JWT Token"
-    var isLogin : Bool?
+    var isLogin : Bool = false
     
     private init(){}
     

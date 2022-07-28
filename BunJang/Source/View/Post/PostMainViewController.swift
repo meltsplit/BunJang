@@ -310,6 +310,8 @@ class PostMainViewController : BaseViewController {
         do {
             print("통신 메소드가 뭘까요! \(method)")
             postData = try checkValidPostData(images: imagesData, title: titleData, category: categoryData, tag: tagData, price: priceData, contents: contentsData)
+            
+            
             ProductPostManager.shared.postPatchProduct(method: method, product: postData!, productId: productId) { (response) in
                 switch response {
                 
@@ -317,18 +319,21 @@ class PostMainViewController : BaseViewController {
                     // MARK: - 상품 등록 성공!!
                     let responseData = data as! ProductPostResponse
                     
-                    print("상품 ID: \(responseData.result.productId) 등록 완료.")
-                    
-                    DataCheet.shard.prevPost = true
-                    DataCheet.shard.productId = responseData.result.productId
-                    
-                    let storyboard = UIStoryboard(name: "Tab", bundle: nil)
-                    
-                    guard let BaseVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
-                    
-                    BaseVC.modalPresentationStyle = .fullScreen
-                    self.present(BaseVC, animated: false)
-                    
+                    if self.method == .post{
+                        print("상품 ID: \(responseData.result!.productId) 등록 완료.")
+                        DataCheet.shard.prevPost = true
+                        DataCheet.shard.productId = responseData.result!.productId
+                        
+                        let storyboard = UIStoryboard(name: "Tab", bundle: nil)
+                        
+                        guard let BaseVC = storyboard.instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
+                        
+                        BaseVC.modalPresentationStyle = .fullScreen
+                        self.present(BaseVC, animated: false)
+                    } else {
+                        self.dismiss(animated: true)
+                        self.presentBottomAlert(message: "상품 수정이 완료되었습니다.")
+                    }
                     
                     
                 case .requestErr(let msg):

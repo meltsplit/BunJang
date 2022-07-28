@@ -37,10 +37,13 @@ class FollowerTableViewCell: UITableViewCell {
         
         profileImageView.makeCornerRound(radius: 2)
         profileImageView.makeBorder(width: 1, color: .systemGray5)
+        
+        
         nextBtn.makeCornerRound(radius: 2)
         nextBtn.makeBorder(width: 1, color: .systemGray5)
         
         profileImageView.kfSetImage(urlSting: data.profileImgUrl)
+        profileImageView.contentMode = .scaleAspectFill
         nicknameLabel.text = data.nickname
         productCntLabel.text = "상품 \(data.productCount)"
         followerCntLabel.text = "팔로워 \(data.followerNum)"

@@ -144,6 +144,8 @@
 		8788899C2891DCB100289F15 /* FollowingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8788899B2891DCB100289F15 /* FollowingCollectionViewCell.swift */; };
 		8788899E2891DCCD00289F15 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8788899D2891DCCD00289F15 /* FollowerTableViewCell.swift */; };
 		878889A12891DEF600289F15 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889A02891DEF600289F15 /* MarketViewController.swift */; };
+		878889A62892FFC400289F15 /* AutoLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889A52892FFC400289F15 /* AutoLoginManager.swift */; };
+		878889A82892FFCC00289F15 /* AutoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878889A72892FFCC00289F15 /* AutoLoginResponse.swift */; };
 		87F3C85728919BFB003EE7A4 /* FollowingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85628919BFB003EE7A4 /* FollowingManager.swift */; };
 		87F3C85928919C0F003EE7A4 /* FollowingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85828919C0F003EE7A4 /* FollowingResponse.swift */; };
 		87F3C85D28919EC4003EE7A4 /* MyFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3C85C28919EC4003EE7A4 /* MyFollowingViewController.swift */; };
@@ -294,6 +296,8 @@
 		8788899B2891DCB100289F15 /* FollowingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingCollectionViewCell.swift; sourceTree = "<group>"; };
 		8788899D2891DCCD00289F15 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		878889A02891DEF600289F15 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		878889A52892FFC400289F15 /* AutoLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginManager.swift; sourceTree = "<group>"; };
+		878889A72892FFCC00289F15 /* AutoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginResponse.swift; sourceTree = "<group>"; };
 		87F3C85628919BFB003EE7A4 /* FollowingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingManager.swift; sourceTree = "<group>"; };
 		87F3C85828919C0F003EE7A4 /* FollowingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingResponse.swift; sourceTree = "<group>"; };
 		87F3C85C28919EC4003EE7A4 /* MyFollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +452,9 @@
 		87442BF32884345F00E7AF3A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				878889A22892F69500289F15 /* AutoLogin */,
+				878889A32892F69E00289F15 /* KaKaoLogin */,
+				878889A42892F6AC00289F15 /* PhoneLogin */,
 				877F204B2887225600F1EEA9 /* SignUpManager.swift */,
 				877C8982288960BA00C79ADC /* SignUpResponse.swift */,
 			);
@@ -1027,6 +1034,29 @@
 			path = Market;
 			sourceTree = "<group>";
 		};
+		878889A22892F69500289F15 /* AutoLogin */ = {
+			isa = PBXGroup;
+			children = (
+				878889A52892FFC400289F15 /* AutoLoginManager.swift */,
+				878889A72892FFCC00289F15 /* AutoLoginResponse.swift */,
+			);
+			path = AutoLogin;
+			sourceTree = "<group>";
+		};
+		878889A32892F69E00289F15 /* KaKaoLogin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KaKaoLogin;
+			sourceTree = "<group>";
+		};
+		878889A42892F6AC00289F15 /* PhoneLogin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PhoneLogin;
+			sourceTree = "<group>";
+		};
 		87F3C85528919BCB003EE7A4 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1245,6 +1275,7 @@
 				87F3C86528919FE7003EE7A4 /* HeartListManager.swift in Sources */,
 				878889942891D3F300289F15 /* MyFollowingManager.swift in Sources */,
 				877F204C2887225600F1EEA9 /* SignUpManager.swift in Sources */,
+				878889A82892FFCC00289F15 /* AutoLoginResponse.swift in Sources */,
 				878889962891D3FC00289F15 /* MyFollowerResponse.swift in Sources */,
 				87442BD32883442400E7AF3A /* RecommendProductCollectionViewCell.swift in Sources */,
 				8773350B288D6A59000556DD /* TotalReviewTableViewCell.swift in Sources */,
@@ -1259,6 +1290,7 @@
 				877C89852889CCF300C79ADC /* ProductPostModel.swift in Sources */,
 				877C407A288AD73E001F4C28 /* UIImageView+.swift in Sources */,
 				877C89872889DCB500C79ADC /* UIStackView+.swift in Sources */,
+				878889A62892FFC400289F15 /* AutoLoginManager.swift in Sources */,
 				8770195B2882651D0003441E /* AppDelegate.swift in Sources */,
 				8781815D2890691900E39B6F /* HotSearchCollectionViewCell.swift in Sources */,
 				878181672890739B00E39B6F /* KeywordProductManager.swift in Sources */,

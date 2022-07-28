@@ -116,7 +116,7 @@ extension TotalReviewViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let productVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
         productVC.productId = totalReviewData[indexPath.row].productId
-        //productVC.userID = totalReviewData[indexPath.row].userId
+        productVC.userID = totalReviewData[indexPath.row].userId
         pushVC(productVC)
     }
     

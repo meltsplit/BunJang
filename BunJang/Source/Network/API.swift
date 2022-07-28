@@ -15,7 +15,7 @@ struct API{
     
    
     static let userURL = baseURL + "/app/users"
-    
+    static let kakaoURL = userURL + "/kakao"
     
     static let bannerURL = baseURL + "/app/banner"
     static let productURL = baseURL + "/app/products"
@@ -27,6 +27,8 @@ struct API{
     
     
     static let signUpURL = userURL + "/sign-up"
+    static let kakaoAutoURL = kakaoURL + "/auto/log-in"
+    
     static let myPageURL = userURL + "/my-page"
     static let heartListURL = userURL + "/heart-list"
     static let reviewURL = userURL + "/shop/reviews"

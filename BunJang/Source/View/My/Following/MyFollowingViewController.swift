@@ -104,8 +104,10 @@ extension MyFollowingViewController :UICollectionViewDelegate,UICollectionViewDa
         cell.setData(follwingData[indexPath.row])
         return cell
     }
-    
-    
-    
+}
+extension MyFollowingViewController : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0 )
+    }
 }
 

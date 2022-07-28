@@ -17,5 +17,10 @@ class HotSearchCollectionViewCell: UICollectionViewCell {
         makeCornerRound(radius: 10)
         
         keywordLabel.text = data.keyword
+        if data.keywordId != 10 {
+            numberLabel.text = "0\(data.keywordId)"
+        } else {
+            numberLabel.text = "\(data.keywordId)"
+        }
     }
 }

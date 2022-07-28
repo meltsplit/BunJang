@@ -12,7 +12,7 @@ struct ProductPostResponse : Codable {
     let isSuccess : Bool
     let code : Int
     let message : String
-    let result : ProductPostResult
+    let result : ProductPostResult?
     
 }
 

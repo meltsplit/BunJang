@@ -86,10 +86,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         productId = data.productId
         
         productImageView.makeCornerRound(radius: 20)
-        
-        let imageURL = URL(string: data.productImgs[0].productImgUrl)
-        productImageView.kf.indicatorType = .activity
-        productImageView.kf.setImage(with: imageURL, placeholder: nil, options: [.transition(.fade(2.0))], progressBlock: nil)
+        productImageView.kfSetImage(urlSting: data.productImgs[0].productImgUrl)
         
         
         priceLabel.text = makePriceString(data.price)
@@ -104,9 +101,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         productId = data.productId
         
         productImageView.makeCornerRound(radius: 20)
-        let imageURL = URL(string: data.productImgs[0].productImgUrl)
-        productImageView.kf.indicatorType = .activity
-        productImageView.kf.setImage(with: imageURL, placeholder: nil, options: [.transition(.fade(2.0))], progressBlock: nil)
+        productImageView.kfSetImage(urlSting: data.productImgs[0].productImgUrl)
         
         priceLabel.text = makePriceString(data.price)
         titleLabel.text = data.title

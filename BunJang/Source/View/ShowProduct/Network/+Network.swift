@@ -64,8 +64,11 @@ extension ShowProductViewController {
                 
                 let responseData = data as! CategoryProductResponse
                 print("\(self.filter.rawValue)로 상품을 재조회 했습니다.")
-                self.setProducts(responseData.result)
-                
+                if responseData.isSuccess {
+                    self.setProducts(responseData.result!)
+                } else {
+                    self.presentBottomAlert(message: responseData.message)
+                }
             case .requestErr(let msg):
                 print("요청에러")
             case .pathErr :
@@ -89,8 +92,11 @@ extension ShowProductViewController {
                 let responseData = data as! KeywordProductResponse
                 
                 print("\(self.filter.rawValue)로 상품을 재조회 했습니다.")
-                self.setProducts(responseData.result)
-                
+                if responseData.isSuccess {
+                    self.setProducts(responseData.result!)
+                } else {
+                    self.presentBottomAlert(message: responseData.message)
+                }
             case .requestErr(let msg):
                 print("요청에러")
             case .pathErr :

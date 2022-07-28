@@ -18,6 +18,6 @@ struct HotSearchResponse : Codable {
 
 
 struct HotSearchResult : Codable {
-    //let keywordId : Int
+    let keywordId : Int
     let keyword : String
 }

@@ -18,19 +18,3 @@ enum NetworkResult<T> {
     
 }
 
-//switch response {
-//
-//case .success(let data) :
-//    let responseData = data as! Response
-//case .requestErr(let msg):
-//    self.presentBottomAlert(message: msg as! String)
-//case .pathErr :
-//    print("pathErr")
-//case .serverErr :
-//    print("serverErr")
-//case .networkFail:
-//    print("networkFail")
-//case .decodeErr:
-//    print("decodeError")
-//}
-

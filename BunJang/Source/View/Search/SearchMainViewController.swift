@@ -42,6 +42,7 @@ class SearchMainViewController : BaseViewController{
     }
     override func viewWillDisappear(_ animated: Bool) {
         showTabBar()
+        showNavBar()
     }
     
     //MARK: - Custom Method

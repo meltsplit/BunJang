@@ -117,6 +117,16 @@ extension MyHeartListViewController : UICollectionViewDelegate, UICollectionView
         return cell
         
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        let productVC = UIStoryboard(name: "Product", bundle: nil).instantiateViewController(withIdentifier: "ProductViewController") as! ProductViewController
+        
+        productVC.userID =  productsData[indexPath.row].userId
+        productVC.productId = productsData[indexPath.row].productId
+        
+        navigationController?.pushViewController(productVC, animated: true)
+    }
+    
 }
 
 extension MyHeartListViewController : UICollectionViewDelegateFlowLayout{

@@ -115,10 +115,8 @@ class RecommendProductCollectionViewCell: UICollectionViewCell {
         self.productID = data.productId
         
         productImageView.makeCornerRound(radius: 50)
+        productImageView.kfSetImage(urlSting: data.productImgs[0].productImgUrl)
         
-        let imageURL = URL(string: data.productImgs[0].productImgUrl)
-        productImageView.kf.indicatorType = .activity
-        productImageView.kf.setImage(with: imageURL, placeholder: nil, options: [.transition(.fade(2.0))], progressBlock: nil)
         
         priceLabel.text = makePriceString(data.price)
         titleLabel.text = data.title

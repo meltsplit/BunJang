@@ -45,6 +45,9 @@ class FollowingCollectionViewCell: UICollectionViewCell {
             if check {
                 productImageViewList[i].kfSetImage(urlSting: data.products[i].productImgUrl)
                 productPriceLabelList[i].text = makePriceString(data.products[i].price)
+                productImageViewList[i].makeCornerRound(radius: 15)
+                productImageViewList[i].contentMode = .scaleAspectFill
+                
                  
             }else{
                 productImageViewList[i].isHidden = true

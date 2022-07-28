@@ -54,7 +54,7 @@ class HomeRecommendProductViewController : BaseViewController{
         if (recommendProductData.count / 6 == page + 1){
             page = page + 1
             getRecommendProduct() //전체 상품 조회 API
-        }
+        } 
     }
     
     private func getRecommendProduct(){
@@ -64,10 +64,15 @@ class HomeRecommendProductViewController : BaseViewController{
             case .success(let data) :
                 
                 let responseData = data as! RecommendProductResponse
-               
-                self.setRecommendData(responseData.result)
                 
+                if responseData.isSuccess {
+                    self.setRecommendData(responseData.result!)
+                    print("추천상품 \(responseData.result!.count)개 받았습니다.")
+                } else {
+                    self.presentBottomAlert(message: "마지막 상품입니다.")
+                }
                 
+            
                 
             case .requestErr(let msg):
                 print(msg)

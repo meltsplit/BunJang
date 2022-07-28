@@ -87,7 +87,7 @@ class ProductViewController : BaseViewController{
     let productImageCountView : UIView = {
        let view = UIView()
         view.backgroundColor = .darkGray
-        view.alpha = 0.5
+        view.alpha = 0.4
         view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -171,7 +171,7 @@ class ProductViewController : BaseViewController{
         productImageSlide.bringSubviewToFront(labelIndicator)
         productImageCountView.snp.makeConstraints {
             $0.center.equalTo(labelIndicator.snp.center)
-            $0.width.equalTo(labelIndicator).offset(10)
+            $0.width.equalTo(labelIndicator).offset(5)
             $0.height.equalTo(labelIndicator).offset(18)
         }
         productImageSlide.pageIndicatorPosition = .init(horizontal: .right(padding: 20), vertical: .customBottom(padding: 20))
@@ -263,7 +263,7 @@ class ProductViewController : BaseViewController{
         
         self.profileImageView.load(urlString: data.profileImgUrl)
         self.nicknameLabel.text = data.nickname
-        self.starLabel.text = String(data.star)
+        self.starLabel.text = String(data.star ?? 5.0) 
         self.followerLabel.text = String(data.follower)
         
         if data.follow {
@@ -412,7 +412,7 @@ class ProductViewController : BaseViewController{
         changeProductVC.priceData = productData?.price
         changeProductVC.contentsData = productData?.contents
         changeProductVC.productId = productData!.productId
-        changeProductVC.modalPresentationStyle = .overFullScreen
+        changeProductVC.modalPresentationStyle = .fullScreen
         
         
         present(changeProductVC, animated: true)

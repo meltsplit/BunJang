@@ -20,6 +20,7 @@ struct TotalReviewResponse : Codable {
 struct TotalReviewResult : Codable {
     
     let productId : Int
+    let userId : Int
     let profileImgUrl: String
     let nickname: String
     let star: Double

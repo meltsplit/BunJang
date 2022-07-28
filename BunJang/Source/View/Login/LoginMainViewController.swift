@@ -17,6 +17,7 @@ class LoginMainViewController : BaseViewController{
     
     @IBOutlet var loginImageSlide :ImageSlideshow!
     
+    @IBOutlet weak var phoneAuthBtn: UIButton!
     //MARK: - Properties
     
     
@@ -31,23 +32,41 @@ class LoginMainViewController : BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("LoginVC - viewDidLoad()")
+        NotificationCenter.default.addObserver(self, selector: #selector(goHome(_:)), name: NSNotification.Name("isLogin"), object: nil)
+        
+
+        if User.shared.isLogin{
+            let mainTabVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
+            changeRootViewController(mainTabVC)
+        }
+        
         print(vcIdentifier)
         setImageSlideShow()
+        setUI()
         
     }
 
     
     //MARK: - Custom Method
     
+    private func setUI(){
+        phoneAuthBtn.makeCornerRound(radius: 2)
+        phoneAuthBtn.makeBorder(width: 1, color: .black)
+    }
+    
     private func setImageSlideShow(){
         
         loginImageSlide?.setImageInputs(onBoardingImage)
+        loginImageSlide.contentMode = .scaleAspectFit
+        let pageIndicator = UIPageControl()
+        pageIndicator.currentPageIndicatorTintColor = UIColor.lightGray
+        pageIndicator.pageIndicatorTintColor = UIColor.black
+        loginImageSlide.pageIndicator = pageIndicator
+        loginImageSlide.pageIndicatorPosition = .init(horizontal: .center, vertical: .bottom)
         
-        let indicator = UIPageControl()
-        indicator.currentPageIndicatorTintColor = UIColor.black
-        indicator.pageIndicatorTintColor = UIColor.lightGray
         
-        loginImageSlide.pageIndicator = indicator
     }
    
     //MARK: - IBAction
@@ -85,35 +104,6 @@ class LoginMainViewController : BaseViewController{
         categoryProductVC.categoryId = 1
         pushVC(categoryProductVC)
         
-        
-        
-        
-        
-        
-        
-        
-//        let userData = User.shared
-//        SignUpManager.shared.postRegister(user: userData) { (result) in
-//            
-//            switch result{
-//                
-//            case .success(let data) :
-//                print("성공")
-//                let signUpData = (data as! SignUpResponse).result
-//                
-//                print(signUpData)
-//            case .requestErr(let msg):
-//                if let message = msg as? String {
-//                    print(message)
-//                }
-//            case .pathErr :
-//                print("pathErr")
-//            case .serverErr :
-//                print("serverErr")
-//            case .networkFail:
-//                print("networkFail")
-//            }
-//        }
       
     }
    
@@ -130,9 +120,14 @@ class LoginMainViewController : BaseViewController{
         
         
         let mainTabVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
-        
-        
         changeRootViewController(mainTabVC)
+    }
+    
+    @objc func goHome(_ notification: Notification) {
+            
+        let mainTabVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
+        changeRootViewController(mainTabVC)
+            
     }
 }
 

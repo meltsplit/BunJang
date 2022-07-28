@@ -30,7 +30,7 @@ extension UIImageView{
     func kfSetImage(urlSting : String){
         let imageURL = URL(string: urlSting)
         kf.indicatorType = .activity
-        kf.setImage(with: imageURL, placeholder: nil, options: [.transition(.fade(2.0))], progressBlock: nil)
+        kf.setImage(with: imageURL, placeholder: nil, options: [.transition(.fade(1.0))], progressBlock: nil)
     }
 
     

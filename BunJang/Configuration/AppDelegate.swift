@@ -12,8 +12,15 @@ import KakaoSDKCommon
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UserDefaults.standard.set("1", forKey: "BGJT_userId")
+        UserDefaults.standard.set(Secret.jwtToken2, forKey: "BGJT_jwt")
+        
+        
+        
         KakaoSDK.initSDK(appKey: Secret.KakaoNativeAppKey)
-        UserDefaults.standard.set(Secret.jwtToken1, forKey: "jwt")
+        
+        tryAutoLogin()
         
         return true
     }
@@ -31,7 +38,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    private func tryAutoLogin(){
+        AutoLoginManager.shared.checkJWT { response in
+            switch response {
+            
+            case .success(let data) :
+                let responseData = data as! AutoLoginResponse
+                
+                if responseData.isSuccess{
+                    self.checkAutoLogin(responseData.result!)
+                }
+                
+            case .requestErr(let msg):
+                print("requsertError")
+            case .pathErr :
+                print("pathErr")
+            case .serverErr :
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .decodeErr:
+                print("decodeError")
+            }
 
+
+
+        }
+    }
+    private func checkAutoLogin(_ data : AutoLoginResult){
+        if data.isLoggedIn{
+            print("자동 로그인 성공")
+            
+            User.shared.userId = String(data.userId)
+            User.shared.jwt = data.jwt
+            User.shared.isLogin = true
+            
+            NotificationCenter.default.post(name: NSNotification.Name("isLogin"), object: "true")
+            
+            
+        } else{
+            print("자동 로그인 실패")
+            User.shared.userId = "1"
+            User.shared.jwt = Secret.jwtToken1
+            User.shared.isLogin = true
+            return
+        }
+        
+    }
 
 }
 
