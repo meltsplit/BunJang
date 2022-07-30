@@ -30,7 +30,7 @@
         <!--Home Total Menu View Controller-->
         <scene sceneID="1eh-qo-95F">
             <objects>
-                <viewController id="l92-Xg-w9v" customClass="HomeTotalMenuViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTotalMenuViewController" id="l92-Xg-w9v" customClass="HomeTotalMenuViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D5e-qJ-QLX">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,6 +89,7 @@
                             <constraint firstItem="Une-6g-3LD" firstAttribute="top" secondItem="D8G-NO-dVS" secondAttribute="bottom" constant="20" id="w0k-dR-2u5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="csF-hW-I02"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxm-m5-NaH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="bZE-Nq-lCH" userLabel="Exit" sceneMemberID="exit"/>
@@ -234,7 +235,7 @@
                         <barButtonItem key="leftBarButtonItem" image="line.3.horizontal" catalog="system" id="ffP-az-cyV">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="l92-Xg-w9v" kind="presentation" modalPresentationStyle="fullScreen" id="Rq5-rk-zrL"/>
+                                <action selector="categoryBtnPressed:" destination="p65-Sb-Y74" id="dXo-fA-XW9"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
@@ -259,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1y-Ly-zwH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489" y="791"/>
+            <point key="canvasLocation" x="487.69230769230768" y="790.87677725118476"/>
         </scene>
         <!--Home Tabman View Controller-->
         <scene sceneID="7Vs-Sr-zrg">
@@ -509,13 +510,14 @@
         <!--Home Total Menu Tabman View Controller-->
         <scene sceneID="HBG-Pb-31U">
             <objects>
-                <viewController id="BvS-GI-bXE" customClass="HomeTotalMenuTabmanViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTotalMenuTabmanViewController" id="BvS-GI-bXE" customClass="HomeTotalMenuTabmanViewController" customModule="BunJang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qh6-BT-IhR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="646"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vkM-LA-gOJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gyg-RY-elA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPl-Xc-xfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -755,6 +757,7 @@
                             <constraint firstItem="e3Q-o1-mnM" firstAttribute="trailing" secondItem="TYd-sy-Rhm" secondAttribute="trailing" id="otC-hf-Mwc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hRQ-zS-NeX"/>
                     <connections>
                         <outlet property="lifeCollectionView" destination="Hlg-uw-hBp" id="ScY-dR-T48"/>
                         <outlet property="popularHabitCollectionView" destination="ibV-lr-neH" id="lE4-t7-OTH"/>
@@ -785,8 +788,8 @@
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="best" width="60" height="60"/>
         <image name="bg pay" width="109" height="48"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart" width="380" height="380"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

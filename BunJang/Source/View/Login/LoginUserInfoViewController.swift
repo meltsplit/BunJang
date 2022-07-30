@@ -13,6 +13,7 @@ class LoginUserInfoViewController : BaseViewController{
     //MARK: - IBOutlet
     
     
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var okBtn: UIButton!
@@ -66,6 +67,7 @@ class LoginUserInfoViewController : BaseViewController{
     private func setUI(){
         okBtn.makeCornerRound(radius: 10)
         gallaryBtn.makeCornerRound(radius: 10)
+        profileImageView.makeCornerRound(radius: 10)
     }
     
     private func goHome(){
@@ -85,9 +87,10 @@ class LoginUserInfoViewController : BaseViewController{
                                 
                                 User.shared.userId = String(responseData.result.userId)
                                 User.shared.jwt = responseData.result.jwt
+                                UserDefaults.standard.set(User.shared.userId, forKey: "BGJT_userId")
+                                UserDefaults.standard.set(User.shared.jwt, forKey: "BGJT_jwt")
                                 
-                                let mainTabVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
-                                self.changeRootViewController(mainTabVC)
+                                self.goHome()
                                 
                                 
                                 
@@ -109,6 +112,8 @@ class LoginUserInfoViewController : BaseViewController{
                             print("decodeError")
                         }
         }
+        
+        
     }
     
     
@@ -120,6 +125,11 @@ class LoginUserInfoViewController : BaseViewController{
     }
     
     @IBAction func okBtnPressed(_ sender: Any) {
+        
+        guard let imgString = imgURLData else {
+            presentBottomAlert(message: "이미지를 선택해주세요.")
+            return }
+        
         guard let nicknameText = nicknameTextField.text else {return }
         nicknameLineView.backgroundColor = .systemGray5
         nicknameData = !nicknameText.isEmpty ? nicknameText : nil
@@ -133,6 +143,12 @@ class LoginUserInfoViewController : BaseViewController{
         
     }
     
+    @IBAction func gallaryBtnPressed(_ sender: Any) {
+        
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "GallayVC") as! GallayVC
+        nextVC.delegate = self
+        present(nextVC, animated: true)
+    }
 }
 
 extension LoginUserInfoViewController : UITextFieldDelegate{
@@ -167,6 +183,15 @@ extension LoginUserInfoViewController : UITextFieldDelegate{
         textField.endEditing(true)
         return true
     }
+    
+}
+
+extension LoginUserInfoViewController : StringDelegate{
+    func sendString(_ data: String) {
+        imgURLData = data
+        profileImageView.kfSetImage(urlSting: data)
+    }
+    
     
 }
 

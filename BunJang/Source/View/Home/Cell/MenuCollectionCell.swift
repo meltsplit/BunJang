@@ -93,7 +93,17 @@ class MenuCollectionCell: UICollectionViewCell {
     func setData(_ indexPath: IndexPath){
         menuImageView.image = menuImage[ indexPath.row]
         menuLabel.text = menuText[ indexPath.row]
-       
+        
+    }
+    
+    func setData(_ data: FirstCategoryResult){
+        menuImageView.firstCategory(data.firstCategoryId)
+        menuLabel.text = data.firstCategory
+    }
+    
+    func setData(_ data: LastCategoryResult){
+        menuImageView.lastCategory(data.lastCategoryId)
+        menuLabel.text = data.lastCategory
     }
 }
 

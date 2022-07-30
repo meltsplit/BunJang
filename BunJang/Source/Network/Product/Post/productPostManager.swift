@@ -31,7 +31,7 @@ extension ProductPostManager{
         
         let param : Parameters = [
             
-            "productImgs" : product.productImgs,
+            "productImgs" : "https://image.msscdn.net/images/goods_img/20180322/740893/740893_1_500.jpg",
             "title" : product.title,
             "firstCategoryId" : product.firstCategoryId,
             "lastCategoryId" : product.lastCategoryId,

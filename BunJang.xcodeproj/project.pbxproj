@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1148CE95CCC727BE9CED33F1 /* Pods_BunJang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689B71A9E8E0FF6AB688A6E1 /* Pods_BunJang.framework */; };
+		87027D6D2893573B000DACD9 /* GallaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87027D6C2893573B000DACD9 /* GallaryVC.swift */; };
+		87027D6F289357C6000DACD9 /* GallaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87027D6E289357C6000DACD9 /* GallaryManager.swift */; };
+		87027D71289357CD000DACD9 /* GallaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87027D70289357CD000DACD9 /* GallaryResponse.swift */; };
+		87027D73289359C1000DACD9 /* GallaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87027D72289359C1000DACD9 /* GallaryCollectionViewCell.swift */; };
+		87027D7528935FB0000DACD9 /* LastCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87027D7428935FB0000DACD9 /* LastCategoryManager.swift */; };
+		87027D7728935FBB000DACD9 /* LastCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87027D7628935FBB000DACD9 /* LastCategoryResponse.swift */; };
 		87442BAF2882DED300E7AF3A /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BAE2882DED300E7AF3A /* Secret.swift */; };
 		87442BB22882E5A300E7AF3A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BB12882E5A300E7AF3A /* User.swift */; };
 		87442BB42882E6B400E7AF3A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87442BB32882E6B400E7AF3A /* LoginViewController.swift */; };
@@ -165,6 +171,12 @@
 /* Begin PBXFileReference section */
 		098D35EDF39F290C4DC70042 /* Pods-BunJang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BunJang.debug.xcconfig"; path = "Target Support Files/Pods-BunJang/Pods-BunJang.debug.xcconfig"; sourceTree = "<group>"; };
 		689B71A9E8E0FF6AB688A6E1 /* Pods_BunJang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BunJang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87027D6C2893573B000DACD9 /* GallaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryVC.swift; sourceTree = "<group>"; };
+		87027D6E289357C6000DACD9 /* GallaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryManager.swift; sourceTree = "<group>"; };
+		87027D70289357CD000DACD9 /* GallaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryResponse.swift; sourceTree = "<group>"; };
+		87027D72289359C1000DACD9 /* GallaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		87027D7428935FB0000DACD9 /* LastCategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCategoryManager.swift; sourceTree = "<group>"; };
+		87027D7628935FBB000DACD9 /* LastCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCategoryResponse.swift; sourceTree = "<group>"; };
 		87442BAE2882DED300E7AF3A /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		87442BB12882E5A300E7AF3A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		87442BB32882E6B400E7AF3A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -443,6 +455,7 @@
 				8781814D28900FF500E39B6F /* Products */,
 				87818159289064EC00E39B6F /* Search */,
 				877C4085288B1432001F4C28 /* My */,
+				878889B7289345C000289F15 /* Gallary */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -633,6 +646,8 @@
 				878889AD28932B6F00289F15 /* LoginPhoneViewController.swift */,
 				878889AF28932B9900289F15 /* LoginCertificationViewController.swift */,
 				878889B128932BB000289F15 /* LoginUserInfoViewController.swift */,
+				87027D6C2893573B000DACD9 /* GallaryVC.swift */,
+				87027D72289359C1000DACD9 /* GallaryCollectionViewCell.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -885,6 +900,8 @@
 				877C89742888156300C79ADC /* FirstCategoryResponse.swift */,
 				877C8976288816EC00C79ADC /* SecondCategoryManger.swift */,
 				877C8978288816F900C79ADC /* SecondCategoryResponse.swift */,
+				87027D7428935FB0000DACD9 /* LastCategoryManager.swift */,
+				87027D7628935FBB000DACD9 /* LastCategoryResponse.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1076,6 +1093,15 @@
 				878889B52893314400289F15 /* PhoneRequestResponse.swift */,
 			);
 			path = PhoneLogin;
+			sourceTree = "<group>";
+		};
+		878889B7289345C000289F15 /* Gallary */ = {
+			isa = PBXGroup;
+			children = (
+				87027D6E289357C6000DACD9 /* GallaryManager.swift */,
+				87027D70289357CD000DACD9 /* GallaryResponse.swift */,
+			);
+			path = Gallary;
 			sourceTree = "<group>";
 		};
 		87F3C85528919BCB003EE7A4 /* Follow */ = {
@@ -1278,6 +1304,7 @@
 				87733513288DC214000556DD /* ProductsCollectionViewCell.swift in Sources */,
 				87442BCD2883389900E7AF3A /* HomeTabManViewController.swift in Sources */,
 				877F205F2887AE5300F1EEA9 /* Cell.swift in Sources */,
+				87027D7728935FBB000DACD9 /* LastCategoryResponse.swift in Sources */,
 				87818158289064E700E39B6F /* RecentSearchManger.swift in Sources */,
 				87442BC62883035900E7AF3A /* BaseTabBarController.swift in Sources */,
 				87442BBB2883014900E7AF3A /* PostMainViewController.swift in Sources */,
@@ -1309,6 +1336,7 @@
 				87442BC42883021800E7AF3A /* SearchMainViewController.swift in Sources */,
 				877C8983288960BA00C79ADC /* SignUpResponse.swift in Sources */,
 				877334FC288C950F000556DD /* HeartResponse.swift in Sources */,
+				87027D73289359C1000DACD9 /* GallaryCollectionViewCell.swift in Sources */,
 				878889B228932BB000289F15 /* LoginUserInfoViewController.swift in Sources */,
 				877C897D28888F3E00C79ADC /* Default.swift in Sources */,
 				877C89852889CCF300C79ADC /* ProductPostModel.swift in Sources */,
@@ -1334,6 +1362,7 @@
 				877334EE288C39BC000556DD /* MyPageManager.swift in Sources */,
 				878889B028932B9900289F15 /* LoginCertificationViewController.swift in Sources */,
 				8781816328906D9900E39B6F /* DeleteRecentSearchManager.swift in Sources */,
+				87027D6F289357C6000DACD9 /* GallaryManager.swift in Sources */,
 				87818148288F16FE00E39B6F /* CategoryProductManager.swift in Sources */,
 				877C4078288AC139001F4C28 /* SignUpModel.swift in Sources */,
 				87442BBD2883016600E7AF3A /* ChatMainViewController.swift in Sources */,
@@ -1348,6 +1377,7 @@
 				877C4073288AB6A1001F4C28 /* ProductGetManager.swift in Sources */,
 				87442BFD28844D8900E7AF3A /* CategoryTagCollectionViewCell.swift in Sources */,
 				8788899E2891DCCD00289F15 /* FollowerTableViewCell.swift in Sources */,
+				87027D7528935FB0000DACD9 /* LastCategoryManager.swift in Sources */,
 				877C898B2889EF6D00C79ADC /* Error.swift in Sources */,
 				878889922891D3E800289F15 /* MyFollowerManager.swift in Sources */,
 				877C8979288816F900C79ADC /* SecondCategoryResponse.swift in Sources */,
@@ -1364,6 +1394,7 @@
 				877334FE288CAA77000556DD /* PostStartVC.swift in Sources */,
 				87F3C8692891A493003EE7A4 /* MyHeartListViewController.swift in Sources */,
 				877334FA288C9323000556DD /* HeartPostManager.swift in Sources */,
+				87027D71289357CD000DACD9 /* GallaryResponse.swift in Sources */,
 				87442BCF28833A0C00E7AF3A /* HomeRecommendProductViewController.swift in Sources */,
 				87733523288EA722000556DD /* ShowProductViewController.swift in Sources */,
 				877C89892889E74000C79ADC /* Int+.swift in Sources */,
@@ -1391,6 +1422,7 @@
 				8773352A288F1129000556DD /* SecondCategoryCollectionViewCell.swift in Sources */,
 				8770198928826A590003441E /* UIColor+.swift in Sources */,
 				87442BDE2883F49B00E7AF3A /* PostTagViewController.swift in Sources */,
+				87027D6D2893573B000DACD9 /* GallaryVC.swift in Sources */,
 				878889B62893314400289F15 /* PhoneRequestResponse.swift in Sources */,
 				877C4095288B4302001F4C28 /* DataCheat.swift in Sources */,
 				87818169289073AA00E39B6F /* KeywordProductResponse.swift in Sources */,

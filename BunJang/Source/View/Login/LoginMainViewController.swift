@@ -79,11 +79,15 @@ class LoginMainViewController : BaseViewController{
                 else {
                     print("loginWithKakaoAccount() success.")
                     
-                    guard let BaseVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as? BaseTabBarController else { return }
+                    User.shared.jwt = "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWQiOjIsImlhdCI6MTY1ODk0MTM3MSwiZXhwIjoxNjYwNDEyNjAwfQ.ISqYkmzRfVaWOu53i5ywbsR5ptaGcHwWil8vtJ6oyfc"
+                    User.shared.userId = "2"
                     
-                    BaseVC.modalPresentationStyle = .fullScreen
+                    UserDefaults.standard.set(User.shared.userId, forKey: "BGJT_userId")
+                    UserDefaults.standard.set(User.shared.jwt, forKey: "BGJT_jwt")
                     
-                    self.present(BaseVC, animated: true)
+                    let mainTabVC = UIStoryboard(name: "Tab", bundle: nil).instantiateViewController(withIdentifier: "BaseTabBarController") as! BaseTabBarController
+                    self.changeRootViewController(mainTabVC)
+                    
                     
                 }
             }
@@ -94,16 +98,6 @@ class LoginMainViewController : BaseViewController{
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "LoginPhoneViewController") as! LoginPhoneViewController
         pushVC(nextVC)
     }
-   
-    
-    
-    
-    
-    //        UIStoryboard(name: "ShowProduct", bundle: nil)
-    //        let categoryProductVC = UIStoryboard(name: "ShowProduct", bundle: nil).instantiateViewController(withIdentifier: "ShowProductViewController") as! ShowProductViewController
-    //        categoryProductVC.show = Show.firstCategoryProduct
-    //        categoryProductVC.categoryId = 1
-    //        pushVC(categoryProductVC)
     
     @IBAction func autoLogin(_ sender: UIButton) {
         
@@ -121,9 +115,5 @@ class LoginMainViewController : BaseViewController{
         changeRootViewController(mainTabVC)
             
     }
-}
-
-extension LoginMainViewController {
-    
 }
 

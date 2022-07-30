@@ -152,10 +152,10 @@ class ShowProductViewController : BaseViewController{
             print("유저 상품입니당")
         case .firstCategoryProduct:
             categoryNameLabel.text = data[0].firstCategory
-            categoryImageView.load(urlString: data[0].firstCategoryImgUrl)
+            categoryImageView.firstCategory(data[0].firstCategoryId)
         case .lastCategoryProduct:
             categoryNameLabel.text = data[0].lastCategory
-            categoryImageView.load(urlString: data[0].lastCategoryImgUrl)
+            categoryImageView.lastCategory(data[0].lastCategoryId)
         case .keywordProduct:
             print("키워드입니당")
         }

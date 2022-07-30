@@ -52,6 +52,7 @@ class HomeTotalMenuViewController : BaseViewController{
     
     //MARK: - IBAction
     @IBAction func backBtnPressed(_ sender: UIButton) {
+        popVC()
         dismiss(animated: true)
     }
     

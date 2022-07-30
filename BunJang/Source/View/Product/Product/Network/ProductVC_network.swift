@@ -110,7 +110,7 @@ extension ProductViewController{
             
             case .success(let data) :
                 print("팔로잉 하였습니다.")
-                
+                self.getProduct()
             case .requestErr(let msg):
                 print("요청에러")
             case .pathErr :

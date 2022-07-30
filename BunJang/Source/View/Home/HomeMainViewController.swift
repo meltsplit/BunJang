@@ -175,6 +175,10 @@ class HomeMainViewController : BaseViewController{
         pushVC(searchVC)
     }
     
+    @IBAction func categoryBtnPressed(_ sender: Any) {
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "HomeTotalMenuViewController") as! HomeTotalMenuViewController
+        pushVC(nextVC)
+    }
 }
 
 //MARK: - CollectionView Delegate, DataSource

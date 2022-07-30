@@ -12,12 +12,7 @@ import KakaoSDKCommon
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        UserDefaults.standard.set("1", forKey: "BGJT_userId")
-        UserDefaults.standard.set(Secret.jwtToken2, forKey: "BGJT_jwt")
-        
-        
-        
+
         KakaoSDK.initSDK(appKey: Secret.KakaoNativeAppKey)
         
         tryAutoLogin()
@@ -40,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func tryAutoLogin(){
+        
         AutoLoginManager.shared.checkJWT { response in
             switch response {
             

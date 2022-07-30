@@ -246,7 +246,7 @@ class ProductViewController : BaseViewController{
         
         
         self.categoryImageView.image = Image.cloth
-        self.categoryImageView.load(urlString: data.lastCategoryImgUrl)
+        self.categoryImageView.lastCategory(data.lastCategoryId)
         self.categoryLabel.text = data.lastCategory
         var i = 0
         
