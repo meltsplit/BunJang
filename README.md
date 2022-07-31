@@ -20,6 +20,7 @@
 | Then | 짧은 코드 처리 |
 | TabMan | 뷰간 전환 |
 | Image Slide Show | 넘기는 이미지 |
+|KingFisher| 이미지 캐싱 |
 
 ## 📌 협업
 
@@ -56,3 +57,16 @@
 4. do-try-catch 문을 통해 예외처리, 그에 따른 메세지 알림 띄우기
 5. Delegate 패턴을 통해 Cell -> VC 로 데이터 전달
 ```
+
+## 📌 토픽
+
+- 재사용 컬렉션 뷰 관련
+- 이중 스크롤 관련
+- 페이징 기법 관련
+- 한 뷰로 여러가지 화면 상황에 따라 나누기
+    - 스택 뷰 활용법
+- tabItem 선택시 push 되는법?
+- 싱글톤은 쓰레드마다 생성되는가?
+- TabBar에 rootVC로 결속되있는 VC는 따로 present를 못하는가
+    - present시 tabBar가 안보이는 현상 발생
+    - 일반 VC는 present해도 tabBar가 보이는데 결속된 VC는 안보임
