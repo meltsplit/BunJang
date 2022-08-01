@@ -8,7 +8,7 @@
 - Storyboard 기반
 
 ## 📌 구현 영상
-추후 업로드 예정
+[구현 영상](https://youtu.be/QhQRMZwGjsg)
 
 ## 📌 라이브러리
 
@@ -16,11 +16,12 @@
 | --- | --- |
 |KaKaoSDK|카카오톡 소셜 로그인|
 | Alamofire | 서버통신 |
+|KingFisher| 이미지 캐싱 |
 | SnapKit | 오토레이아웃 |
 | Then | 짧은 코드 처리 |
 | TabMan | 뷰간 전환 |
 | Image Slide Show | 넘기는 이미지 |
-|KingFisher| 이미지 캐싱 |
+|BottomSheet| 바텀 시트뷰 |
 
 ## 📌 협업
 
